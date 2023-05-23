@@ -12,7 +12,7 @@ public class Colaborador : User
 
 	}
 
-	public Colaborador(double vencimento, char equipa, string viatura)
+	public Colaborador(double vencimento, char equipa, string viatura)	//falta :base com variaveis herdadas de User
 	{
 		Vencimento = vencimento;
 		Equipa = equipa;
