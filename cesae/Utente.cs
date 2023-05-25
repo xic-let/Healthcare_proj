@@ -9,14 +9,14 @@ namespace Saude_DIstante
     public class Utente:User
     {
         public int Idsns;
-        public enum Concelho;
+        public concelho Concelho;
         public bool Rgpd;
 
-        list <DadosSaude> dadoutente = new.DadosSaude();
+        list <DadosSaude> dadoutente = new DadosSaude();
 
         public Utente() { }
 
-        public Utente(int idsns, enum concelho, bool rgpd)
+        public Utente(int idsns, concelho concelho, bool rgpd)
         {
             this.Idsns = idsns;
             this.Concelho = concelho;
