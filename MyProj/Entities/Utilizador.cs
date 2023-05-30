@@ -15,8 +15,6 @@ namespace MyProj
         public string morada { get; set; }
         public Concelho concelho { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
-        public bool isColaborador{ get; set; }   // true se for profissional, false se for cliente
         
     
         // Construtor
@@ -28,8 +26,6 @@ namespace MyProj
         {
             Nome = nome;
             Email = email;
-            Password = password;
-            this.isColaborador = isColaborador;
             this.generoUtilizador = generoUtilizador;
             this.dataNascimento = dataNascimento;
             this.telefone = telefone;
@@ -42,8 +38,6 @@ namespace MyProj
         {
             Console.WriteLine($"Nome: {Nome}");
             Console.WriteLine($"Email: {Email}");
-            Console.WriteLine($"Password: {Password}");
-            Console.WriteLine($"É colaborador: {isColaborador}");
             Console.WriteLine($"Género: {generoUtilizador}");
             Console.WriteLine($"Data de Nascimento: {dataNascimento}");
             Console.WriteLine($"Telefone: {telefone}");
