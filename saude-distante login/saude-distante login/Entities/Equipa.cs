@@ -13,7 +13,7 @@ namespace saude_distante_login.Entities
 
         //Propriedades da classe Equipa
         public int IdEquipa { get; set; }
-        public Concelho Concelho { get; set; }
+        public Distrito Distrito { get; set; }
         public Administrativo Administrativo { get; set; }
         public Motorista Motorista { get; set; }
         public Medico Medico { get; set; }
@@ -24,14 +24,14 @@ namespace saude_distante_login.Entities
         {
         }
 
-        public Equipa(int idEquipa, Concelho concelho, Administrativo administrativo, Motorista motorista, List<Medico> medicos, List<Enfermeiro> enfermeiros)
+        public Equipa(int idEquipa, Distrito distrito, Administrativo administrativo, Motorista motorista, Medico medico, Enfermeiro enfermeiro)
         {
             IdEquipa = idEquipa;
-            Concelho = concelho;
+            Distrito = distrito;
             Administrativo = administrativo;
             Motorista = motorista;
-            Medico = medicos;
-            Enfermeiro = enfermeiros;
+            Medico = medico;
+            Enfermeiro = enfermeiro;
         }
     }
 }

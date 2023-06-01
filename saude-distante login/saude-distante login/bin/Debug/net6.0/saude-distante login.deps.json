@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "saude-distante login/1.0.0": {
+        "runtime": {
+          "saude-distante login.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "saude-distante login/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

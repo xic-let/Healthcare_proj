@@ -8,8 +8,22 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities
 {
+    
     internal class Enfermeiro : Colaborador
     {
+        //Construtores da classe Enfermeiro
+        public Enfermeiro()
+        {
+
+        }
+
+        public Enfermeiro(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Distrito distrito, string email, int idColaborador, double vencimento, Equipa equipa, string password)
+            : base(nome, genero, dataNascimento, contacto, morada, distrito, email, idColaborador, vencimento, equipa, password)
+        {
+
+        }
+
+        //Métodos da classe Enfermeiro
         protected virtual void RegistoUtente(List<Utente> utentes)  //protected virtual void indica que o método é acessível dentro da classe Colaborador e subclasses, permitindo sobreposição do método nas subclasses
         {
             Console.WriteLine("Registo de Utente:");

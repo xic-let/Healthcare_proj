@@ -107,11 +107,27 @@ namespace saude_distante_login
                 {
                     Console.WriteLine("Função, Email ou Password inválidos. Tente novamente.");
                 }
-            }
-            else
-            {
-                Console.WriteLine("Função não encontrada. Tente novamente.");
-            }
+            
+                else
+                {
+                    Console.WriteLine("Função não encontrada. Tente novamente.");
+                }
+            
+            //teste métodos administrativo
+            /*Administrativo administrativo = new Administrativo();
+            
+            administrativo.RegistarEquipa(administrativo);
+
+            Console.WriteLine();
+
+            administrativo.RegistarEquipa(administrativo);
+
+            Console.WriteLine();
+
+            administrativo.RelatorioColaboradores();*/
         }
+
+        
+    
     }
 }
