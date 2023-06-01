@@ -1,19 +1,42 @@
-﻿using Saude_distante.Entities;
-using Saude_distante.Entities.Enums;
+﻿using saude_distante_login.Entities;
 
-namespace Saude_distante
+namespace saude_distante_login
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            List<Colaborador> colaboradores = new List<Colaborador>();
-            Colaborador colaborador1 = new Colaborador(funcaoProfissional.Administrativo, "maria@email.com", "12345");
+            Colaborador colabSelecionado = null;
+            bool eColaborador = false;
 
             Console.WriteLine("Login de Colaborador");
             Console.WriteLine();
-            Console.WriteLine("Selecione a sua Função: Administrativo, Enfermeiro, Médico, Motorista");
-            string inserirFuncao = Console.ReadLine().ToLower();
+            Console.WriteLine("Selecione a sua Função (1-4):");
+            Console.WriteLine("1-Administrativo");
+            Console.WriteLine("2-Enfermeiro");
+            Console.WriteLine("3-Médico");
+            Console.WriteLine("4-Motorista");
+            
+            string lerColaborador = Console.ReadLine();
+
+            switch(lerColaborador)
+            {
+                case "1":
+                    LoginAdministrativo(colaboradores);
+                    break;
+                case "2":
+                    LoginEnfermeiro(colaboradores);
+                    break;
+                case "3":
+                    LoginMedico(colaboradores);
+                    break;
+                case "4":
+                    LoginMotorista(colaboradores);
+                    break;
+                default:
+                    Console.WriteLine("Opção Inválida. Tente novamente.");
+                    break;
+            }
 
             if (Enum.TryParse<funcaoProfissional>(inserirFuncao, out funcaoProfissional tipoColab)) //Enum.TryParse<TipoColaborador> é um método que tenta converter uma string em um enumerador anteriormente especificado
             {
@@ -25,7 +48,7 @@ namespace Saude_distante
                 Colaborador colaboradorLogin = null;
 
                 //verificação se o colaborador existe e validação das credenciais
-                foreach (Colaborador colaborador in colaboradores) 
+                foreach (Colaborador colaborador in colaboradores)
                 {
                     if (colaborador.TipoColab == tipoColab && colaborador.Email == inserirEmail && colaborador.Password == inserirPassword)
                     {
@@ -85,15 +108,11 @@ namespace Saude_distante
                 {
                     Console.WriteLine("Função, Email ou Password inválidos. Tente novamente.");
                 }
-            }    
+            }
             else
             {
                 Console.WriteLine("Função não encontrada. Tente novamente.");
-            }     
-
-            
+            }
         }
-
-
     }
 }
