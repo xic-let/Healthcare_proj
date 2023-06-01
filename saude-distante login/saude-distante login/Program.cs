@@ -1,4 +1,6 @@
 ﻿using saude_distante_login.Entities;
+using saude_distante_login.Entities.Enums;
+using System.Diagnostics.Contracts;
 
 namespace saude_distante_login
 {
@@ -6,9 +8,7 @@ namespace saude_distante_login
     {
         static void Main(string[] args)
         {
-            Colaborador colabSelecionado = null;
-            bool eColaborador = false;
-
+            Administrativo administrativo = new Colaborador("Maria José", Genero.Feminino, new DateTime(02-05-1985), "934567654", "Rua das Flores nº5", Distrito., "maria.jose@email.com", 123, 1000, "123456");
             Console.WriteLine("Login de Colaborador");
             Console.WriteLine();
             Console.WriteLine("Selecione a sua Função (1-4):");
@@ -18,6 +18,7 @@ namespace saude_distante_login
             Console.WriteLine("4-Motorista");
             
             string lerColaborador = Console.ReadLine();
+            Colaborador colaboradorLogin = null;
 
             switch(lerColaborador)
             {
@@ -38,8 +39,6 @@ namespace saude_distante_login
                     break;
             }
 
-            if (Enum.TryParse<funcaoProfissional>(inserirFuncao, out funcaoProfissional tipoColab)) //Enum.TryParse<TipoColaborador> é um método que tenta converter uma string em um enumerador anteriormente especificado
-            {
                 Console.Write("Email: ");
                 string inserirEmail = Console.ReadLine();
                 Console.Write("Password: ");
@@ -50,7 +49,7 @@ namespace saude_distante_login
                 //verificação se o colaborador existe e validação das credenciais
                 foreach (Colaborador colaborador in colaboradores)
                 {
-                    if (colaborador.TipoColab == tipoColab && colaborador.Email == inserirEmail && colaborador.Password == inserirPassword)
+                    if (colaborador.Email == inserirEmail && colaborador.Password == inserirPassword)
                     {
                         colaboradorLogin = colaborador;
                         break;
@@ -63,7 +62,7 @@ namespace saude_distante_login
 
                     switch (colaboradorLogin.TipoColab)
                     {
-                        case funcaoProfissional.Administrativo:
+                        case Administrativo:
                             Console.WriteLine("Menu Administrativo:");
                             Console.WriteLine("1. Adicionar novo colaborador");
                             Console.WriteLine("2. Gerar relatório de colaborador");

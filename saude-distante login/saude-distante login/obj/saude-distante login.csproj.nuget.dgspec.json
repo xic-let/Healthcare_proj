@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Projectos Window Forms\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {}
+    "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Projectos Window Forms\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {
+    "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Projectos Window Forms\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
+        "projectUniqueName": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
         "projectName": "saude-distante login",
-        "projectPath": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Projectos Window Forms\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
+        "projectPath": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
         "packagesPath": "C:\\Users\\cesae\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Projectos Window Forms\\saude-distante login\\saude-distante login\\obj\\",
+        "outputPath": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Healthcare_proj\\saude-distante login\\saude-distante login\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cesae\\AppData\\Roaming\\NuGet\\NuGet.Config",

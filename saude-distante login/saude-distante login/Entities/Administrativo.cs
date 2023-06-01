@@ -6,25 +6,19 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities
 {
-    internal class Administrador : Colaborador
+    internal class Administrativo : Colaborador
     {
        
 
 
-        public Admin()
+        public Administrativo()
         {
 
         }
 
-        public Admin(double vencimento, char equipa, string viatura)
-            : base(vencimento, equipa, viatura)
-        {
+        
+        
 
-        }
-
-        public void AddItemInventario(ItemInventario item)
-        {
-            inventario.Add(item);
-        }
+       
     }
 }
