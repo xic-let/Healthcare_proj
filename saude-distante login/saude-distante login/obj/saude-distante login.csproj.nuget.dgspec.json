@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {}
+    "C:\\Users\\cesae\\Desktop\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {
+    "C:\\Users\\cesae\\Desktop\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
+        "projectUniqueName": "C:\\Users\\cesae\\Desktop\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
         "projectName": "saude-distante login",
-        "projectPath": "C:\\Users\\User\\Desktop\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Healthcare_proj\\saude-distante login\\saude-distante login\\obj\\",
+        "projectPath": "C:\\Users\\cesae\\Desktop\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
+        "packagesPath": "C:\\Users\\cesae\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cesae\\Desktop\\Healthcare_proj\\saude-distante login\\saude-distante login\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cesae\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

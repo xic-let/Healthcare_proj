@@ -24,7 +24,7 @@ namespace saude_distante_login.Entities
         }
 
         //Métodos da classe Enfermeiro
-        protected virtual void RegistoUtente(List<Utente> utentes)  //protected virtual void indica que o método é acessível dentro da classe Colaborador e subclasses, permitindo sobreposição do método nas subclasses
+        /*protected virtual void RegistoUtente(List<Utente> utentes)  //protected virtual void indica que o método é acessível dentro da classe Colaborador e subclasses, permitindo sobreposição do método nas subclasses
         {
             Console.WriteLine("Registo de Utente:");
 
@@ -71,6 +71,6 @@ namespace saude_distante_login.Entities
             {
                 Console.WriteLine("O Registo do Utente não foi efetuado!");
             }
-        }
+        }*/
     }
 }

@@ -26,7 +26,7 @@ namespace saude_distante_login.Entities
         {
             Equipa equipa = new Equipa();
             equipa.Administrativo = administrativo;
-            
+
             Console.Write("Insira o ID da equipa: ");
             equipa.IdEquipa = int.Parse(Console.ReadLine());
             Console.Write("Insira o distrito da equipa: ");
@@ -114,7 +114,7 @@ namespace saude_distante_login.Entities
             Equipas.Add(equipa);
 
             Console.WriteLine();
-            Console.WriteLine("Equipa " + equipa.IdEquipa + "(" + equipa.Distrito + ") criada com sucesso.");
+            Console.WriteLine("Equipa " + equipa.IdEquipa + " (" + equipa.Distrito + ") criada com sucesso.");
         }
 
         public void RelatorioColaboradores()
@@ -122,17 +122,29 @@ namespace saude_distante_login.Entities
             Console.WriteLine("RELATÓRIO DE COLABORADORES:");
             foreach (Equipa equipa in Equipas)
             {
-                Console.WriteLine("Equipa " + equipa.IdEquipa + "(" + equipa.Distrito + "):\n"
-                + "Administrativo: " + equipa.Administrativo.Nome + "(vencimento: " + equipa.Administrativo.Vencimento + "€)\n"
-                + "Enfermeiro: " + equipa.Enfermeiro.Nome + "(vencimento: " + equipa.Enfermeiro.Vencimento + "€)\n"
-                + "Medico: " + equipa.Medico.Nome + "(vencimento: " + equipa.Medico.Vencimento + "€)\n"
-                + "Motorista: " + equipa.Motorista.Nome + "(vencimento: " + equipa.Motorista.Vencimento + "€)");
+                Console.WriteLine("Equipa " + equipa.IdEquipa + " (" + equipa.Distrito + "):\n"
+                + "Administrativo: " + equipa.Administrativo.Nome + " (vencimento: " + equipa.Administrativo.Vencimento + "€)\n"
+                + "Enfermeiro: " + equipa.Enfermeiro.Nome + " (vencimento: " + equipa.Enfermeiro.Vencimento + "€)\n"
+                + "Médico: " + equipa.Medico.Nome + " (vencimento: " + equipa.Medico.Vencimento + "€)\n"
+                + "Motorista: " + equipa.Motorista.Nome + " (vencimento: " + equipa.Motorista.Vencimento + "€)");
                 Console.WriteLine();
             }
         }
 
-
-
-
+        public void RelatorioEquipa(int idEquipa)
+        {
+            foreach (Equipa equipa in Equipas)
+            {
+                if (idEquipa == equipa.IdEquipa)
+                {
+                    Console.WriteLine("Equipa " + equipa.IdEquipa + " (" + equipa.Distrito + "):\n"
+                     + "Administrativo: " + equipa.Administrativo.Nome + " (vencimento: " + equipa.Administrativo.Vencimento + "€)\n"
+                     + "Enfermeiro: " + equipa.Enfermeiro.Nome + " (vencimento: " + equipa.Enfermeiro.Vencimento + "€)\n"
+                     + "Médico: " + equipa.Medico.Nome + " (vencimento: " + equipa.Medico.Vencimento + "€)\n"
+                     + "Motorista: " + equipa.Motorista.Nome + " (vencimento: " + equipa.Motorista.Vencimento + "€)");
+                    Console.WriteLine();
+                }
+            }
+        }
     }
 }
