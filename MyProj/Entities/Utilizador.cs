@@ -9,12 +9,17 @@ namespace MyProj
     public class Utilizador
     {
         public string Nome { get; set; }
-        public genero genero { get; set; }
-        public DateTime dataNascimento { get; set; }
-        public string telefone { get; set; } 
-        public string morada { get; set; }
-        public Concelho concelho { get; set; }
+        public Genero GeneroUtil { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public string Telefone { get; set; } 
+        public string Morada { get; set; }
+        public Concelho ConcelhoUtil { get; set; }
         public string Email { get; set; }
+<<<<<<< Updated upstream
+=======
+        
+        
+>>>>>>> Stashed changes
         
     
         // Construtor
@@ -22,15 +27,23 @@ namespace MyProj
         public Utilizador()
         {} // Construtor vazio
 
-        public Utilizador(string nome, string email, string password, bool isColaborador, genero generoUtilizador, DateTime dataNascimento, string telefone, string morada, Concelho concelho)
+        public Utilizador(string nome, string email, Genero generoUtil, DateTime dataNascimento, string telefone, string morada, Concelho concelhoUtil)
         {
             Nome = nome;
             Email = email;
+<<<<<<< Updated upstream
             this.generoUtilizador = generoUtilizador;
             this.dataNascimento = dataNascimento;
             this.telefone = telefone;
             this.morada = morada;
             this.concelho = concelho;
+=======
+            GeneroUtil = generoUtil;
+            DataNascimento = dataNascimento;
+            Telefone = telefone;
+            Morada = morada;
+            Concelho = concelhoUtil;
+>>>>>>> Stashed changes
         }
 
         // Métodos
