@@ -8,8 +8,7 @@ namespace saude_distante_login
     {
         static void Main(string[] args)
         {
-
-            /*Administrativo administrativo = new Colaborador("Maria José", Genero.Feminino, new DateTime(02 - 05 - 1985), "934567654", "Rua das Flores nº5", Distrito., "maria.jose@email.com", 123, 1000, "123456");
+            Administrativo administrativo = new Colaborador("Maria José", Genero.Feminino, new DateTime(02 - 05 - 1985), "934567654", "Rua das Flores nº5", Distrito., "maria.jose@email.com", 123, 1000, "123456");
             Console.WriteLine("Login de Colaborador");
             Console.WriteLine();
             Console.WriteLine("Selecione a sua Função (1-4):");
@@ -113,11 +112,11 @@ namespace saude_distante_login
                 else
             {
                 Console.WriteLine("Função não encontrada. Tente novamente.");
-            }*/
+            }
 
 
-            //teste métodos administrativo
-            
+            //teste métodos administrativo          
+            /*
             Console.OutputEncoding = System.Text.Encoding.Default;  //permite imprimir na consola o símbolo €. caso contrário imprime ?
             
             Administrativo administrativo = new Administrativo();
@@ -133,6 +132,7 @@ namespace saude_distante_login
             administrativo.RelatorioColaboradores();
 
             administrativo.RelatorioEquipa(2);
+            */
             
         }
 
