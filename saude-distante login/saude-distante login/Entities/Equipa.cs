@@ -19,9 +19,11 @@ namespace saude_distante_login.Entities
         public Medico Medico { get; set; }
         public Enfermeiro Enfermeiro { get; set; }
 
+        public Equipamentos Equipamentos { get; set; }
+
         //Construtores da classe Equipa
 
-        public Equipa(int idEquipa, Distrito distrito, Administrativo administrativo, Motorista motorista, Medico medico, Enfermeiro enfermeiro)
+        public Equipa(int idEquipa, Distrito distrito, Administrativo administrativo, Motorista motorista, Medico medico, Enfermeiro enfermeiro, Equipamentos equipamentos)
         {
             IdEquipa = idEquipa;
             Distrito = distrito;
@@ -29,7 +31,9 @@ namespace saude_distante_login.Entities
             Motorista = motorista;
             Medico = medico;
             Enfermeiro = enfermeiro;
+            Equipamentos = equipamentos;
         }
+        
     }
 }
 

@@ -64,7 +64,82 @@ namespace saude_distante_login.Entities
                     break;
             }
         }
-
         
+        public void RegistarConsultaMed()
+        {
+            Console.WriteLine("Registe os dados da consulta:");
+            if (utente.DadosSaude == null)
+            {
+                Console.WriteLine("É necessário registrar os dados de pré-consulta antes de prosseguir.");
+                Console.WriteLine("Deseja registrar os dados de pré-consulta? (sim/não): ");
+                string input = Console.ReadLine();
+                if (input.ToLower() == "sim")
+                {
+                    RegistarPreConsulta();
+                    Console.WriteLine("Continuar com o registo da consulta? (sim/não): ");
+                    string input2 = Console.ReadLine();
+                    if (input2.ToLower() == "sim")
+                    {
+                        RegistarConsultaMed();  // Chama o método novamente para continuar o registo da consulta
+                    }
+                    else
+                    {
+                        Console.WriteLine("Operação cancelada.");
+                        return;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Operação cancelada.");
+                    return;
+                }
+            }
+
+            Console.WriteLine("Registe os dados completos da consulta:");
+
+            Console.Write("É fumador? (sim/não): ");
+            string fumadorInput = Console.ReadLine();
+            utente.DadosSaude.Fumador = fumadorInput.ToLower() == "sim"; 
+
+            Console.Write("Informe o histórico de doenças: ");
+            utente.DadosSaude.HistoricoDoencas = Console.ReadLine();
+
+            Console.Write("Existem Observações a Registar? (sim/não): ");
+            string obsInput = Console.ReadLine();
+
+            if (obsInput.ToLower() == "sim")
+            {
+                Console.Write("Informe as observações: ");
+                utente.DadosSaude.Observacoes = Console.ReadLine();
+            }
+            else
+            {
+                utente.DadosSaude.Observacoes = "Nenhuma observação registada.";
+            }
+
+            Console.Write("Será prescrita Medicaççao? (sim/não): ");
+            string medInput = Console.ReadLine();
+
+            if (medInput.ToLower() == "sim")
+            {
+                Console.Write("Informe a medicação: ");
+                utente.DadosSaude.Medicacao = Console.ReadLine();
+            }
+            else
+            {
+                utente.DadosSaude.Medicacao = "Nenhuma medicação prescrita.";
+            }
+
+            Console.WriteLine("Consulta registrada com sucesso!");
+
+            Console.WriteLine("Deseja imprimir o relatório da consulta? (sim/não): ");
+            string relInput = Console.ReadLine();
+
+            if(relInput.ToLower() == "sim")
+            {
+                Consulta.RelConsultaInd(utente);
+            }
+        }
+
     }
 }

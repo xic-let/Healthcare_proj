@@ -1,6 +1,13 @@
 ﻿using saude_distante_login.Entities;
 using saude_distante_login.Entities.Enums;
 using System.Diagnostics.Contracts;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
 
 namespace saude_distante_login
 {

@@ -98,20 +98,60 @@ namespace saude_distante_login.Entities
 
             Console.WriteLine("O utente dá o seu consentimento para o tratamento dos dados de acordo com o RGPD? (Sim/Não):");
             string resp = Console.ReadLine().ToLower();
-            bool rGPD = (resp == "sim") ? true : false;
 
-            if (resp == "sim")
-            {
-                Utente novoUtente = new Utente(nome, genero, dataNascimento, contacto, morada, distrito, email, password, numUtente, rGPD);
+            bool yes_rgpd = (resp == "sim" || resp == "Sim" || resp == "SIM");
+            
+            Utente novoUtente = new Utente(nome, genero, dataNascimento, contacto , morada, distrito, email, id, yes_rgpd);
 
+            if (resp == "sim" || resp == "Sim" || resp == "SIM")
+            {   
                 utentes.Add(novoUtente);
-
-                Console.WriteLine("O Registo do Utente foi concluído com sucesso!");
             }
             else
             {
-                Console.WriteLine("O Registo do Utente não foi efetuado!");
+                utentes.Add(novoUtente);
             }
+
+            Console.WriteLine("Utente registado com sucesso!");
+
+        }
+
+        public void RegPreConsulta(Utente utente)
+        {
+        Console.WriteLine("Registe os dados de pré-consulta do utente:");
+
+        Console.Write("Informe a data da consulta (dd/mm/aaaa): ");
+        DateTime dataConsulta = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+        Console.Write("Informe a Equipa Responsável pelo Rastreio: ");
+        string equipa = Console.ReadLine();
+
+        Console.Write("Informe o peso: ");
+        double peso = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        Console.Write("Informe a altura: ");
+        double altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        Console.Write("Informe a PA Distólica: ");
+        int paDistolica = int.Parse(Console.ReadLine());
+
+        Console.Write("Informe a PA Sistólica: ");
+        int paSistolica = int.Parse(Console.ReadLine());
+
+        Console.Write("Informe o nivel de Glicose: ");
+        double glicose = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        utente.DadosSaude = new DadosSaude
+        {
+            DataConsulta = data,
+            Equipa = equipa,
+            Peso = peso,
+            Altura = altura,
+            PressaoArterialsis = paSistolica,
+            PressaoArterialdias = paDistolica,
+            Glicose = glicose
+        };
+        Console.WriteLine("Dados de pré-consulta registrados com sucesso!");
         }
     }
 }
