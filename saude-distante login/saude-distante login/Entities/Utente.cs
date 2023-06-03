@@ -9,37 +9,43 @@ namespace saude_distante_login.Entities
 {
     internal class Utente : Pessoa
     {
-        public int IDSNS { get; set; }
-        public bool Sim_RGPD { get; set; }
-        public double Peso { get; set; }
-        public double Altura { get; set; }
-        public bool Fumador { get; set; }
-        public string HistoricoDoencas { get; set; }
-        public double NivelGlicose { get; set; }
-        public double PressaoArterialSis { get; set; }
-        public double PressaoArterialDia { get; set; }
-        public string Observacoes { get; set; }
+       public int Idsns { get; private set; }
+        public bool Yes_Rgpd { get; set; } // true = aceita, false = não aceita
+        public List<Consulta> dadossaude{ get; set; }
+        
+    }
 
+    public Utente()
+    { } // Construtor vazio
 
-        public Utente()
-        {
+    public Utente(string nome, genero genero, DateTime dataNascimento,string telefone , string morada, Concelho concelho, string email, string password, int id, bool yes_rgpd)
+    :base (nome, email, password, dataNascimento, morada, contacto, false, dadossaude)
+    {
+        this.Idsns = id;
+        this.Yes_Rgpd = yes_rgpd;
+        dadossaude = new List<Consulta>();
+    }
 
-        }
+    public Utente()
+    { 
+        dadossaude = new List<Consulta>();
+    } 
 
-        public Utente(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Distrito distrito, string email, int idSNS, bool sim_RGPD, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialSis, double pressaoArterialDia, string observacoes)
-            : base(nome, genero, dataNascimento, contacto, morada, distrito, email)
-        {
-            IDSNS = idSNS;
-            Sim_RGPD = sim_RGPD;
-            Peso = peso;
-            Altura = altura;
-            Fumador = fumador;
-            HistoricoDoencas = historicoDoencas;
-            NivelGlicose = nivelGlicose;
-            PressaoArterialSis = pressaoArterialSis;
-            PressaoArterialDia = pressaoArterialDia;
-            Observacoes = observacoes;
-        }
+    // Métodos
+
+    public void MostrarDados()
+    {
+        Console.WriteLine($"Nome: {Nome}");
+        Console.WriteLine($"Email: {Email}");
+        Console.WriteLine($"Password: {Password}");
+        Console.WriteLine($"É colaborador: {isColaborador}");
+        Console.WriteLine($"Género: {generoUtilizador}");
+        Console.WriteLine($"Data de Nascimento: {dataNascimento}");
+        Console.WriteLine($"Telefone: {telefone}");
+        Console.WriteLine($"Morada: {morada}");
+        Console.WriteLine($"Concelho de Residência: {concelho}");
+        Console.WriteLine($"ID SNS: {Idsns}");
+        Console.WriteLine($"RGPD: {Yes_Rgpd}");
 
 
     }
