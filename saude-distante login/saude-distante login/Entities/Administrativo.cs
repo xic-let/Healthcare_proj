@@ -22,15 +22,15 @@ namespace saude_distante_login.Entities
 
         }
 
+
+        //Métodos da classe Administrativo
+
         public bool Autenticar(string funcao, string email, string password)
         {
             // Verificar se a função informada é "administrativo"
             return base.Email == email && base.Password == password && funcao.ToLower() == "administrativo";
         }
 
-
-
-        //Métodos da classe Administrativo
         public override void AcessoPermitido()
         {
             base.AcessoPermitido();
@@ -41,7 +41,7 @@ namespace saude_distante_login.Entities
             Console.WriteLine("3. Aceder relatório estatístico nacional");
             Console.WriteLine("4. Aceder relatório estatístico semanal");
             Console.WriteLine("5. Aceder relatório estatístico diário");
-            Console.WriteLine("6. Agendar Rota"); //o email é enviado ao fazer o registo da rota?
+            Console.WriteLine("6. Agendar Rota"); //o email é enviado automaticamente ao fazer o registo da rota?
             Console.WriteLine();
             Console.Write("Opção (1-6): ");
             string opcao = Console.ReadLine(); 

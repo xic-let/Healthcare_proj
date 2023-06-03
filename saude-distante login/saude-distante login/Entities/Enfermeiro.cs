@@ -24,6 +24,47 @@ namespace saude_distante_login.Entities
         }
 
         //Métodos da classe Enfermeiro
+
+        public bool Autenticar(string funcao, string email, string password)
+        {
+            // Verificar se a função informada é "médico"
+            return base.Email == email && base.Password == password && funcao.ToLower() == "enfermeiro";
+        }
+
+        public override void AcessoPermitido()
+        {
+            base.AcessoPermitido();
+            Console.WriteLine("Selecione uma opção:");
+            Console.WriteLine();
+            Console.WriteLine("1. Registo de utente");
+            Console.WriteLine("2. Aceder relatório estatístico nacional");
+            Console.WriteLine("3. Aceder relatório estatístico semanal");
+            Console.WriteLine("4. Aceder relatório estatístico diário");
+            //Console.WriteLine("5. Aceder relatório consultas");
+            Console.WriteLine();
+            Console.Write("Opção (1-4): ");
+            string opcao = Console.ReadLine();
+
+            switch (opcao)
+            {
+                case "1":
+                    RegistarConsultaMed();
+                    break;
+                case "2":
+                    RelEstatisticoNacional();
+                    break;
+                case "3":
+                    RelEstatisticoSemanal();
+                    break;
+                case "4":
+                    RelEstatisticoDiario();
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
+                    break;
+            }
+        }
+
         protected virtual void RegistoUtente(List<Utente> utentes)  //protected virtual void indica que o método é acessível dentro da classe Colaborador e subclasses, permitindo sobreposição do método nas subclasses
         {
             Console.WriteLine("Registo de Utente:");

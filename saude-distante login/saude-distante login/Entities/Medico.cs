@@ -21,6 +21,10 @@ namespace saude_distante_login.Entities
 
         }
 
+
+        //Métodos da classe Medico
+
+
         public bool Autenticar(string funcao, string email, string password)
         {
             // Verificar se a função informada é "médico"
@@ -30,13 +34,14 @@ namespace saude_distante_login.Entities
         public override void AcessoPermitido()
         {
             base.AcessoPermitido();
-            Console.WriteLine("Selecione~uma opção:");
+            Console.WriteLine("Selecione uma opção:");
             Console.WriteLine();
             Console.WriteLine("1. Realizar consulta");
             Console.WriteLine("2. Aceder relatório estatístico nacional");
             Console.WriteLine("3. Aceder relatório estatístico semanal");
             Console.WriteLine("4. Aceder relatório estatístico diário");
-
+            //Console.WriteLine("5. Aceder relatório consultas");
+            Console.WriteLine();
             Console.Write("Opção (1-4: ");
             string opcao = Console.ReadLine();
 
@@ -60,6 +65,6 @@ namespace saude_distante_login.Entities
             }
         }
 
-        //Métodos da classe Medico
+        
     }
 }
