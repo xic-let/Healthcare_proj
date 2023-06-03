@@ -21,6 +21,47 @@ namespace saude_distante_login.Entities
 
         }
 
+
         //Métodos da classe Motorista
+
+
+        public bool Autenticar(string funcao, string email, string password)
+        {
+            // Verificar se a função informada é "motorista"
+            return base.Email == email && base.Password == password && funcao.ToLower() == "motorista";
+        }
+
+        public override void AcessoPermitido()
+        {
+            base.AcessoPermitido();
+            Console.WriteLine("Selecione uma opção:");
+            Console.WriteLine();
+            Console.WriteLine("1. Verificar plano de rota");
+            Console.WriteLine("2. Aceder relatório estatístico nacional");
+            Console.WriteLine("3. Aceder relatório estatístico semanal");
+            Console.WriteLine("4. Aceder relatório estatístico diário");
+            Console.WriteLine();
+            Console.Write("Opção (1-4): ");
+            string opcao = Console.ReadLine();
+
+            switch (opcao)
+            {
+                case "1":
+                    VerPlanoRota();
+                    break;
+                case "2":
+                    RelEstatisticoNacional();
+                    break;
+                case "3":
+                    RelEstatisticoSemanal();
+                    break;
+                case "4":
+                    RelEstatisticoDiario();
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
+                    break;
+            }
+        }
     }
 }

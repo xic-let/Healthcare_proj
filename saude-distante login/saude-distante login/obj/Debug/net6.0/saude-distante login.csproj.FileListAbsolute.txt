@@ -28,3 +28,11 @@ C:\Users\cesae\Desktop\Healthcare_proj\saude-distante login\saude-distante login
 C:\Users\cesae\Desktop\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.pdb
 C:\Users\cesae\Desktop\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.genruntimeconfig.cache
 C:\Users\cesae\Desktop\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\ref\saude-distante login.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.csproj.AssemblyReference.cache
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.AssemblyInfoInputs.cache
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.AssemblyInfo.cs
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.csproj.CoreCompileInputs.cache
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\refint\saude-distante login.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.pdb
