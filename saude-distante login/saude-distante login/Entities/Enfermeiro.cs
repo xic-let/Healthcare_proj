@@ -48,7 +48,7 @@ namespace saude_distante_login.Entities
             switch (opcao)
             {
                 case "1":
-                    RegistarConsultaMed();
+                    RegistarConsultaEnf();
                     break;
                 case "2":
                     RelEstatisticoNacional();
