@@ -31,7 +31,12 @@ namespace saude_distante_login.Entities
             Password = password;
         }
 
+        public virtual void AcessoPermitido()
+        {
+            Console.WriteLine("Bem-vindo/a " + this.Nome);
+            Console.WriteLine();
+        }
 
-        
+
     }
 }

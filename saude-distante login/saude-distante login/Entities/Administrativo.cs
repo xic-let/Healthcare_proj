@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using saude_distante_login.Services;
 
 namespace saude_distante_login.Entities
 {
-    internal class Administrativo : Colaborador
+    internal class Administrativo : Colaborador, IAutenticacao
     {
         //Construtores da classe Administrativo
         public Administrativo()
@@ -21,7 +22,56 @@ namespace saude_distante_login.Entities
 
         }
 
+        public bool Autenticar(string funcao, string email, string password)
+        {
+            // Verificar se a função informada é "administrativo"
+            return base.Email == email && base.Password == password && funcao.ToLower() == "administrativo";
+        }
+
+
+
         //Métodos da classe Administrativo
+        public override void AcessoPermitido()
+        {
+            base.AcessoPermitido();
+            Console.WriteLine("Selecione uma opção:");
+            Console.WriteLine();
+            Console.WriteLine("1. Adicionar equipa");
+            Console.WriteLine("2. Aceder relatório de colaboradores");
+            Console.WriteLine("3. Aceder relatório estatístico nacional");
+            Console.WriteLine("4. Aceder relatório estatístico semanal");
+            Console.WriteLine("5. Aceder relatório estatístico diário");
+            Console.WriteLine("6. Agendar Rota"); //o email é enviado ao fazer o registo da rota?
+            Console.WriteLine();
+            Console.Write("Opção (1-6): ");
+            string opcao = Console.ReadLine(); 
+
+            switch (opcao)
+            {
+                case "1":
+                    RegistarEquipa();
+                    break;
+                case "2":
+                    RelatorioColaboradores();
+                    break;
+                case "3":
+                    RelEstatisticoNacional();
+                    break;
+                case "4":
+                    RelEstatisticoSemanal();
+                    break;
+                case "5":
+                    RelEstatisticoDiario();
+                    break;
+                case "6":
+                    PlanoRota();
+                default:
+                    Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
+                    break;
+            }
+        }
+
+
         public void RegistarEquipa(Administrativo administrativo)
         {
             Equipa equipa = new Equipa();
