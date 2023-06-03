@@ -44,7 +44,7 @@ namespace saude_distante_login.Entities
             string morada = Console.ReadLine();
 
             Console.Write("Concelho: ");
-            Concelho concelho = Enum.Parse<Concelho>(Console.ReadLine());
+            Distrito distrito = Enum.Parse<Distrito>(Console.ReadLine());
 
             Console.Write("Email: ");
             string email = Console.ReadLine();
@@ -61,7 +61,7 @@ namespace saude_distante_login.Entities
 
             if (resp == "sim")
             {
-                Utente novoUtente = new Utente(nome, genero, dataNascimento, contacto, morada, concelho, email, password, numUtente, rGPD);
+                Utente novoUtente = new Utente(nome, genero, dataNascimento, contacto, morada, distrito, email, password, numUtente, rGPD);
 
                 utentes.Add(novoUtente);
 

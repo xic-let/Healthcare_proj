@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
+
 
 namespace saude_distante_login.Entities
 {
@@ -13,23 +15,14 @@ namespace saude_distante_login.Entities
         public bool Yes_Rgpd { get; set; } // true = aceita, false = não aceita
         public List<Consulta> dadossaude{ get; set; }
         
-    }
-
-    public Utente()
-    { } // Construtor vazio
-
-    public Utente(string nome, genero genero, DateTime dataNascimento,string telefone , string morada, Concelho concelho, string email, string password, int id, bool yes_rgpd)
-    :base (nome, email, password, dataNascimento, morada, contacto, false, dadossaude)
+    public Utente(string nome, Genero genero, DateTime dataNascimento,string contacto , string morada, Distrito distrito, string email, string password, int id, bool yes_rgpd)
+    :base(nome, genero, dataNascimento, contacto, morada, distrito, email)
     {
-        this.Idsns = id;
-        this.Yes_Rgpd = yes_rgpd;
-        dadossaude = new List<Consulta>();
+        Idsns = id;
+        Yes_Rgpd = yes_rgpd;
+       
     }
 
-    public Utente()
-    { 
-        dadossaude = new List<Consulta>();
-    } 
 
     // Métodos
 
@@ -37,16 +30,16 @@ namespace saude_distante_login.Entities
     {
         Console.WriteLine($"Nome: {Nome}");
         Console.WriteLine($"Email: {Email}");
-        Console.WriteLine($"Password: {Password}");
-        Console.WriteLine($"É colaborador: {isColaborador}");
-        Console.WriteLine($"Género: {generoUtilizador}");
-        Console.WriteLine($"Data de Nascimento: {dataNascimento}");
-        Console.WriteLine($"Telefone: {telefone}");
-        Console.WriteLine($"Morada: {morada}");
-        Console.WriteLine($"Concelho de Residência: {concelho}");
+        Console.WriteLine($"Género: {Genero}");
+        Console.WriteLine($"Data de Nascimento: {DataNascimento}");
+        Console.WriteLine($"Telefone: {Contacto}");
+        Console.WriteLine($"Morada: {Morada}");
+        Console.WriteLine($"Distrito de Residência: {Distrito}");
         Console.WriteLine($"ID SNS: {Idsns}");
         Console.WriteLine($"RGPD: {Yes_Rgpd}");
 
 
     }
+    }
+
 }

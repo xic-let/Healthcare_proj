@@ -20,9 +20,6 @@ namespace saude_distante_login.Entities
         public Enfermeiro Enfermeiro { get; set; }
 
         //Construtores da classe Equipa
-        public Equipa()
-        {
-        }
 
         public Equipa(int idEquipa, Distrito distrito, Administrativo administrativo, Motorista motorista, Medico medico, Enfermeiro enfermeiro)
         {

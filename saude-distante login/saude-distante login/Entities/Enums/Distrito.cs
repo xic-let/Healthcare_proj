@@ -8,11 +8,11 @@ namespace saude_distante_login.Entities.Enums
 {
     internal enum Distrito
     {
-        Braga,
-        Porto,
-        Coimbra,
-        Lisboa,
-        Evora,
-        Faro
+        Braga  = 1,
+        Porto  = 2,
+        Coimbra = 3,
+        Lisboa = 4,
+        Evora = 5,
+        Faro = 6,
     }
 }

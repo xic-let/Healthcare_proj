@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
+using saude_distante_login.Entities.Enums;
 
 namespace saude_distante_login.Entities
 {
-    internal class Consulta : Utente
+    internal class Consulta : Utente 
     {
-        public DateTime data { get; set; }
-        public string hora { get; set; }
-        public Concelho concelho { get; set; }
-        public Medico medico { get; set; }
-        public Enfermeiro enfermeiro { get; set; }
-         public double Peso { get; set; }
+        public DateTime Data { get; set; }
+        public string Hora { get; set; }
+        public Equipa equipa { get; set; }
+        public double Peso { get; set; }
         public double Altura { get; set; }
         public bool Fumador { get; set; }
         public string HistoricoDoencas { get; set; }
@@ -22,18 +22,20 @@ namespace saude_distante_login.Entities
         public double PressaoArterialdia { get; set; }
         public string observacoes { get; set; }
 
+        public string receitas { get; set; }
+        public List<Consulta> dadosSaude { get; set; }
+
+       
+
         public Consulta()
         { } // Construtor vazio
 
-        public Consulta(int idsns, bool yes_rgpd, DateTime data, string hora, Concelho concelho, Medico medico, Enfermeiro enfermeiro, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialsis, double pressaoArterialdia, string observacoes)
-        :base (idsns, yes_rgpd) //falta inserir os dados Utilizador base - ver como fazer
+        public Consulta(DateTime data, string hora, Equipa equipa, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialsis, double pressaoArterialdia, string observacoes, string receitas, string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Distrito distrito, string email, int id, bool yes_rgpd)
+        : base (nome, genero, dataNascimento, contacto, morada, distrito, email, id, yes_rgpd)
         {
-            this.Idsns = idsns;
-            this.Yes_Rgpd = yes_rgpd;
-            this.hora = hora;
-            this.concelho = concelho;
-            this.medico = medico;
-            this.enfermeiro = enfermeiro;
+            this.Data = data;
+            this.Hora = hora;
+            this.equipa = equipa;
             this.Peso = peso;
             this.Altura = altura;
             this.Fumador = fumador;
@@ -42,17 +44,12 @@ namespace saude_distante_login.Entities
             this.PressaoArterialsis = pressaoArterialsis;
             this.PressaoArterialdia = pressaoArterialdia;
             this.observacoes = observacoes;
+            this.receitas = receitas;
         }
 
-        public Consulta(DateTime data, string hora, Concelho concelho, string observacoes, Medico medico, Enfermeiro enfermeiro)
-        {
-            this.data = data;
-            this.hora = hora;
-            this.concelho = concelho;
-            this.observacoes = observacoes;
-            this.medico = medico;
-            this.enfermeiro = enfermeiro;
-        }
+
+
+       
 
         // Métodos
         public void AdicionarDadosSaude()
@@ -138,6 +135,7 @@ namespace saude_distante_login.Entities
             {
                 Console.WriteLine("A pressão arterial do utente é elevada.");
             }
+        }
 
         public void IMC()
         {

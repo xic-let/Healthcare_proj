@@ -20,11 +20,6 @@ namespace saude_distante_login.Entities
 
         //Construtores
 
-        public Pessoa()
-        {
-
-        }
-
         public Pessoa(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Distrito distrito, string email)
         {
             Nome = nome;
