@@ -18,7 +18,6 @@ namespace saude_distante_login.Entities
         public Motorista Motorista { get; set; }
         public Medico Medico { get; set; }
         public Enfermeiro Enfermeiro { get; set; }
-
         public Equipamentos Equipamentos { get; set; }
 
         //Construtores da classe Equipa
@@ -32,8 +31,28 @@ namespace saude_distante_login.Entities
             Medico = medico;
             Enfermeiro = enfermeiro;
             Equipamentos = equipamentos;
+
         }
         
+        public AddEquipa()
+        {
+            Console.WriteLine("Insira o ID da equipa: ");
+            int idEquipa = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira o distrito: ");
+            string distrito = Console.ReadLine();
+            Console.WriteLine("Insira o nome do administrativo: ");
+            string nomeAdministrativo = Console.ReadLine();
+            Console.WriteLine("Insira o nome do motorista: ");
+            string nomeMotorista = Console.ReadLine();
+            Console.WriteLine("Insira o nome do médico: ");
+            string nomeMedico = Console.ReadLine();
+            Console.WriteLine("Insira o nome do enfermeiro: ");
+            string nomeEnfermeiro = Console.ReadLine();
+            Console.WriteLine("Insira o nome do equipamento: ");
+            string nomeEquipamento = Console.ReadLine();
+
+            Equipa equipa = new Equipa(idEquipa, distrito, nomeAdministrativo, nomeMotorista, nomeMedico, nomeEnfermeiro, nomeEquipamento);
+        }
     }
 }
 
