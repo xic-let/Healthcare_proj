@@ -1,9 +1,11 @@
-﻿using saude_distante_login.Entities.Enums;
+﻿using Microsoft.VisualBasic;
+using saude_distante_login.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace saude_distante_login.Entities
 {
@@ -65,22 +67,22 @@ namespace saude_distante_login.Entities
             }
         }
         
-        public void RegistarConsultaMed()
+        public void RegistarConsultaMed(Utente utente, Consulta consulta )
         {
             Console.WriteLine("Registe os dados da consulta:");
-            if (utente.DadosSaude == null)
+            if (utente.consultas == null)
             {
                 Console.WriteLine("É necessário registrar os dados de pré-consulta antes de prosseguir.");
                 Console.WriteLine("Deseja registrar os dados de pré-consulta? (sim/não): ");
                 string input = Console.ReadLine();
                 if (input.ToLower() == "sim")
                 {
-                    RegistarPreConsulta();
+                    Enfermeiro.RegPreConsulta(utente, consulta);
                     Console.WriteLine("Continuar com o registo da consulta? (sim/não): ");
                     string input2 = Console.ReadLine();
                     if (input2.ToLower() == "sim")
                     {
-                        RegistarConsultaMed();  // Chama o método novamente para continuar o registo da consulta
+                        RegistarConsultaMed(utente, consulta);  // Chama o método novamente para continuar o registo da consulta
                     }
                     else
                     {
@@ -95,40 +97,43 @@ namespace saude_distante_login.Entities
                 }
             }
 
-            Console.WriteLine("Registe os dados completos da consulta:");
+            Console.WriteLine("Registe os dados da consulta:");
 
             Console.Write("É fumador? (sim/não): ");
-            string fumadorInput = Console.ReadLine();
-            utente.DadosSaude.Fumador = fumadorInput.ToLower() == "sim"; 
+            bool fumador = bool.Parse(Console.ReadLine());
 
             Console.Write("Informe o histórico de doenças: ");
-            utente.DadosSaude.HistoricoDoencas = Console.ReadLine();
+            string historicoDoencas = Console.ReadLine();
 
             Console.Write("Existem Observações a Registar? (sim/não): ");
-            string obsInput = Console.ReadLine();
+            string res = Console.ReadLine();
 
-            if (obsInput.ToLower() == "sim")
+            string observacoes = string.Empty;
+            if (res.ToLower() == "sim")
             {
                 Console.Write("Informe as observações: ");
-                utente.DadosSaude.Observacoes = Console.ReadLine();
+                observacoes = Console.ReadLine();
             }
             else
             {
-                utente.DadosSaude.Observacoes = "Nenhuma observação registada.";
+                Console.WriteLine("Nenhuma observação registada.");
             }
 
             Console.Write("Será prescrita Medicaççao? (sim/não): ");
-            string medInput = Console.ReadLine();
+            string res2 = Console.ReadLine();
 
-            if (medInput.ToLower() == "sim")
+            string medicacao = string.Empty;
+            if (res2.ToLower() == "sim")
             {
                 Console.Write("Informe a medicação: ");
-                utente.DadosSaude.Medicacao = Console.ReadLine();
+                medicacao = Console.ReadLine();
             }
             else
             {
-                utente.DadosSaude.Medicacao = "Nenhuma medicação prescrita.";
+                Console.WriteLine("Nenhuma Medicação prescrita!");
             }
+
+            utente.Consultas.Add(consulta);
 
             Console.WriteLine("Consulta registrada com sucesso!");
 
@@ -137,7 +142,7 @@ namespace saude_distante_login.Entities
 
             if(relInput.ToLower() == "sim")
             {
-                Consulta.RelConsultaInd(utente);
+                utente.RelConsultaInd();
             }
         }
 

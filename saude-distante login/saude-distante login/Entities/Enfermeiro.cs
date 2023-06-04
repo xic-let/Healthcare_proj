@@ -11,15 +11,14 @@ namespace saude_distante_login.Entities
     
     internal class Enfermeiro : Colaborador
     {
+        
         //Construtores da classe Enfermeiro
-        public Enfermeiro()
-        {
-
-        }
+        public Enfermeiro(){ }
 
         public Enfermeiro(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Distrito distrito, string email, int idColaborador, double vencimento, Equipa equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, distrito, email, idColaborador, vencimento, equipa, password)
         {
+            
 
         }
 
@@ -48,15 +47,18 @@ namespace saude_distante_login.Entities
             switch (opcao)
             {
                 case "1":
-                    RegistarConsultaEnf();
+                    RegistoUtente();
                     break;
                 case "2":
-                    RelEstatisticoNacional();
+                    RegPreConsulta();
                     break;
                 case "3":
-                    RelEstatisticoSemanal();
+                    RelEstatisticoNacional();
                     break;
                 case "4":
+                    RelEstatisticoSemanal();
+                    break;
+                case "5":
                     RelEstatisticoDiario();
                     break;
                 default:
@@ -65,7 +67,9 @@ namespace saude_distante_login.Entities
             }
         }
 
-        protected virtual void RegistoUtente(List<Utente> utentes)  //protected virtual void indica que o método é acessível dentro da classe Colaborador e subclasses, permitindo sobreposição do método nas subclasses
+        //protected virtual void RegistoUtente(List<Utente> utentes)  //protected virtual void indica que o método é acessível dentro da classe Colaborador e subclasses, permitindo sobreposição do método nas subclasses
+        //precisamos de acessar a este metodo na classe de utente que não faz parte da classe colaborador, nem é uma subclasse dela.
+        public void RegistoUtente(Utente utente, Utente utentes)
         {
             Console.WriteLine("Registo de Utente:");
 
@@ -90,9 +94,6 @@ namespace saude_distante_login.Entities
             Console.Write("Email: ");
             string email = Console.ReadLine();
 
-            Console.Write("Password: ");
-            string password = Console.ReadLine();
-
             Console.Write("Número de Utente do SNS: ");
             int numUtente = int.Parse(Console.ReadLine());
 
@@ -100,23 +101,14 @@ namespace saude_distante_login.Entities
             string resp = Console.ReadLine().ToLower();
 
             bool yes_rgpd = (resp == "sim" || resp == "Sim" || resp == "SIM");
-            
-            Utente novoUtente = new Utente(nome, genero, dataNascimento, contacto , morada, distrito, email, id, yes_rgpd);
 
-            if (resp == "sim" || resp == "Sim" || resp == "SIM")
-            {   
-                utentes.Add(novoUtente);
-            }
-            else
-            {
-                utentes.Add(novoUtente);
-            }
+            utente.utentes.Add(utentes);
 
             Console.WriteLine("Utente registado com sucesso!");
 
         }
 
-        public void RegPreConsulta(Utente utente)
+        public void RegPreConsulta(Utente utente, Consulta consulta)
         {
         Console.WriteLine("Registe os dados de pré-consulta do utente:");
 
@@ -141,16 +133,9 @@ namespace saude_distante_login.Entities
         Console.Write("Informe o nivel de Glicose: ");
         double glicose = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-        utente.DadosSaude = new DadosSaude
-        {
-            DataConsulta = data,
-            Equipa = equipa,
-            Peso = peso,
-            Altura = altura,
-            PressaoArterialsis = paSistolica,
-            PressaoArterialdias = paDistolica,
-            Glicose = glicose
-        };
+            utente.consultas.Add(consulta);
+
+            //inserir dados na tabela da consulta
         Console.WriteLine("Dados de pré-consulta registrados com sucesso!");
         }
     }
