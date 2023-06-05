@@ -29,7 +29,6 @@ namespace saude_distante_login.Entities
 
         public bool Autenticar(string funcao, string email, string password)
         {
-            // Verificar se a função informada é "médico"
             return base.Email == email && base.Password == password && funcao.ToLower() == "médico";
         }
 
@@ -39,12 +38,11 @@ namespace saude_distante_login.Entities
             Console.WriteLine("Selecione uma opção:");
             Console.WriteLine();
             Console.WriteLine("1. Realizar consulta");
-            Console.WriteLine("2. Aceder relatório estatístico nacional");
-            Console.WriteLine("3. Aceder relatório estatístico semanal");
-            Console.WriteLine("4. Aceder relatório estatístico diário");
+            Console.WriteLine("2. Aceder Relatório Estatístico");
+            Console.WriteLine("3. Aceder Relatório de Consultas");
             //Console.WriteLine("5. Aceder relatório consultas");
             Console.WriteLine();
-            Console.Write("Opção (1-4: ");
+            Console.Write("Opção (1-3: ");
             string opcao = Console.ReadLine();
 
             switch (opcao)
@@ -53,13 +51,11 @@ namespace saude_distante_login.Entities
                     RegistarConsultaMed();
                     break;
                 case "2":
-                    RelEstatisticoNacional();
+                    RelEstatistico();
                     break;
                 case "3":
-                    RelEstatisticoSemanal();
+                    RelConsultas();
                     break;
-                case "4":
-                    RelEstatisticoDiario();
                     break;
                 default:
                     Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
