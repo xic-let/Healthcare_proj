@@ -1,5 +1,4 @@
 ﻿using saude_distante_login.Entities.Enums;
-using saude_distante_login.Services;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -7,18 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace saude_distante_login.Entities
 {
     
-    internal class Enfermeiro : Colaborador, IAutenticacao
+    internal class Enfermeiro : Colaborador
     {
         
         //Construtores da classe Enfermeiro
         public Enfermeiro(){ }
 
-        public Enfermeiro(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Distrito distrito, string email, int idColaborador, double vencimento, Equipa equipa, string password)
-            : base(nome, genero, dataNascimento, contacto, morada, distrito, email, idColaborador, vencimento, equipa, password)
+        public Enfermeiro(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, double vencimento, Equipa equipa, string password)
+            : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, vencimento, equipa, password)
         {
             
 
@@ -91,7 +89,7 @@ namespace saude_distante_login.Entities
             string morada = Console.ReadLine();
 
             Console.Write("Concelho: ");
-            Distrito distrito = Enum.Parse<Distrito>(Console.ReadLine());
+            Concelho concelho = Enum.Parse<Concelho>(Console.ReadLine());
 
             Console.Write("Email: ");
             string email = Console.ReadLine();

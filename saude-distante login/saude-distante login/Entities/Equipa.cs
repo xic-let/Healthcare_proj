@@ -13,33 +13,33 @@ namespace saude_distante_login.Entities
 
         //Propriedades da classe Equipa
         public int IdEquipa { get; set; }
-        public Distrito Distrito { get; set; }
+        public Concelho Concelho { get; }
         public Administrativo Administrativo { get; set; }
         public Motorista Motorista { get; set; }
         public Medico Medico { get; set; }
         public Enfermeiro Enfermeiro { get; set; }
-        public Equipamentos Equipamentos { get; set; }
+        public List<Equipamentos> Material { get; }
 
         //Construtores da classe Equipa
 
-        public Equipa(int idEquipa, Distrito distrito, Administrativo administrativo, Motorista motorista, Medico medico, Enfermeiro enfermeiro, Equipamentos equipamentos)
+        public Equipa(int idEquipa, Concelho concelho, Administrativo administrativo, Motorista motorista, Medico medico, Enfermeiro enfermeiro)
         {
             IdEquipa = idEquipa;
-            Distrito = distrito;
+            Concelho = concelho;
             Administrativo = administrativo;
             Motorista = motorista;
             Medico = medico;
             Enfermeiro = enfermeiro;
-            Equipamentos = equipamentos;
+            
 
         }
-        
-        public AddEquipa()
+
+        public void AddEquipa()
         {
             Console.WriteLine("Insira o ID da equipa: ");
             int idEquipa = int.Parse(Console.ReadLine());
-            Console.WriteLine("Insira o distrito: ");
-            string distrito = Console.ReadLine();
+            Console.WriteLine("Insira o Concelho: ");
+            string concelho = Console.ReadLine();
             Console.WriteLine("Insira o nome do administrativo: ");
             string nomeAdministrativo = Console.ReadLine();
             Console.WriteLine("Insira o nome do motorista: ");
@@ -48,11 +48,15 @@ namespace saude_distante_login.Entities
             string nomeMedico = Console.ReadLine();
             Console.WriteLine("Insira o nome do enfermeiro: ");
             string nomeEnfermeiro = Console.ReadLine();
-            Console.WriteLine("Insira o nome do equipamento: ");
-            string nomeEquipamento = Console.ReadLine();
+            Console.WriteLine("Equipa Criada Com Sucesso!");
+            Console.WriteLine("Inventario de Equipamentos Atribuido!");
+            Console.WriteLine(Equipamentos.Inventario());
 
-            Equipa equipa = new Equipa(idEquipa, distrito, nomeAdministrativo, nomeMotorista, nomeMedico, nomeEnfermeiro, nomeEquipamento);
+            Equipa equipa = new Equipa(idEquipa, concelho, nomeAdministrativo, nomeMotorista, nomeMedico, nomeEnfermeiro);
+
+            
         }
     }
 }
+
 

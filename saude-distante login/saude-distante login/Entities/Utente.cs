@@ -19,8 +19,8 @@ namespace saude_distante_login.Entities
        public List<Consulta> consultas { get; set; }
 
 
-        public Utente(string nome, Genero genero, DateTime dataNascimento,string contacto , string morada, Distrito distrito, string email, int id, bool yes_rgpd)
-        :base(nome, genero, dataNascimento, contacto, morada, distrito, email)
+        public Utente(string nome, Genero genero, DateTime dataNascimento,string contacto , string morada, Concelho concelho, string email, int id, bool yes_rgpd)
+        :base(nome, genero, dataNascimento, contacto, morada, concelho, email)
         {
             Idsns = id;
             Yes_Rgpd = yes_rgpd;
@@ -48,7 +48,7 @@ namespace saude_distante_login.Entities
                 Console.WriteLine($"Data de Nascimento: {utente.DataNascimento.ToShortDateString()}");
                 Console.WriteLine($"Contacto: {utente.Contacto}");
                 Console.WriteLine($"Morada: {utente.Morada}");
-                Console.WriteLine($"Distrito: {utente.Distrito}");
+                Console.WriteLine($"Distrito: {utente.Concelho}");
                 Console.WriteLine($"Email: {utente.Email}");
                 Console.WriteLine($"ID: {utente.Idsns}");
                 Console.WriteLine($"RGPD: {utente.Yes_Rgpd}");

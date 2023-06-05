@@ -14,8 +14,6 @@ namespace saude_distante_login.Entities
         public double Vencimento { get; set; }
         public string Password { get; private set; }
         public Equipa Equipa { get; set; }
-
-        public Função Função { get; set; }
         public List<Equipa> Equipas { get; set; } = new List<Equipa>();
 
         public Colaborador()
@@ -24,14 +22,13 @@ namespace saude_distante_login.Entities
         }
 
         
-        public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Distrito distrito, string email, int idColaborador, double vencimento, Equipa equipa, Funcao funcao, string password)
-            : base(nome, genero, dataNascimento, contacto, morada, distrito, email)
+        public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, double vencimento, Equipa equipa, string password)
+            : base(nome, genero, dataNascimento, contacto, morada, concelho, email)
         {
             IdColaborador = idColaborador;
             Vencimento = vencimento;
             Equipa = equipa;
             Password = password;
-            Função = funcao;
         }
 
         //Métodos da classe Colaborador

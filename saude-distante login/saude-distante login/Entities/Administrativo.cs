@@ -16,8 +16,8 @@ namespace saude_distante_login.Entities
 
         }
 
-        public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Distrito distrito, string email, int idColaborador, double vencimento, Equipa equipa, string password)
-            : base(nome, genero, dataNascimento, contacto, morada, distrito, email, idColaborador, vencimento, equipa, password)
+        public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, double vencimento, Equipa equipa, string password)
+            : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, vencimento, equipa, password)
         {
 
         }
@@ -79,8 +79,8 @@ namespace saude_distante_login.Entities
 
             Console.Write("Insira o ID da equipa: ");
             equipa.IdEquipa = int.Parse(Console.ReadLine());
-            Console.Write("Insira o distrito da equipa: ");
-            equipa.Distrito = Enum.Parse<Distrito>(Console.ReadLine());
+            Console.Write("Insira o Concelho da equipa: ");
+            equipa.Concelho = Enum.Parse<Concelho>(Console.ReadLine());
 
             Console.WriteLine();
 
@@ -95,8 +95,8 @@ namespace saude_distante_login.Entities
             string enfContacto = Console.ReadLine();
             Console.Write("Morada: ");
             string enfMorada = Console.ReadLine();
-            Console.Write("Distrito: ");
-            Distrito enfDistrito = Enum.Parse<Distrito>(Console.ReadLine());
+            Console.Write("Concelho: ");
+            Concelho enfConcelho = Enum.Parse<Concelho>(Console.ReadLine());
             Console.Write("Email: ");
             string enfEmail = Console.ReadLine();
             Console.Write("ID de colaborador: ");
@@ -105,7 +105,7 @@ namespace saude_distante_login.Entities
             double enfVencimento = double.Parse(Console.ReadLine());
             Console.Write("Password: ");
             string enfPassword = Console.ReadLine();
-            Enfermeiro enfermeiro = new Enfermeiro(enfNome, enfGenero, enfDataNascimento, enfContacto, enfMorada, enfDistrito, enfEmail, enfIdColaborador, enfVencimento, equipa, enfPassword);
+            Enfermeiro enfermeiro = new Enfermeiro(enfNome, enfGenero, enfDataNascimento, enfContacto, enfMorada, enfConcelho, enfEmail, enfIdColaborador, enfVencimento, equipa, enfPassword);
 
             Console.WriteLine();
 
@@ -120,8 +120,8 @@ namespace saude_distante_login.Entities
             string medContacto = Console.ReadLine();
             Console.Write("Morada: ");
             string medMorada = Console.ReadLine();
-            Console.Write("Distrito: ");
-            Distrito medDistrito = Enum.Parse<Distrito>(Console.ReadLine());
+            Console.Write("Concelho: ");
+            Concelho medConcelho = Enum.Parse<Concelho>(Console.ReadLine());
             Console.Write("Email: ");
             string medEmail = Console.ReadLine();
             Console.Write("ID de colaborador: ");
@@ -130,7 +130,7 @@ namespace saude_distante_login.Entities
             double medVencimento = double.Parse(Console.ReadLine());
             Console.Write("Password: ");
             string medPassword = Console.ReadLine();
-            Medico medico = new Medico(medNome, medGenero, medDataNascimento, medContacto, medMorada, medDistrito, medEmail, medIdColaborador, medVencimento, equipa, medPassword);
+            Medico medico = new Medico(medNome, medGenero, medDataNascimento, medContacto, medMorada, medConcelho, medEmail, medIdColaborador, medVencimento, equipa, medPassword);
 
             Console.WriteLine();
 
@@ -145,8 +145,8 @@ namespace saude_distante_login.Entities
             string motContacto = Console.ReadLine();
             Console.Write("Morada: ");
             string motMorada = Console.ReadLine();
-            Console.Write("Distrito: ");
-            Distrito motDistrito = Enum.Parse<Distrito>(Console.ReadLine());
+            Console.Write("Concelho: ");
+            Concelho motConcelho = Enum.Parse<Concelho>(Console.ReadLine());
             Console.Write("Email: ");
             string motEmail = Console.ReadLine();
             Console.Write("ID de colaborador: ");
@@ -155,7 +155,7 @@ namespace saude_distante_login.Entities
             double motVencimento = double.Parse(Console.ReadLine());
             Console.Write("Password: ");
             string motPassword = Console.ReadLine();
-            Motorista motorista = new Motorista(motNome, motGenero, motDataNascimento, motContacto, motMorada, motDistrito, motEmail, motIdColaborador, motVencimento, equipa, motPassword);
+            Motorista motorista = new Motorista(motNome, motGenero, motDataNascimento, motContacto, motMorada, motConcelho, motEmail, motIdColaborador, motVencimento, equipa, motPassword);
 
             equipa.Enfermeiro = enfermeiro;
             equipa.Medico = medico;
@@ -164,7 +164,7 @@ namespace saude_distante_login.Entities
             Equipas.Add(equipa);
 
             Console.WriteLine();
-            Console.WriteLine("Equipa " + equipa.IdEquipa + " (" + equipa.Distrito + ") criada com sucesso.");
+            Console.WriteLine("Equipa " + equipa.IdEquipa + " (" + equipa.Concelho + ") criada com sucesso.");
         }
 
         public void RelatorioColaboradores()
@@ -172,7 +172,7 @@ namespace saude_distante_login.Entities
             Console.WriteLine("RELATÓRIO DE COLABORADORES:");
             foreach (Equipa equipa in Equipas)
             {
-                Console.WriteLine("Equipa " + equipa.IdEquipa + " (" + equipa.Distrito + "):\n"
+                Console.WriteLine("Equipa " + equipa.IdEquipa + " (" + equipa.Concelho + "):\n"
                 + "Administrativo: " + equipa.Administrativo.Nome + " (vencimento: " + equipa.Administrativo.Vencimento + "€)\n"
                 + "Enfermeiro: " + equipa.Enfermeiro.Nome + " (vencimento: " + equipa.Enfermeiro.Vencimento + "€)\n"
                 + "Médico: " + equipa.Medico.Nome + " (vencimento: " + equipa.Medico.Vencimento + "€)\n"
@@ -187,7 +187,7 @@ namespace saude_distante_login.Entities
             {
                 if (idEquipa == equipa.IdEquipa)
                 {
-                    Console.WriteLine("Equipa " + equipa.IdEquipa + " (" + equipa.Distrito + "):\n"
+                    Console.WriteLine("Equipa " + equipa.IdEquipa + " (" + equipa.Concelho + "):\n"
                      + "Administrativo: " + equipa.Administrativo.Nome + " (vencimento: " + equipa.Administrativo.Vencimento + "€)\n"
                      + "Enfermeiro: " + equipa.Enfermeiro.Nome + " (vencimento: " + equipa.Enfermeiro.Vencimento + "€)\n"
                      + "Médico: " + equipa.Medico.Nome + " (vencimento: " + equipa.Medico.Vencimento + "€)\n"

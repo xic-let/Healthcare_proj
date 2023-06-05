@@ -14,20 +14,20 @@ namespace saude_distante_login.Entities
         public DateTime DataNascimento { get; set; }
         public string Contacto { get; set; }
         public string Morada { get; set; }
-        public Distrito Distrito { get; set; }
+        public Concelho Concelho { get; set; }
         public string Email { get; set; }
 
 
         //Construtores
 
-        public Pessoa(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Distrito distrito, string email)
+        public Pessoa(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email)
         {
             Nome = nome;
             Genero = genero;
             DataNascimento = dataNascimento;
             Contacto = contacto;
             Morada = morada;
-            Distrito = distrito;
+            Concelho = concelho;
             Email = email;
         }
     }

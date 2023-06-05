@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities.Enums
 {
-    internal enum Equipamentos
+    internal enum Concelho
     {
-        ViaturaLigeira,
-        ViaturadeRastreio,
-        Esfigmamómetro,
-        Estetoscópio,
-        TirasGlicose,
-        TirasColesterol
-
-
+        Braga  = 1,
+        Guimarães  = 2,
+        Amares = 3,
     }
 }
