@@ -38,6 +38,18 @@ namespace saude_distante_login.Entities
             Console.WriteLine();
         }
 
+        public void RelDiario()
+        {
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("DGS - Direção Regional de Saude de Rastreios");
+            Console.WriteLine();
+            Console.WriteLine("Relatório Diário de Rastreios");
+            Console.WriteLine("Data: " + DateTime.Now.ToString("dd/MM/yyyy"));
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("Numero Total de Consultas Realizadas: " + //aplicar .Count para contar o numero de consultas realizadas);
+            Console.WriteLine("Numero de consultas realizadas por Rota: " + //sortir as consultas por equipa e contar ccada uma delas);
+        }
+
 
     }
 }

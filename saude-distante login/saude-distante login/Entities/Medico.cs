@@ -77,7 +77,8 @@ namespace saude_distante_login.Entities
                 string input = Console.ReadLine();
                 if (input.ToLower() == "sim")
                 {
-                    Enfermeiro.RegPreConsulta(utente, consulta);
+                    Enfermeiro enfermeiro = new Enfermeiro();
+                    enfermeiro.RegPreConsulta(utente, consulta);
                     Console.WriteLine("Continuar com o registo da consulta? (sim/não): ");
                     string input2 = Console.ReadLine();
                     if (input2.ToLower() == "sim")
@@ -87,13 +88,13 @@ namespace saude_distante_login.Entities
                     else
                     {
                         Console.WriteLine("Operação cancelada.");
-                        return;
+                        base.AcessoPermitido();
                     }
                 }
                 else
                 {
                     Console.WriteLine("Operação cancelada.");
-                    return;
+                    base.AcessoPermitido();
                 }
             }
 
@@ -133,7 +134,7 @@ namespace saude_distante_login.Entities
                 Console.WriteLine("Nenhuma Medicação prescrita!");
             }
 
-            utente.Consultas.Add(consulta);
+            utente.consultas.Add(consulta);
 
             Console.WriteLine("Consulta registrada com sucesso!");
 
