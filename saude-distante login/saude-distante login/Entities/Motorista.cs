@@ -37,8 +37,9 @@ namespace saude_distante_login.Entities
             Console.WriteLine();
             Console.WriteLine("1. Verificar plano de rota");
             Console.WriteLine("2. Aceder relatório estatístico");
+            Console.WriteLine("3. Sair");
             Console.WriteLine();
-            Console.Write("Opção (1-2): ");
+            Console.Write("Opção (1-3): ");
             string opcao = Console.ReadLine();
 
             switch (opcao)
@@ -48,6 +49,9 @@ namespace saude_distante_login.Entities
                     break;
                 case "2":
                     RelEstatistico();
+                    break;
+                case "3":
+                    //Logout
                     break;
                 default:
                     Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");

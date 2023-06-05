@@ -39,8 +39,9 @@ namespace saude_distante_login.Entities
             Console.WriteLine("2. Aceder Relatório de Colaboradores");
             Console.WriteLine("3. Aceder Relatório Estatístico");
             Console.WriteLine("4. Agendar Rota"); //o email é enviado automaticamente ao fazer o registo da rota
+            Console.WriteLine("5. Sair");
             Console.WriteLine();
-            Console.Write("Opção (1-4): ");
+            Console.Write("Opção (1-5): ");
             string opcao = Console.ReadLine(); 
 
             switch (opcao)
@@ -56,6 +57,10 @@ namespace saude_distante_login.Entities
                     break;
                 case "4":
                     PlanoRota();
+                    break;
+                case "5":
+                    //Logout
+                    break;
                 default:
                     Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
                     break;

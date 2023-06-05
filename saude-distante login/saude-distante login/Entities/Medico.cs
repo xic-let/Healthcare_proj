@@ -40,9 +40,9 @@ namespace saude_distante_login.Entities
             Console.WriteLine("1. Realizar consulta");
             Console.WriteLine("2. Aceder Relatório Estatístico");
             Console.WriteLine("3. Aceder Relatório de Consultas");
-            //Console.WriteLine("5. Aceder relatório consultas");
+            Console.WriteLine("4. Sair");
             Console.WriteLine();
-            Console.Write("Opção (1-3: ");
+            Console.Write("Opção (1-4: ");
             string opcao = Console.ReadLine();
 
             switch (opcao)
@@ -56,6 +56,8 @@ namespace saude_distante_login.Entities
                 case "3":
                     RelConsultas();
                     break;
+                case "5":
+                    //Logout
                     break;
                 default:
                     Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
