@@ -1,5 +1,6 @@
 ﻿using saude_distante_login.Entities;
 using saude_distante_login.Entities.Enums;
+using saude_distante_login.Services;
 using System.Diagnostics.Contracts;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,7 @@ namespace saude_distante_login
             else
             {
                 // Falha no login
-                Console.WriteLine("Login falhou. Verifique as informações de login e tente novamente.");
+                Console.WriteLine("Login falhou.Tente novamente.");
             }
 
         }
