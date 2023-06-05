@@ -27,7 +27,6 @@ namespace saude_distante_login.Entities
 
         public bool Autenticar(string funcao, string email, string password)
         {
-            // Verificar se a função informada é "administrativo"
             return base.Email == email && base.Password == password && funcao.ToLower() == "administrativo";
         }
 
@@ -36,14 +35,13 @@ namespace saude_distante_login.Entities
             base.AcessoPermitido();
             Console.WriteLine("Selecione uma opção:");
             Console.WriteLine();
-            Console.WriteLine("1. Adicionar equipa");
-            Console.WriteLine("2. Aceder relatório de colaboradores");
-            Console.WriteLine("3. Aceder relatório estatístico nacional");
-            Console.WriteLine("4. Aceder relatório estatístico semanal");
-            Console.WriteLine("5. Aceder relatório estatístico diário");
-            Console.WriteLine("6. Agendar Rota"); //o email é enviado automaticamente ao fazer o registo da rota?
+            Console.WriteLine("1. Adicionar Equipa");
+            Console.WriteLine("2. Aceder Relatório de Colaboradores");
+            Console.WriteLine("3. Aceder Relatório Estatístico");
+            Console.WriteLine("4. Agendar Rota"); //o email é enviado automaticamente ao fazer o registo da rota
+            Console.WriteLine("5. Sair");
             Console.WriteLine();
-            Console.Write("Opção (1-6): ");
+            Console.Write("Opção (1-5): ");
             string opcao = Console.ReadLine(); 
 
             switch (opcao)
@@ -55,16 +53,14 @@ namespace saude_distante_login.Entities
                     RelatorioColaboradores();
                     break;
                 case "3":
-                    RelEstatisticoNacional();
+                    RelEstatistico();
                     break;
                 case "4":
-                    RelEstatisticoSemanal();
+                    PlanoRota();
                     break;
                 case "5":
-                    RelEstatisticoDiario();
+                    //Logout
                     break;
-                case "6":
-                    PlanoRota();
                 default:
                     Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
                     break;
