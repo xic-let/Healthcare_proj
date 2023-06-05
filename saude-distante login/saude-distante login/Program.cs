@@ -16,6 +16,7 @@ namespace saude_distante_login
     {
         static void Main(string[] args)
         {
+
             
             // Login
             Console.WriteLine("Login de Colaborador:");

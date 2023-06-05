@@ -16,7 +16,7 @@ namespace saude_distante_login.Entities
        public bool Yes_Rgpd { get; set; } // true = aceita, false = não aceita
 
        public List<Utente> utentes { get; set; }
-       public List<Consulta> consultas { get; set; }
+       public List<Consulta> Consultas { get; set; }
 
 
         public Utente(string nome, Genero genero, DateTime dataNascimento,string contacto , string morada, Concelho concelho, string email, int id, bool yes_rgpd)
@@ -25,7 +25,7 @@ namespace saude_distante_login.Entities
             Idsns = id;
             Yes_Rgpd = yes_rgpd;
             utentes = new List<Utente>();
-            consultas = new List<Consulta>();
+            Consultas = new List<Consulta>();
 
         }
 
@@ -54,7 +54,7 @@ namespace saude_distante_login.Entities
                 Console.WriteLine($"RGPD: {utente.Yes_Rgpd}");
 
                 // Verificar se o utente possui consultas
-                if (utente.consultas.Count > 0)
+                if (utente.Consultas.Count > 0)
                 {
                     Console.WriteLine("Dados da Consulta:");
 

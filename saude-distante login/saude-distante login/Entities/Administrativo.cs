@@ -198,3 +198,17 @@ namespace saude_distante_login.Entities
         }
     }
 }
+
+Console.WriteLine (" Qual a função do COLABORADOR? ");
+Console.WriteLine (" 1 - Administrativo ");
+Console.WriteLine (" 2 - Enfermeiro ");
+Console.WriteLine (" 3 - Médico ");
+Console.WriteLine (" 4 - Motorista ");
+int res = int.Parse(Console.ReadLine());
+
+if (res ==1)
+{
+    string função = "Administrativo";
+}
+
+lista :(1 , Manual, Method, 4000, equipa1)

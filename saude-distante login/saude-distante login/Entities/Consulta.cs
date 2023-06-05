@@ -23,15 +23,17 @@ namespace saude_distante_login.Entities
         public string Observacoes { get; set; }
         public string Receitas { get; set; }
         public int numUtente { get; set; }
+        public string ResHTA { get; set; }
+        public string ResDiabetes { get; set; }
+        public string ResIMC { get; set; }
         public Utente Utente { get; set; }
-
-        public Consulta consultas { get; set; }
+        public Consulta Consultas { get; set; }
 
         //Construtores////////////////////////////////////////////////////////////////////////////////
 
         public Consulta() { }
 
-        public Consulta(DateTime data, Equipa equipa, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialsis, double pressaoArterialdia, string observacoes, string receitas, Utente utente, Consulta consulta)
+        public Consulta(DateTime data, Equipa equipa, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialsis, double pressaoArterialdia, string observacoes, string receitas, idsns, reshta, resdiabetes, resimc, Utente utente, Consulta consultas)
 
         {
             Data = data;
@@ -45,17 +47,24 @@ namespace saude_distante_login.Entities
             PressaoArterialdia = pressaoArterialdia;
             Observacoes = observacoes;
             Receitas = receitas;
+            numUtente = idsns;
             Utente = utente;
+            ResHTA = reshta;
+            ResDiabetes = resdiabetes;
+            ResIMC = resimc;
+
+             Consultas = consultas;
+             Consultas.Add(this); 
 
         }
 
         // Methods//////////////////////////////////////////////////////////////////////////////////
-            public void GraudeDiabetes()
+            public void GraudeDiabetes(Consulta consultas)
             {
-                
                 if (NivelGlicose < 100)
                 {
                     Console.WriteLine("O utente não tem diabetes.");
+
                 }
                 else if (NivelGlicose >= 100 && NivelGlicose <= 125)
                 {
@@ -66,9 +75,12 @@ namespace saude_distante_login.Entities
                     Console.WriteLine("O utente tem diabetes tipo 2.");
                 }
                 
-            }
+                Utente.consultas.Add(consultas);
 
-            public void MedidasPA() 
+
+            }
+           
+            public void MedidasPA(Consulta consultas) 
             {
                 if (this.PressaoArterialsis < 120 && this.PressaoArterialdia < 80)
                 {
@@ -98,9 +110,10 @@ namespace saude_distante_login.Entities
                 {
                     Console.WriteLine("AVISO: Utente Com Hipertensão Sistólica Isolada (2)");
                 }
+                Utente.consultas.Add(consultas);
             }
 
-            public void CalcImc()
+            public void CalcImc(consulta)
             {
                 double imc = Peso / (Altura * Altura);
                 Console.WriteLine("O IMC do utente é: " + imc);
@@ -128,6 +141,7 @@ namespace saude_distante_login.Entities
                 {
                     Console.WriteLine("O utente está com obesidade grau 3.");
                 }
+                Utente.consultas.Add(consultas);
             }
 
 
