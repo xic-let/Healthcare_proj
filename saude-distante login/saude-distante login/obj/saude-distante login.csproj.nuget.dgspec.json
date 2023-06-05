@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cesae\\Desktop\\Git\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {}
+    "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cesae\\Desktop\\Git\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {
+    "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cesae\\Desktop\\Git\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
+        "projectUniqueName": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
         "projectName": "saude-distante login",
-        "projectPath": "C:\\Users\\Cesae\\Desktop\\Git\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
-        "packagesPath": "C:\\Users\\Cesae\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cesae\\Desktop\\Git\\Healthcare_proj\\saude-distante login\\saude-distante login\\obj\\",
+        "projectPath": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Healthcare_proj\\saude-distante login\\saude-distante login\\saude-distante login.csproj",
+        "packagesPath": "C:\\Users\\cesae\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\Healthcare_proj\\saude-distante login\\saude-distante login\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Cesae\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\cesae\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
