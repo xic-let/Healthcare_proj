@@ -206,8 +206,6 @@ namespace saude_distante_login.Entities
             {
                 string função = "Administrativo";
             }
-
-            //lista: (1, Manual, Method, 4000, equipa1);
         }
 
         public void AdicionarRota(Rotas novaRota, List<Rotas> rotas) //resolver equipas para nao dar erro
@@ -222,8 +220,8 @@ namespace saude_distante_login.Entities
             rotas.Add(6, Enums.Concelho.Guimarães, "Creixomil", equipa3);
         }
     }
-<<<<<<< Updated upstream
+
 }
-=======
+
 }
->>>>>>> Stashed changes
+

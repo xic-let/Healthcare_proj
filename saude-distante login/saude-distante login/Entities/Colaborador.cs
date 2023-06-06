@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,28 +15,20 @@ namespace saude_distante_login.Entities
 		public string Funcao { get; set; }
 		public double Vencimento { get; set; }
 		public string Password { get; private set; }
-		public Equipa Equipa { get; set; }
-<<<<<<< Updated upstream
-		public List<Equipa> Equipas { get; set; } = new List<Equipa>();
+		public int Equipa { get; set; }
+		
 
-		//public Colaborador(){}
-=======
-		public List<Colaborador> colaboradores { get; set; }
->>>>>>> Stashed changes
-
-
-
-		public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, Equipa equipa)
+		public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa)
 			: base(nome, genero, dataNascimento, contacto, morada, concelho, email)
 		{
 			IdColaborador = idColaborador;
 			Funcao = funcao;
 			Vencimento = vencimento;
-			Equipa = equipa;
 			Password = password;
+			Equipa = equipa;
 
-
-			List<Colaborador> colaboradores = new List<Colaborador>();
+		
+            List<Colaborador> colaboradores = new List<Colaborador>();
 
 			colaboradores.Add(new Colaborador("Maria José", Genero.Feminino, new DateTime(11 - 11 - 1987), "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 1));
 			colaboradores.Add(new Colaborador("Maria José", Genero.Feminino, new DateTime(11 - 11 - 1987), "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 2));
@@ -49,11 +42,50 @@ namespace saude_distante_login.Entities
 			colaboradores.Add(new Colaborador("Miguel Soares", Genero.Masculino, new DateTime(04 - 04 - 1974), "911233454", "Rua 5 de Outubro", Concelho.Guimarães, "miguel.soares@email.com", 130, "Motorista", 1100, "123456", 3));
 			colaboradores.Add(new Colaborador("Joana Freitas", Genero.Feminino, new DateTime(05 - 05 - 1988), "918111222", "Rua Velha", Concelho.Guimarães, "joana.freitas@email.com", 131, "Médico", 1500, "123456", 3));
 			colaboradores.Add(new Colaborador("Carlos Santos", Genero.Masculino, new DateTime(12 - 12 - 1987), "918891918", "Rua Santa", Concelho.Guimarães, "carlos.santos@email.com", 132, "Enfermeiro", 1500, "123456", 3));
-        }
 
-		////////Métodos da classe Colaborador//////////////////////////////////////////////////////////////////////Colaborad
 
-		public virtual void AcessoPermitido()
+            List<Colaborador> equipaColaboradores1 = new List<Colaborador>()
+            {
+                colaboradores[0], // Example: Assigning the first colaborador from the list
+				colaboradores[3],
+				colaboradores[4],
+				colaboradores[5],
+				
+				
+				
+				// Example: Assigning the second colaborador from the list
+                // Add more colaboradores to the team
+            };
+
+			List<Colaborador> equipaColaboradores2 = new List<Colaborador>()
+			{
+				 colaboradores[1],
+				 colaboradores[6],
+				 colaboradores[7],
+				 colaboradores[8]
+			};
+
+
+			List<Colaborador> equipaColaboradores3 = new List<Colaborador>()
+			{
+				 colaboradores[2],
+				 colaboradores[9],
+				 colaboradores[10],
+				 colaboradores[11]
+			};
+
+
+        
+
+
+ 
+
+
+    
+
+        ////////Métodos da classe Colaborador//////////////////////////////////////////////////////////////////////Colaborad
+
+        public virtual void AcessoPermitido()
 		{
 			Console.WriteLine("Bem-vindo/a " + this.Nome);
 			Console.WriteLine();
