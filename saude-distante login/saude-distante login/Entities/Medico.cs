@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using saude_distante_login.Entities.Enums;
+using saude_distante_login.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace saude_distante_login.Entities
 {
-    internal class Medico : Colaborador
+    internal class Medico : Colaborador, IAutenticacao
     {
         //Construtores da classe Medico
         public Medico()

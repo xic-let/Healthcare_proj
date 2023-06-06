@@ -11,10 +11,7 @@ namespace saude_distante_login.Entities
     internal class Administrativo : Colaborador, IAutenticacao
     {
         //Construtores da classe Administrativo
-        public Administrativo()
-        {
-
-        }
+        //public Administrativo() {}
 
         public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, Equipa equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)
@@ -42,12 +39,12 @@ namespace saude_distante_login.Entities
             Console.WriteLine("5. Sair");
             Console.WriteLine();
             Console.Write("Opção (1-5): ");
-            string opcao = Console.ReadLine(); 
+            string opcao = Console.ReadLine();
 
             switch (opcao)
             {
                 case "1":
-                    RegistarEquipa();
+                    RegistarEquipa(); //resolver equipas
                     break;
                 case "2":
                     RelatorioColaboradores();
@@ -56,7 +53,7 @@ namespace saude_distante_login.Entities
                     RelEstatistico();
                     break;
                 case "4":
-                    PlanoRota();
+                    AdicionarRota(); //resolver equipas
                     break;
                 case "5":
                     //Logout
@@ -70,13 +67,13 @@ namespace saude_distante_login.Entities
 
         public void RegistarEquipa(Administrativo administrativo)
         {
-            Equipa equipa = new Equipa();
+            Equipa equipa = new Equipa(); //listas das equipas devem ser resolvidas para tirar este erro
             equipa.Administrativo = administrativo;
 
             Console.Write("Insira o ID da equipa: ");
             equipa.IdEquipa = int.Parse(Console.ReadLine());
             Console.Write("Insira o Concelho da equipa: ");
-            equipa.Concelho = Enum.Parse<Concelho>(Console.ReadLine());
+            equipa.concelho = Enum.Parse<Concelho>(Console.ReadLine());
 
             Console.WriteLine();
 
@@ -97,11 +94,13 @@ namespace saude_distante_login.Entities
             string enfEmail = Console.ReadLine();
             Console.Write("ID de colaborador: ");
             int enfIdColaborador = int.Parse(Console.ReadLine());
+            Console.Write("Função: ");
+            string enfFuncao = Console.ReadLine();
             Console.Write("Vencimento: ");
             double enfVencimento = double.Parse(Console.ReadLine());
             Console.Write("Password: ");
             string enfPassword = Console.ReadLine();
-            Enfermeiro enfermeiro = new Enfermeiro(enfNome, enfGenero, enfDataNascimento, enfContacto, enfMorada, enfConcelho, enfEmail, enfIdColaborador, enfVencimento, equipa, enfPassword);
+            Enfermeiro enfermeiro = new Enfermeiro(enfNome, enfGenero, enfDataNascimento, enfContacto, enfMorada, enfConcelho, enfEmail, enfIdColaborador, enfFuncao, enfVencimento, equipa, enfPassword);
 
             Console.WriteLine();
 
@@ -122,11 +121,13 @@ namespace saude_distante_login.Entities
             string medEmail = Console.ReadLine();
             Console.Write("ID de colaborador: ");
             int medIdColaborador = int.Parse(Console.ReadLine());
+            Console.Write("Função: ");
+            string medFuncao = Console.ReadLine();
             Console.Write("Vencimento: ");
             double medVencimento = double.Parse(Console.ReadLine());
             Console.Write("Password: ");
             string medPassword = Console.ReadLine();
-            Medico medico = new Medico(medNome, medGenero, medDataNascimento, medContacto, medMorada, medConcelho, medEmail, medIdColaborador, medVencimento, equipa, medPassword);
+            Medico medico = new Medico(medNome, medGenero, medDataNascimento, medContacto, medMorada, medConcelho, medEmail, medIdColaborador, medFuncao, medVencimento, equipa, medPassword);
 
             Console.WriteLine();
 
@@ -147,11 +148,13 @@ namespace saude_distante_login.Entities
             string motEmail = Console.ReadLine();
             Console.Write("ID de colaborador: ");
             int motIdColaborador = int.Parse(Console.ReadLine());
+            Console.Write("Função: ");
+            string motFuncao = Console.ReadLine();
             Console.Write("Vencimento: ");
             double motVencimento = double.Parse(Console.ReadLine());
             Console.Write("Password: ");
             string motPassword = Console.ReadLine();
-            Motorista motorista = new Motorista(motNome, motGenero, motDataNascimento, motContacto, motMorada, motConcelho, motEmail, motIdColaborador, motVencimento, equipa, motPassword);
+            Motorista motorista = new Motorista(motNome, motGenero, motDataNascimento, motContacto, motMorada, motConcelho, motEmail, motIdColaborador, motFuncao, motVencimento, equipa, motPassword);
 
             equipa.Enfermeiro = enfermeiro;
             equipa.Medico = medico;
@@ -191,20 +194,32 @@ namespace saude_distante_login.Entities
                     Console.WriteLine();
                 }
             }
+
+            Console.WriteLine(" Qual a função do COLABORADOR? ");
+            Console.WriteLine(" 1 - Administrativo ");
+            Console.WriteLine(" 2 - Enfermeiro ");
+            Console.WriteLine(" 3 - Médico ");
+            Console.WriteLine(" 4 - Motorista ");
+            int res = int.Parse(Console.ReadLine());
+
+            if (res == 1)
+            {
+                string função = "Administrativo";
+            }
+
+            //lista: (1, Manual, Method, 4000, equipa1);
+        }
+
+        public void AdicionarRota(Rotas novaRota, List<Rotas> rotas) //resolver equipas para nao dar erro
+        {
+            rotas.Add(novaRota);
+
+            rotas.Add(1, Enums.Concelho.Braga, "Sao Vitor", equipa1);
+            rotas.Add(2, Enums.Concelho.Braga, "Gualtar", equipa1);
+            rotas.Add(3, Enums.Concelho.Amares, "Amares e Figueiredo", equipa2);
+            rotas.Add(4, Enums.Concelho.Amares, "Dornelas", equipa2);
+            rotas.Add(5, Enums.Concelho.Guimarães, "Azurém", equipa3);
+            rotas.Add(6, Enums.Concelho.Guimarães, "Creixomil", equipa3);
         }
     }
 }
-
-Console.WriteLine (" Qual a função do COLABORADOR? ");
-Console.WriteLine (" 1 - Administrativo ");
-Console.WriteLine (" 2 - Enfermeiro ");
-Console.WriteLine (" 3 - Médico ");
-Console.WriteLine (" 4 - Motorista ");
-int res = int.Parse(Console.ReadLine());
-
-if (res ==1)
-{
-    string função = "Administrativo";
-}
-
-lista :(1 , Manual, Method, 4000, equipa1)

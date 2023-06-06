@@ -17,10 +17,7 @@ namespace saude_distante_login.Entities
 		public Equipa Equipa { get; set; }
 		public List<Equipa> Equipas { get; set; } = new List<Equipa>();
 
-		public Colaborador()
-		{
-
-		}
+		//public Colaborador(){}
 
 
 		public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, Equipa equipa, string password)

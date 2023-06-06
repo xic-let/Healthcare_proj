@@ -1,4 +1,5 @@
 ﻿using saude_distante_login.Entities.Enums;
+using saude_distante_login.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,11 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities
 {
-    internal class Motorista : Colaborador
+    internal class Motorista : Colaborador, IAutenticacao
     {
         //Construtores da classe Motorista
-        public Motorista()
-        {
-
-        }
+        //public Motorista() {}
+        
 
         public Motorista(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, Equipa equipa, string password) 
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)
