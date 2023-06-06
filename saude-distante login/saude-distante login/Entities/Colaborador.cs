@@ -11,6 +11,7 @@ namespace saude_distante_login.Entities
 	internal class Colaborador : Pessoa
 	{
 		public int IdColaborador { get; private set; }
+		public string funcao { get; set; }
 		public double Vencimento { get; set; }
 		public string Password { get; private set; }
 		public Equipa Equipa { get; set; }
@@ -22,7 +23,7 @@ namespace saude_distante_login.Entities
 		}
 
 
-		public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, double vencimento, Equipa equipa, string password)
+		public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, Equipa equipa, string password)
 			: base(nome, genero, dataNascimento, contacto, morada, concelho, email)
 		{
 			IdColaborador = idColaborador;
