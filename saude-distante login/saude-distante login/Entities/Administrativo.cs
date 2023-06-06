@@ -11,10 +11,7 @@ namespace saude_distante_login.Entities
     internal class Administrativo : Colaborador, IAutenticacao
     {
         //Construtores da classe Administrativo
-        public Administrativo()
-        {
-
-        }
+        //public Administrativo() {}
 
         public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, Equipa equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)

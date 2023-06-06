@@ -1,4 +1,5 @@
 ﻿using saude_distante_login.Entities.Enums;
+using saude_distante_login.Services;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace saude_distante_login.Entities
 {
     
-    internal class Enfermeiro : Colaborador
+    internal class Enfermeiro : Colaborador, IAutenticacao
     {
         
         //Construtores da classe Enfermeiro
