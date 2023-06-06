@@ -68,20 +68,12 @@ namespace saude_distante_login.Entities
 
 			List<Colaborador> equipaColaboradores3 = new List<Colaborador>()
 			{
-				 colaboradores[2],
-				 colaboradores[9],
-				 colaboradores[10],
-				 colaboradores[11]
+				colaboradores[2],
+				colaboradores[9],
+				colaboradores[10],
+				colaboradores[11]
 			};
 
-
-        
-
-
- 
-
-
-    
 
         ////////Métodos da classe Colaborador//////////////////////////////////////////////////////////////////////Colaborad
 
@@ -92,43 +84,34 @@ namespace saude_distante_login.Entities
 		}
 
 
-		private void TotConsultas()
+
+		private int TotConsultas(Utente utente)
 		{
-			int cstotal = utente.Consultas.Count; // conta total das consultas na lista de consultas
+			return utente.Consultas.Count; // conta total das consultas na lista de consultas
 		}
 
-		private Dictionary<string, int> contadorEquipas = new Dictionary<string, int>();
+        private Dictionary<string, int> ConsDia(Utente utente)
+        {
+            Dictionary<string, int> contadorEquipas = new Dictionary<string, int>();
 
-		private void ConsDia()
-		{
+            foreach (Consulta consulta in utente.Consultas)
+            {
+                string equipa = consulta.Equipa;
 
-				// Percorrer a lista de consultas
-			foreach (Consulta consulta in utente.Consultas)
-			{
-				string equipa = consulta.Equipa; // Supondo que há uma propriedade "Equipa" na classe Consulta que representa a equipe responsável pela consulta
+                if (contadorEquipas.ContainsKey(equipa))
+                {
+                    contadorEquipas[equipa]++;
+                }
+                else
+                {
+                    contadorEquipas[equipa] = 1;
+                }
+            }
 
-						// Verificar se a equipe já está no dicionário
-				if (contadorEquipas.ContainsKey(equipa))
-				{
-						// Incrementar o contador para a equipe existente
-					contadorEquipas[equipa]++;
-				}
-				else
-				{
-					// Adicionar a equipe ao dicionário com contador inicial 1
-					contadorEquipas[equipa] = 1;
-				}
-			}
+            return contadorEquipas;
+        }
 
-			// Percorrer o dicionário e imprimir os resultados
-			foreach (KeyValuePair<string, int> par in contadorEquipas)
-			{
-				Console.WriteLine("Equipa: " + par.Key + " - " + par.Value + " consultas");
-
-			}
-		}
-
-		public void RelConsultas()
+        public void RelConsultas()
 		{
 			Console.WriteLine("-------------------------------------------------");
 			Console.WriteLine("DGS - Direção Regional de Saude de Rastreios");
