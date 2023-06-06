@@ -18,7 +18,7 @@ namespace saude_distante_login.Entities
 		public int Equipa { get; set; }
 		
 
-		public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa)
+		public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
 			: base(nome, genero, dataNascimento, contacto, morada, concelho, email)
 		{
 			IdColaborador = idColaborador;
