@@ -33,7 +33,7 @@ namespace saude_distante_login.Entities
 
         public Consulta() { }
 
-        public Consulta(DateTime data, Equipa equipa, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialsis, double pressaoArterialdia, string observacoes, string receitas, idsns, reshta, resdiabetes, resimc, Utente utente, Consulta consultas)
+        public Consulta(DateTime data, Equipa equipa, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialsis, double pressaoArterialdia, string observacoes, string receitas, int numutente, string reshta, string resdiabetes, string resimc, Utente utente, Consulta consultas)
 
         {
             Data = data;
@@ -47,19 +47,19 @@ namespace saude_distante_login.Entities
             PressaoArterialdia = pressaoArterialdia;
             Observacoes = observacoes;
             Receitas = receitas;
-            numUtente = idsns;
-            Utente = utente;
+            numUtente = numutente;
             ResHTA = reshta;
             ResDiabetes = resdiabetes;
             ResIMC = resimc;
+            Utente = utente;
 
-             Consultas = consultas;
-             Consultas.Add(this); 
+            Consultas = consultas;
+            utente.Consultas.Add(this); 
 
         }
 
         // Methods//////////////////////////////////////////////////////////////////////////////////
-            public void GraudeDiabetes(Consulta consultas)
+            public void GraudeDiabetes()
             {
                 if (NivelGlicose < 100)
                 {
@@ -74,13 +74,10 @@ namespace saude_distante_login.Entities
                 {
                     Console.WriteLine("O utente tem diabetes tipo 2.");
                 }
-                
-                Utente.consultas.Add(consultas);
-
-
+             
             }
            
-            public void MedidasPA(Consulta consultas) 
+            public void MedidasPA() 
             {
                 if (this.PressaoArterialsis < 120 && this.PressaoArterialdia < 80)
                 {
@@ -110,10 +107,10 @@ namespace saude_distante_login.Entities
                 {
                     Console.WriteLine("AVISO: Utente Com Hipertensão Sistólica Isolada (2)");
                 }
-                Utente.consultas.Add(consultas);
+                
             }
 
-            public void CalcImc(consulta)
+            public void CalcImc()
             {
                 double imc = Peso / (Altura * Altura);
                 Console.WriteLine("O IMC do utente é: " + imc);
@@ -141,7 +138,6 @@ namespace saude_distante_login.Entities
                 {
                     Console.WriteLine("O utente está com obesidade grau 3.");
                 }
-                Utente.consultas.Add(consultas);
             }
 
 

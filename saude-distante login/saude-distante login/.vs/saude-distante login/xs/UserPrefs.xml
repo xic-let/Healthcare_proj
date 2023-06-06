@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{0C6D9D93-6F4D-47EF-A1B7-247A96AAFB02}|Default">
+  <MonoDevelop.Ide.ItemProperties.saude-distante_220login PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Colaborador.cs">
+    <Files>
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Entities/Colaborador.cs" Line="80" Column="32" />
+      <File FileName="Entities/Consulta.cs" Line="140" Column="18" />
+      <File FileName="Entities/Utente.cs" Line="1" Column="1" />
+      <File FileName="Entities/Rotas.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="saude-distante login" expanded="True">
+            <Node name="saude-distante login" expanded="True">
+              <Node name="Entities" expanded="True">
+                <Node name="Consulta.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
