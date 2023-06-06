@@ -11,8 +11,12 @@ namespace saude_distante_login.Entities
     internal class Motorista : Colaborador, IAutenticacao
     {
         //Construtores da classe Motorista
+<<<<<<< Updated upstream
         //public Motorista() {}
         
+=======
+   
+>>>>>>> Stashed changes
 
         public Motorista(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, Equipa equipa, string password) 
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)
@@ -44,10 +48,13 @@ namespace saude_distante_login.Entities
             switch (opcao)
             {
                 case "1":
-                    VerPlanoRota();
+                    Console.WriteLine("Plano de rotas: ");
+                    Rotas rotas = new Rotas();
+                    rotas.VerPlanoRota(Rotas.rotas);
+
                     break;
                 case "2":
-                    RelEstatistico();
+                    RelConsultas();
                     break;
                 case "3":
                     //Logout
