@@ -13,6 +13,8 @@ namespace saude_distante_login.Entities
         //Construtores da classe Administrativo
         //public Administrativo() {}
 
+        public List<Colaborador> Colaboradores = new List<Colaborador>();
+
         public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, Equipa equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)
         {
@@ -64,6 +66,73 @@ namespace saude_distante_login.Entities
             }
         }
 
+        public void RegistarColaboradores()
+        {
+            Console.Write("Número de colaboradores a registar: ");
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine("Qual a função do colaborador?");
+                Console.WriteLine("1 - Administrativo");
+                Console.WriteLine("2 - Enfermeiro");
+                Console.WriteLine("3 - Médico");
+                Console.WriteLine("4 - Motorista");
+                int res = int.Parse(Console.ReadLine());
+                string funcao = "";
+                if (res == 1)
+                {
+                    funcao = "Administrativo";
+                }
+                else if (res == 2)
+                {
+                    funcao = "Enfermeiro";
+                }
+                else if (res == 3)
+                {
+                    funcao = "Medico";
+                }
+                else
+                {
+                    funcao = "Motorista";
+                }
+
+                Console.WriteLine("Dados do colaborador:");
+                Console.Write("ID: ");
+                int idColaborador = int.Parse(Console.ReadLine());
+                Console.Write("Nome: ");
+                string nome = Console.ReadLine();
+                Console.Write("Vencimento: ");
+                double vencimento = double.Parse(Console.ReadLine());
+                Console.WriteLine("Equipa: ");
+                int equipa = int.Parse(Console.ReadLine());
+
+                Colaborador colaborador = new Colaborador();
+                colaborador.IdColaborador = idColaborador;
+                colaborador.Nome = nome;
+                colaborador.Vencimento = vencimento;
+                colaborador.Equipa = equipa;
+
+                Colaboradores.Add(colaborador);
+
+                //Colaboradores.Add(equipa + ", " + idColaborador + ", " + nome + ", " + funcao + ", " + vencimento);
+            }
+        }
+
+        public void RelatorioColaboradores()
+        {
+            Colaboradores.Sort();
+            /*
+            foreach (string colaborador in Colaboradores)
+            {
+                Console.WriteLine("Equipa " + colaborador);
+            }
+            */
+            foreach (Colaborador colaborador in Colaboradores)
+            {
+                Console.WriteLine("Equipa " + Colaboradores);
+            }
+        }
 
         public void RegistarEquipa(Administrativo administrativo)
         {
