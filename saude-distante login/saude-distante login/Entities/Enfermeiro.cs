@@ -13,7 +13,7 @@ namespace saude_distante_login.Entities
     {
         
         //Construtores da classe Enfermeiro
-        public Enfermeiro(){ }
+        //public Enfermeiro(){ }
 
         public Enfermeiro(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, Equipa equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)
@@ -49,7 +49,7 @@ namespace saude_distante_login.Entities
                     RegistoUtente();
                     break;
                 case "2":
-                    RegPreConsulta();
+                    RegPreConsulta(); //está a dar erro porque não reconhece lista das consultas
                     break;
                 case "3":
                     RelEstatistico();
@@ -66,9 +66,8 @@ namespace saude_distante_login.Entities
             }
         }
 
-        //protected virtual void RegistoUtente(List<Utente> utentes)  //protected virtual void indica que o método é acessível dentro da classe Colaborador e subclasses, permitindo sobreposição do método nas subclasses
-        //precisamos de acessar a este metodo na classe de utente que não faz parte da classe colaborador, nem é uma subclasse dela.
-        public void RegistoUtente(Utente utente, Utente utentes)
+        
+        public void RegistoUtente()
         {
             Console.WriteLine("Registo de Utente:");
 
@@ -101,7 +100,9 @@ namespace saude_distante_login.Entities
 
             bool yes_rgpd = (resp == "sim" || resp == "Sim" || resp == "SIM");
 
-            utente.utentes.Add(utentes);
+            Utente utente = new Utente(nome, genero, dataNascimento, contacto, morada, concelho, email, numUtente, yes_rgpd);
+
+            utente.utentes.Add(utente);
 
             Console.WriteLine("Utente registado com sucesso!");
 
@@ -132,7 +133,7 @@ namespace saude_distante_login.Entities
         Console.Write("Informe o nivel de Glicose: ");
         double glicose = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            utente.consultas.Add(consulta);
+            utente.Consultas.Add(consulta);
 
             //inserir dados na tabela da consulta
         Console.WriteLine("Dados de pré-consulta registrados com sucesso!");

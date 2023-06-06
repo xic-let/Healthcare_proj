@@ -8,9 +8,10 @@ using saude_distante_login.Entities.Enums;
 
 namespace saude_distante_login.Entities
 {
-    internal class Consulta //Propriedades//////////////////////////////////////////
-                            // consulta não pode ser herdada de utente par permitir o registo de consulta
+    internal class Consulta 
+                            
     {
+        //Propriedades//////////////////////////////////////////
         public DateTime Data { get; set; }
         public Equipa Equipa { get; set; }
         public double Peso { get; set; }
