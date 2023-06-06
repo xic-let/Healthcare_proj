@@ -51,23 +51,29 @@ namespace saude_distante_login.Entities
 		{
 
 				// Percorrer a lista de consultas
-		foreach (Consulta consulta in utente.Consultas)
-		{
-			string equipa = consulta.Equipa; // Supondo que há uma propriedade "Equipa" na classe Consulta que representa a equipe responsável pela consulta
-
-					// Verificar se a equipe já está no dicionário
-			if (contadorEquipas.ContainsKey(equipa))
+			foreach (Consulta consulta in utente.Consultas)
 			{
-					// Incrementar o contador para a equipe existente
-				contadorEquipas[equipa]++;
-			}
-			else
-			{
-				// Adicionar a equipe ao dicionário com contador inicial 1
-				contadorEquipas[equipa] = 1;
-			}
-		}
+				string equipa = consulta.Equipa; // Supondo que há uma propriedade "Equipa" na classe Consulta que representa a equipe responsável pela consulta
 
+						// Verificar se a equipe já está no dicionário
+				if (contadorEquipas.ContainsKey(equipa))
+				{
+						// Incrementar o contador para a equipe existente
+					contadorEquipas[equipa]++;
+				}
+				else
+				{
+					// Adicionar a equipe ao dicionário com contador inicial 1
+					contadorEquipas[equipa] = 1;
+				}
+			}
+
+			// Percorrer o dicionário e imprimir os resultados
+			foreach (KeyValuePair<string, int> par in contadorEquipas)
+			{
+				Console.WriteLine("Equipa: " + par.Key + " - " + par.Value + " consultas");
+
+			}
 		}
 
 			public void RelConsultas()
