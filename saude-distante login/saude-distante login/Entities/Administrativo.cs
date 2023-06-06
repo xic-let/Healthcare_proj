@@ -222,8 +222,8 @@ namespace saude_distante_login.Entities
             rotas.Add(6, Enums.Concelho.Guimarães, "Creixomil", equipa3);
         }
     }
-<<<<<<< Updated upstream
+
 }
-=======
-}
->>>>>>> Stashed changes
+
+
+
