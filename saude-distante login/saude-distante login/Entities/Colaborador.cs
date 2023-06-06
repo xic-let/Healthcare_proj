@@ -44,7 +44,7 @@ namespace saude_distante_login.Entities
 			colaboradores.Add(new Colaborador("Carlos Santos", Genero.Masculino, new DateTime(12 - 12 - 1987), "918891918", "Rua Santa", Concelho.Guimarães, "carlos.santos@email.com", 132, "Enfermeiro", 1500, "123456", 3));
 
 
-            List<Colaborador> equipaColaboradores1 = new List<Colaborador>()
+            List<Colaborador> equipa1 = new List<Colaborador>()
             {
                 colaboradores[0], // Example: Assigning the first colaborador from the list
 				colaboradores[3],
@@ -57,7 +57,7 @@ namespace saude_distante_login.Entities
                 // Add more colaboradores to the team
             };
 
-			List<Colaborador> equipaColaboradores2 = new List<Colaborador>()
+			List<Colaborador> equipa2 = new List<Colaborador>()
 			{
 				 colaboradores[1],
 				 colaboradores[6],
@@ -66,7 +66,7 @@ namespace saude_distante_login.Entities
 			};
 
 
-			List<Colaborador> equipaColaboradores3 = new List<Colaborador>()
+			List<Colaborador> equipa3 = new List<Colaborador>()
 			{
 				colaboradores[2],
 				colaboradores[9],
