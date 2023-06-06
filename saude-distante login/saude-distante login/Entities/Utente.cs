@@ -19,40 +19,36 @@ namespace saude_distante_login.Entities
 	   public List<Consulta> Consultas { get; set; }
 
 
-		public Utente(string nome, Genero genero, DateTime dataNascimento,string contacto , string morada, Concelho concelho, string email, int id, bool yes_rgpd)
-		:base(nome, genero, dataNascimento, contacto, morada, concelho, email)
+		public Utente(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int id, bool yes_rgpd)
+		: base(nome, genero, dataNascimento, contacto, morada, concelho, email)
 		{
 			Idsns = id;
 			Yes_Rgpd = yes_rgpd;
-			
 
 
-            Consultas = new List<Consulta>();
+
+			/*Consultas = new List<Consulta>();
 
 
-			// List<Consulta> consultas = new List<Consulta>(new Consulta[]
-
-			Consultas.Add(new Consulta(new DateTime(20 - 05 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 1));
+            Consultas.Add(new Consulta(new DateTime(20 - 05 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 1,));
 			Consultas.Add(new Consulta(new DateTime(20 - 05 - 2023), 2, 65, 1.62, true, "N/A", 85, 122, 90, "N/A", "N/A", 2));
 			Consultas.Add(new Consulta(new DateTime(27 - 05 - 2023), 3, 95, 1.85, false, "N/A", 81, 119, 82, "N/A", "Artovastatina", 3));
 			Consultas.Add(new Consulta(new DateTime(27 - 05 - 2023), 2, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 4));
 			Consultas.Add(new Consulta(new DateTime(01 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina",5));
 			Consultas.Add(new Consulta(new DateTime(02 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 6));
 			Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 7));
-			Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 2, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Artovastatina", 8);
-			Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 9);
-			Consultas.Add(new Consulta(new DateTime(06 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 10);
-			Consultas.Add(new Consulta(new DateTime(07 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 11);
-			Consultas.Add(new Consulta(new DateTime(08 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 12);
-			Consultas.Add(new Consulta(new DateTime(08 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 13);
-   
+			Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 2, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Artovastatina", 8));
+			Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 9));
+			Consultas.Add(new Consulta(new DateTime(06 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 10));
+			Consultas.Add(new Consulta(new DateTime(07 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 11));
+			Consultas.Add(new Consulta(new DateTime(08 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 12));
+			Consultas.Add(new Consulta(new DateTime(08 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 13));
+   */
 
 
 
             utentes = new List<Utente>();
-            //mok de utentes
-            //Lista Utentes
-            //List<Utente> utentes = new List<Utente>(new Utente[]
+            
 
             utentes.Add(new Utente("João Silva", Genero.Masculino, new DateTime(06 - 06 - 1975), "123-456-7890", "Rua Sá de Noronha", Concelho.Braga, "joao.silva@example.com", 1, true));
 			utentes.Add(new Utente("Maria Santos", Genero.Feminino, new DateTime(02 - 02 - 1980), "987-654-3210", "Avenida da República", Concelho.Amares, "maria.santos@example.com", 2, true));
