@@ -79,7 +79,7 @@ namespace saude_distante_login.Entities
                 Console.WriteLine("3 - Médico");
                 Console.WriteLine("4 - Motorista");
                 int res = int.Parse(Console.ReadLine());
-                string funcao = "";
+                string funcao;
                 if (res == 1)
                 {
                     funcao = "Administrativo";
@@ -102,16 +102,26 @@ namespace saude_distante_login.Entities
                 int idColaborador = int.Parse(Console.ReadLine());
                 Console.Write("Nome: ");
                 string nome = Console.ReadLine();
+                Console.WriteLine("Género: ");
+                Genero genero = Enum.Parse<Genero>(Console.ReadLine());
+                Console.Write("Data de nascimento: ");
+                DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
+                Console.Write("Contacto: ");
+                string contacto = Console.ReadLine();
+                Console.Write("Morada: ");
+                string morada = Console.ReadLine();
+                Console.Write("Concelho: ");
+                Concelho concelho = Enum.Parse<Concelho>(Console.ReadLine());
+                Console.Write("Email: ");
+                string email = Console.ReadLine();
                 Console.Write("Vencimento: ");
                 double vencimento = double.Parse(Console.ReadLine());
+                Console.Write("Password: ");
+                string password = Console.ReadLine();
                 Console.WriteLine("Equipa: ");
                 int equipa = int.Parse(Console.ReadLine());
 
-                Colaborador colaborador = new Colaborador();
-                colaborador.IdColaborador = idColaborador;
-                colaborador.Nome = nome;
-                colaborador.Vencimento = vencimento;
-                colaborador.Equipa = equipa;
+                Colaborador colaborador = new Colaborador(equipa, nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password);
 
                 Colaboradores.Add(colaborador);
 
@@ -134,6 +144,7 @@ namespace saude_distante_login.Entities
             }
         }
 
+      
         
 
         

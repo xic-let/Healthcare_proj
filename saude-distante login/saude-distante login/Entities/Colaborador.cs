@@ -16,18 +16,18 @@ namespace saude_distante_login.Entities
 		public double Vencimento { get; set; }
 		public string Password { get; private set; }
 		public int Equipa { get; set; }
-		
 
-		public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
-			: base(nome, genero, dataNascimento, contacto, morada, concelho, email)
-		{
-			IdColaborador = idColaborador;
-			Funcao = funcao;
-			Vencimento = vencimento;
-			Password = password;
-			Equipa = equipa;
 
-		
+        public Colaborador(int equipa, string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password)
+                : base(nome, genero, dataNascimento, contacto, morada, concelho, email)
+        {
+            IdColaborador = idColaborador;
+            Funcao = funcao;
+            Vencimento = vencimento;
+            Password = password;
+            Equipa = equipa;
+
+
             List<Colaborador> colaboradores = new List<Colaborador>();
 
 			colaboradores.Add(new Colaborador("Maria José", Genero.Feminino, new DateTime(11 - 11 - 1987), "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 1));
@@ -89,6 +89,15 @@ namespace saude_distante_login.Entities
 		{
 			return utente.Consultas.Count; // conta total das consultas na lista de consultas
 		}
+
+        public override string ToString()
+        {
+            return "ID: " + IdColaborador
+                + "Nome: " + Nome
+                + "Funcao: " + Funcao
+                + "Equipa: " + Equipa
+                + "Vencimento: " + Vencimento;
+        }
 
         private Dictionary<string, int> ConsDia(Utente utente)
         {
