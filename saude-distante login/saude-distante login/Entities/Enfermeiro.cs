@@ -108,35 +108,46 @@ namespace saude_distante_login.Entities
 
         }
 
-        public void RegPreConsulta(Utente utente, Consulta consulta)
+        public void RegPreConsulta() 
         {
-        Console.WriteLine("Registe os dados de pré-consulta do utente:");
+            // Procurar o utente na lista de utentes
+            Utente utente = utentes.Find(u => u.Idsns == id);//não encontra lista de utentes
 
-        Console.Write("Informe a data da consulta (dd/mm/aaaa): ");
-        DateTime dataConsulta = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            if (utente != null)
+            {
+                Console.WriteLine("Registe os dados de pré-consulta do utente:");
 
-        Console.Write("Informe a Equipa Responsável pelo Rastreio: ");
-        string equipa = Console.ReadLine();
+                Console.Write("Informe a data da consulta (dd/mm/aaaa): ");
+                DateTime dataConsulta = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-        Console.Write("Informe o peso: ");
-        double peso = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.Write("Informe a Equipa Responsável pelo Rastreio: ");
+                string equipa = Console.ReadLine();
 
-        Console.Write("Informe a altura: ");
-        double altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.Write("Informe o peso: ");
+                double peso = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-        Console.Write("Informe a PA Distólica: ");
-        int paDistolica = int.Parse(Console.ReadLine());
+                Console.Write("Informe a altura: ");
+                double altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-        Console.Write("Informe a PA Sistólica: ");
-        int paSistolica = int.Parse(Console.ReadLine());
+                Console.Write("Informe a PA Distólica: ");
+                int paDistolica = int.Parse(Console.ReadLine());
 
-        Console.Write("Informe o nivel de Glicose: ");
-        double glicose = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                Console.Write("Informe a PA Sistólica: ");
+                int paSistolica = int.Parse(Console.ReadLine());
 
-            utente.Consultas.Add(consulta);
+                Console.Write("Informe o nivel de Glicose: ");
+                double glicose = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            //inserir dados na tabela da consulta
-        Console.WriteLine("Dados de pré-consulta registrados com sucesso!");
+                Consulta consulta = new Consulta();
+                utente.Consultas.Add(consulta);
+
+                //inserir dados na tabela da consulta
+                Console.WriteLine("Dados de pré-consulta registrados com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("O utente não possui consultas registadas.");
+            }
         }
     }
 }
