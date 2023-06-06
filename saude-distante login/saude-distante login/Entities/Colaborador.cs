@@ -201,7 +201,7 @@ namespace saude_distante_login.Entities
 
 		}*/
 
-		public void RelEstatistico()
+		public string RelEstatistico()
 		{   
 			Console.WriteLine("-------------------------------------------------");
 			Console.WriteLine("DGS - Direção Regional de Saude de Rastreios");

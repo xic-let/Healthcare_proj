@@ -11,10 +11,7 @@ namespace saude_distante_login.Entities
     internal class Administrativo : Colaborador, IAutenticacao
     {
         //Construtores da classe Administrativo
-        public Administrativo() { }
-
         public List<Colaborador> Colaboradores = new List<Colaborador>();
-
 
         public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)
@@ -64,13 +61,9 @@ namespace saude_distante_login.Entities
                     break;
                 case "5":
                     Colaborador colaborador = new Colaborador();
-                    colaborador.RelEstatistico();
+                    .RelEstatistico();
                     break;
                 case "6":
-                    Rotas rotas = new Rotas();
-                    rotas.VerAgenda(); 
-                    break;
-                case "7":
                     //Logout
                     break;
                 default:
@@ -82,7 +75,12 @@ namespace saude_distante_login.Entities
         public void RegistarColaboradores()
         {
             Console.Write("Número de colaboradores a registar: ");
-            int n = int.Parse(Console.ReadLine());
+            int n;
+            if (!int.TryParse(Console.ReadLine(), out n))
+            {
+                Console.WriteLine("Número inválido. Tente novamente.");
+                return;
+            }
 
             for (int i = 1; i <= n; i++)
             {
@@ -91,7 +89,15 @@ namespace saude_distante_login.Entities
                 Console.WriteLine("2 - Enfermeiro");
                 Console.WriteLine("3 - Médico");
                 Console.WriteLine("4 - Motorista");
-                int res = int.Parse(Console.ReadLine());
+
+                int res;
+                if (!int.TryParse(Console.ReadLine(), out res) || res < 1 || res > 4)
+                {
+                    Console.WriteLine("Opção inválida. Tente novamente.");
+                    i--;
+                    continue;
+                }
+
                 string funcao;
                 if (res == 1)
                 {
@@ -111,36 +117,77 @@ namespace saude_distante_login.Entities
                 }
 
                 Console.WriteLine("Dados do colaborador:");
-                Console.Write("ID: ");
-                int idColaborador = int.Parse(Console.ReadLine());
-                Console.Write("Nome: ");
-                string nome = Console.ReadLine();
-                Console.WriteLine("Género: ");
-                Genero genero = Enum.Parse<Genero>(Console.ReadLine());
-                Console.Write("Data de nascimento: ");
-                DateTime dataNascimento = DateTime.Parse(Console.ReadLine());
-                Console.Write("Contacto: ");
-                string contacto = Console.ReadLine();
-                Console.Write("Morada: ");
-                string morada = Console.ReadLine();
-                Console.Write("Concelho: ");
-                Concelho concelho = Enum.Parse<Concelho>(Console.ReadLine());
-                Console.Write("Email: ");
-                string email = Console.ReadLine();
-                Console.Write("Vencimento: ");
-                double vencimento = double.Parse(Console.ReadLine());
-                Console.Write("Password: ");
-                string password = Console.ReadLine();
-                Console.WriteLine("Equipa: ");
-                int equipa = int.Parse(Console.ReadLine());
-
-                Colaborador colaborador = new Colaborador(equipa, nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password);
-
-                Colaboradores.Add(colaborador);
-
-                
-            }
+        Console.Write("ID: ");
+        int idColaborador;
+        if (!int.TryParse(Console.ReadLine(), out idColaborador))
+        {
+            Console.WriteLine("ID inválido. Tente novamente.");
+            i--;
+            continue;
         }
+
+        Console.Write("Nome: ");
+        string nome = Console.ReadLine();
+        
+        Console.WriteLine("Género: ");
+        Genero genero;
+        if (!Enum.TryParse(Console.ReadLine(), out genero))
+        {
+            Console.WriteLine("Género inválido. Tente novamente.");
+            i--;
+            continue;
+        }
+
+        Console.Write("Data de nascimento: ");
+        DateTime dataNascimento;
+        if (!DateTime.TryParse(Console.ReadLine(), out dataNascimento))
+        {
+            Console.WriteLine("Data de nascimento inválida. Tente novamente.");
+            i--;
+            continue;
+        }
+
+        Console.Write("Contacto: ");
+        string contacto = Console.ReadLine();
+        Console.Write("Morada: ");
+        string morada = Console.ReadLine();
+
+        Console.Write("Concelho: ");
+        Concelho concelho;
+        if (!Enum.TryParse(Console.ReadLine(), out concelho))
+        {
+            Console.WriteLine("Concelho inválido. Tente novamente.");
+            i--;
+            continue;
+        }
+
+        Console.Write("Email: ");
+        string email = Console.ReadLine();
+        Console.Write("Vencimento: ");
+        double vencimento;
+        if (!double.TryParse(Console.ReadLine(), out vencimento))
+        {
+            Console.WriteLine("Vencimento inválido. Tente novamente.");
+            i--;
+            continue;
+        }
+
+        Console.Write("Password: ");
+        string password = Console.ReadLine();
+
+        Console.WriteLine("Equipa: ");
+        int equipa;
+        if (!int.TryParse(Console.ReadLine(), out equipa))
+        {
+            Console.WriteLine("Equipa inválida. Tente novamente.");
+            i--;
+            continue;
+        }
+
+        Colaborador colaborador = new Colaborador(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
+        Colaborador.colaboradores.Add(colaborador);
+    }
+}
 
        public void RelatorioColaboradores()
         {
@@ -152,70 +199,17 @@ namespace saude_distante_login.Entities
             if (res == 1)
             {
                 Colaborador colaborador = new Colaborador();
-                colaboradores.ListarColaboradores();
-
-
-                /*Console.WriteLine("Relatório Geral");
-                Console.WriteLine();
-                foreach (Colaborador colaborador in Colaboradores)
-                {
-                    Console.WriteLine("ID: " + colaborador.IdColaborador);
-                    Console.WriteLine("Nome: " + colaborador.Nome);
-                    Console.WriteLine("Vencimento: " + colaborador.Vencimento);
-                    Console.WriteLine();
-                }*/
+                Colaborador.colaboradores.ListarColaboradores();
+           
             }
             else
             {
                 Colaborador colaborador = new Colaborador();
                 colaboradores.ListarColaboradoresPorEquipa();
 
-                /*Console.WriteLine("Relatório por Equipa");
-                Console.WriteLine();
-                
-                
-                Console.Write("ID da equipa: ");
-                int idEquipa = int.Parse(Console.ReadLine());
-
-                foreach (Colaborador colaborador in Colaboradores)
-                {
-                    if (idEquipa == colaborador.Equipa)
-                    {
-                        Console.WriteLine("ID: " + colaborador.IdColaborador);
-                        Console.WriteLine("Nome: " + colaborador.Nome);
-                        Console.WriteLine("Vencimento: " + colaborador.Vencimento);
-                        Console.WriteLine("Equipa: " + colaborador.Equipa);
-                        Console.WriteLine();
-                    }
-                }*/
             }
         }
 
-      
-        /*Colaboradores.Sort();
-           
-            foreach (Colaborador colaborador in equipa1)
-            {   
-                int i = 0;
-                Console.WriteLine("Equipa " + Colaborador.colaborador[i].nome  + "vencimento " + Colaboradores + "€");
-            }
-
-        
-
-        /*public void RelatorioEquipa(int idEquipa)
-        {
-            foreach (Equipa equipa in Equipas)
-            {
-                if (idEquipa == equipa.IdEquipa)
-                {
-                    Console.WriteLine("Equipa " + equipa.IdEquipa + " (" + equipa.Concelho + "):\n"
-                     + "Administrativo: " + equipa.Administrativo.Nome + " (vencimento: " + equipa.Administrativo.Vencimento + "€)\n"
-                     + "Enfermeiro: " + equipa.Enfermeiro.Nome + " (vencimento: " + equipa.Enfermeiro.Vencimento + "€)\n"
-                     + "Médico: " + equipa.Medico.Nome + " (vencimento: " + equipa.Medico.Vencimento + "€)\n"
-                     + "Motorista: " + equipa.Motorista.Nome + " (vencimento: " + equipa.Motorista.Vencimento + "€)");
-                    Console.WriteLine();
-                }
-            }*/
 
     }
 
