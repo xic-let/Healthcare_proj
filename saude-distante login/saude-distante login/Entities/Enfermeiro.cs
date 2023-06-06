@@ -50,7 +50,7 @@ namespace saude_distante_login.Entities
                     RegistoUtente();
                     break;
                 case "2":
-                    RegPreConsulta(); //está a dar erro porque não reconhece lista das consultas
+                    RegPreConsulta(); 
                     break;
                 case "3":
                     RelEstatistico();

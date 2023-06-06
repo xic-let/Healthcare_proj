@@ -18,7 +18,7 @@ namespace saude_distante_login.Entities
 		public int Equipa { get; set; }
 
 
-        public Colaborador(int equipa, string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password)
+        public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa)
                 : base(nome, genero, dataNascimento, contacto, morada, concelho, email)
         {
             IdColaborador = idColaborador;
@@ -42,40 +42,94 @@ namespace saude_distante_login.Entities
 			colaboradores.Add(new Colaborador("Miguel Soares", Genero.Masculino, new DateTime(04 - 04 - 1974), "911233454", "Rua 5 de Outubro", Concelho.Guimarães, "miguel.soares@email.com", 130, "Motorista", 1100, "123456", 3));
 			colaboradores.Add(new Colaborador("Joana Freitas", Genero.Feminino, new DateTime(05 - 05 - 1988), "918111222", "Rua Velha", Concelho.Guimarães, "joana.freitas@email.com", 131, "Médico", 1500, "123456", 3));
 			colaboradores.Add(new Colaborador("Carlos Santos", Genero.Masculino, new DateTime(12 - 12 - 1987), "918891918", "Rua Santa", Concelho.Guimarães, "carlos.santos@email.com", 132, "Enfermeiro", 1500, "123456", 3));
+			
 
 
-            List<Colaborador> equipa1 = new List<Colaborador>()
-            {
-                colaboradores[0], // Example: Assigning the first colaborador from the list
-				colaboradores[3],
-				colaboradores[4],
-				colaboradores[5],
-				
-				
-				
-				// Example: Assigning the second colaborador from the list
-                // Add more colaboradores to the team
-            };
-
-			List<Colaborador> equipa2 = new List<Colaborador>()
+			//métodos
+			public void ListarColaboradores()
 			{
-				 colaboradores[1],
-				 colaboradores[6],
-				 colaboradores[7],
-				 colaboradores[8]
-			};
+				int x;
+				for (x = 0; x < colaboradores.Count; x++)
+				{	
+					Console.WriteLine("Lista de Colaboradores: ");
+					Console.WriteLine("Nome: ");
+					Console.WriteLine(colaboradores[x].Nome);	
+					Console.WriteLine("Vencimento em €:");
+					Console.WriteLine(colaboradores[x].Vencimento);
+					Console.WriteLine("Função: ");
+					Console.WriteLine(colaboradores[x].Funcao);
+					Console.WriteLine("Equipa: ");
+					Console.WriteLine(colaboradores[x].Equipa);
+				}
+			}
 
-
-			List<Colaborador> equipa3 = new List<Colaborador>()
+			public void ListarColaboradoresPorEquipa()
 			{
-				colaboradores[2],
-				colaboradores[9],
-				colaboradores[10],
-				colaboradores[11]
-			};
+				Console.WriteLine("Escolha a equipa: ");
+				Console.WriteLine("1 - Equipa 1");
+				Console.WriteLine("2 - Equipa 2");
+				Console.WriteLine("3 - Equipa 3");
+				int opcao = Convert.ToInt32(Console.ReadLine());
+				if (opcao == 1)
+				{
+					int x;
+					for (x = 0; x < colaboradores.Count; x++)
+					{
+						if (colaboradores[x].Equipa == 1)
+						{
+							Console.WriteLine("Lista de Colaboradores: ");
+							Console.WriteLine("Nome: ");
+							Console.WriteLine(colaboradores[x].Nome);
+							Console.WriteLine("Vencimento em €:");
+							Console.WriteLine(colaboradores[x].Vencimento);
+							Console.WriteLine("Função: ");
+							Console.WriteLine(colaboradores[x].Funcao);
+							Console.WriteLine("Equipa: ");
+							Console.WriteLine(colaboradores[x].Equipa);
+						}
+					}
+				}
+				else if (opcao == 2)
+				{
+					int x;
+					for (x = 0; x < colaboradores.Count; x++)
+					{
+						if (colaboradores[x].Equipa == 2)
+						{
+							Console.WriteLine("Lista de Colaboradores: ");
+							Console.WriteLine("Nome: ");
+							Console.WriteLine(colaboradores[x].Nome);
+							Console.WriteLine("Vencimento em €:");
+							Console.WriteLine(colaboradores[x].Vencimento);
+							Console.WriteLine("Função: ");
+							Console.WriteLine(colaboradores[x].Funcao);
+							Console.WriteLine("Equipa: ");
+							Console.WriteLine(colaboradores[x].Equipa);
+						}
+					}
+				}
+				else if (opcao == 3)
+				{
+					int x;
+					for (x = 0; x < colaboradores.Count; x++)
+					{
+						if (colaboradores[x].Equipa == 3)
+						{
+							Console.WriteLine("Lista de Colaboradores: ");
+							Console.WriteLine("Nome: ");
+							Console.WriteLine(colaboradores[x].Nome);
+							Console.WriteLine("Vencimento em €:");
+							Console.WriteLine(colaboradores[x].Vencimento);
+							Console.WriteLine("Função: ");
+							Console.WriteLine(colaboradores[x].Funcao);
+							Console.WriteLine("Equipa: ");
+							Console.WriteLine(colaboradores[x].Equipa);
+						}
+					}
+				}
+			}
+		}
 
-
-        ////////Métodos da classe Colaborador//////////////////////////////////////////////////////////////////////Colaborad
 
         public virtual void AcessoPermitido()
 		{
@@ -83,21 +137,10 @@ namespace saude_distante_login.Entities
 			Console.WriteLine();
 		}
 
-
-
 		private int TotConsultas(Utente utente)
 		{
 			return utente.Consultas.Count; // conta total das consultas na lista de consultas
 		}
-
-        public override string ToString()
-        {
-            return "ID: " + IdColaborador
-                + "Nome: " + Nome
-                + "Funcao: " + Funcao
-                + "Equipa: " + Equipa
-                + "Vencimento: " + Vencimento;
-        }
 
         private Dictionary<string, int> ConsDia(Utente utente)
         {
@@ -156,7 +199,7 @@ namespace saude_distante_login.Entities
 
 
 
-		}
+		}*/
 
 		public void RelEstatistico()
 		{   
@@ -164,7 +207,7 @@ namespace saude_distante_login.Entities
 			Console.WriteLine("DGS - Direção Regional de Saude de Rastreios");
 			Console.WriteLine();
 			Console.WriteLine("Relatório Estatistico de Rastreios");
-			Console.WriteLine("Data: " + DateTime.Now.ToString("dd/MM/yyyy"));
+			/*Console.WriteLine("Data: " + DateTime.Now.ToString("dd/MM/yyyy"));
 			Console.WriteLine("-------------------------------------------------");
 			Console.WriteLine("Numero Total de Consultas Realizadas: " + //aplicar .Count para contar o numero de consultas realizadas);
 			Console.WriteLine("Numero de consultas realizadas por Rota: " + //sortir as consultas por equipa e contar ccada uma delas);
@@ -188,5 +231,6 @@ namespace saude_distante_login.Entities
 		}
 
 	}
-
+	
 }
+

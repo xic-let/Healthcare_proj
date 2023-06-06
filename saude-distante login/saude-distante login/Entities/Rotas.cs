@@ -12,15 +12,15 @@ namespace saude_distante_login.Entities
     public class Rotas
     {
         public int IdRota { get; set; }
-        Concelho Concelho { get;}
+        Concelho Concelho { get; set;}
         public string Freguesia { get; set; }
-        List<Equipa> Equipa { get;  }
+        int Equipa { get; set; }
         public DateTime Data { get; set; }  
 
         public Rotas() { }
 
 
-        public Rotas(int id, Concelho concelho, string freguesia, Equipa equipa, DateTime data)
+        public Rotas(int id, Concelho concelho, string freguesia, int equipa, DateTime data)
         {
             IdRota = id;
             Concelho = concelho;
@@ -31,17 +31,18 @@ namespace saude_distante_login.Entities
 
         public static List<Rotas> rotas = new List<Rotas>()
         {
-            new Rotas(1, Concelho.Braga, "Sao Vitor", Equipa.equipas[0], new DateTime(2023, 1, 25)),
-            new Rotas(2, Concelho.Braga, "Gualtar", Equipa.equipas[0], new DateTime(2023, 1, 25)),
-            new Rotas(3, Concelho.Amares, "Amares e Figueiredo", Equipa.equipas[1], new DateTime(2023, 1, 25)),
-            new Rotas(4, Concelho.Amares, "Dornelas", Equipa.equipas[1], new DateTime(2023, 1, 25)),
-            new Rotas(5, Concelho.Guimarães, "Azurém", Equipa.equipas[2], new DateTime(2023, 1, 25)),
-            new Rotas(6, Concelho.Guimarães, "Creixomil", Equipa.equipas[2], new DateTime(2023, 1, 25))
+            new Rotas(1, Concelho.Braga, "Sao Vitor", 1, new DateTime(2023, 1, 25)),
+            new Rotas(2, Concelho.Braga, "Gualtar", 1, new DateTime(2023, 1, 25)),
+            new Rotas(3, Concelho.Amares, "Amares e Figueiredo", 2, new DateTime(2023, 1, 25)),
+            new Rotas(4, Concelho.Amares, "Dornelas", 2, new DateTime(2023, 1, 25)),
+            new Rotas(5, Concelho.Guimarães, "Azurém", 3, new DateTime(2023, 1, 25)),
+            new Rotas(6, Concelho.Guimarães, "Creixomil", 3, new DateTime(2023, 1, 25))
         };
 
-        public static void AdicionarRota(List<Rotas> rotas, Rotas novaRota)
+        public static void AdicionarRota(List<Rotas> rotas)
         {
-            rotas.Add(novaRota);
+            rotas.Add(); 
+        
         }
 
         public void VerPlanoRota(List<Rotas> rotas)

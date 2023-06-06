@@ -11,9 +11,10 @@ namespace saude_distante_login.Entities
     internal class Administrativo : Colaborador, IAutenticacao
     {
         //Construtores da classe Administrativo
-        //public Administrativo() {}
+        public Administrativo() { }
 
         public List<Colaborador> Colaboradores = new List<Colaborador>();
+
 
         public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)
@@ -35,29 +36,41 @@ namespace saude_distante_login.Entities
             Console.WriteLine("Selecione uma opção:");
             Console.WriteLine();
             Console.WriteLine("1. Adicionar Equipa");
-            Console.WriteLine("2. Aceder Relatório de Colaboradores");
-            Console.WriteLine("3. Aceder Relatório Estatístico");
-            Console.WriteLine("4. Agendar Rota"); //o email é enviado automaticamente ao fazer o registo da rota
-            Console.WriteLine("5. Sair");
+            Console.WriteLine("2. Agendar Rotas");
+            Console.WriteLine("3. Consultar Rotas Agendadas");
+            Console.WriteLine("4. Consultar Relatório de Colaboradores");
+            Console.WriteLine("5. Consultar Relatório Estatístico"); //o email é enviado automaticamente ao fazer o registo da rota
+            Console.WriteLine("6. Sair");
             Console.WriteLine();
-            Console.Write("Opção (1-5): ");
+            Console.Write("Opção (1-6): ");
             string opcao = Console.ReadLine();
 
             switch (opcao)
             {
                 case "1":
-                    RegistarEquipa(); //resolver equipas
+                
+                    RegistarColaboradores(); 
                     break;
                 case "2":
-                    RelatorioColaboradores();
+                    Rotas rotas = new Rotas();
+                    rotas.AgendaRotas();
                     break;
                 case "3":
-                    RelEstatistico();
+                    Rotas rotas = new Rotas();
+                    rotas.VerAgenda(); 
                     break;
                 case "4":
-                    AdicionarRota(); //resolver equipas
+                    RelatorioColaboradores();
                     break;
                 case "5":
+                    Colaborador colaborador = new Colaborador();
+                    colaborador.RelEstatistico();
+                    break;
+                case "6":
+                    Rotas rotas = new Rotas();
+                    rotas.VerAgenda(); 
+                    break;
+                case "7":
                     //Logout
                     break;
                 default:
@@ -125,31 +138,71 @@ namespace saude_distante_login.Entities
 
                 Colaboradores.Add(colaborador);
 
-                //Colaboradores.Add(equipa + ", " + idColaborador + ", " + nome + ", " + funcao + ", " + vencimento);
+                
             }
         }
 
-        public void RelatorioColaboradores()
+       public void RelatorioColaboradores()
         {
-            Colaboradores.Sort();
-            /*
-            foreach (string colaborador in Colaboradores)
+            Console.WriteLine("Deseja imprimir Relatório Geral ou Relatório por Equipa?");
+            Console.WriteLine("1 - Relatório Geral");
+            Console.WriteLine("2 - Relatório por Equipa");
+            int res = int.Parse(Console.ReadLine());
+
+            if (res == 1)
             {
-                Console.WriteLine("Equipa " + colaborador);
+                Colaborador colaborador = new Colaborador();
+                colaboradores.ListarColaboradores();
+
+
+                /*Console.WriteLine("Relatório Geral");
+                Console.WriteLine();
+                foreach (Colaborador colaborador in Colaboradores)
+                {
+                    Console.WriteLine("ID: " + colaborador.IdColaborador);
+                    Console.WriteLine("Nome: " + colaborador.Nome);
+                    Console.WriteLine("Vencimento: " + colaborador.Vencimento);
+                    Console.WriteLine();
+                }*/
             }
-            */
-            foreach (Colaborador colaborador in Colaboradores)
+            else
             {
-                Console.WriteLine("Equipa " + Colaboradores);
+                Colaborador colaborador = new Colaborador();
+                colaboradores.ListarColaboradoresPorEquipa();
+
+                /*Console.WriteLine("Relatório por Equipa");
+                Console.WriteLine();
+                
+                
+                Console.Write("ID da equipa: ");
+                int idEquipa = int.Parse(Console.ReadLine());
+
+                foreach (Colaborador colaborador in Colaboradores)
+                {
+                    if (idEquipa == colaborador.Equipa)
+                    {
+                        Console.WriteLine("ID: " + colaborador.IdColaborador);
+                        Console.WriteLine("Nome: " + colaborador.Nome);
+                        Console.WriteLine("Vencimento: " + colaborador.Vencimento);
+                        Console.WriteLine("Equipa: " + colaborador.Equipa);
+                        Console.WriteLine();
+                    }
+                }*/
             }
         }
 
       
-        
+        /*Colaboradores.Sort();
+           
+            foreach (Colaborador colaborador in equipa1)
+            {   
+                int i = 0;
+                Console.WriteLine("Equipa " + Colaborador.colaborador[i].nome  + "vencimento " + Colaboradores + "€");
+            }
 
         
 
-        public void RelatorioEquipa(int idEquipa)
+        /*public void RelatorioEquipa(int idEquipa)
         {
             foreach (Equipa equipa in Equipas)
             {
@@ -162,20 +215,8 @@ namespace saude_distante_login.Entities
                      + "Motorista: " + equipa.Motorista.Nome + " (vencimento: " + equipa.Motorista.Vencimento + "€)");
                     Console.WriteLine();
                 }
-            }
+            }*/
 
-
-        public void AdicionarRota(Rotas novaRota, List<Rotas> rotas) //resolver equipas para nao dar erro
-        {
-            rotas.Add(novaRota);
-
-            rotas.Add(1, Enums.Concelho.Braga, "Sao Vitor", equipa1);
-            rotas.Add(2, Enums.Concelho.Braga, "Gualtar", equipa1);
-            rotas.Add(3, Enums.Concelho.Amares, "Amares e Figueiredo", equipa2);
-            rotas.Add(4, Enums.Concelho.Amares, "Dornelas", equipa2);
-            rotas.Add(5, Enums.Concelho.Guimarães, "Azurém", equipa3);
-            rotas.Add(6, Enums.Concelho.Guimarães, "Creixomil", equipa3);
-        }
     }
 
 }
