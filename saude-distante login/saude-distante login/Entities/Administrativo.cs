@@ -15,7 +15,7 @@ namespace saude_distante_login.Entities
 
         public List<Colaborador> Colaboradores = new List<Colaborador>();
 
-        public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, Equipa equipa, string password)
+        public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)
         {
 
@@ -46,16 +46,18 @@ namespace saude_distante_login.Entities
             switch (opcao)
             {
                 case "1":
-                    RegistarEquipa(); //resolver equipas
+                    RegistarColaboradores(); 
                     break;
                 case "2":
                     RelatorioColaboradores();
                     break;
                 case "3":
-                    RelEstatistico();
+                    Rotas rotas = new Rotas();
+                    Rotas.AgendaRotas() ;
                     break;
                 case "4":
-                    AdicionarRota(); //resolver equipas
+                    Rotas rotas = new Rotas();
+                    Rotas.AdicionarRota(); //resolver equipas
                     break;
                 case "5":
                     //Logout
