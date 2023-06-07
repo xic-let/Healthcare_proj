@@ -113,7 +113,7 @@ namespace saude_distante_login.Entities
         public void RegPreConsulta() 
         {
             // Procurar o utente na lista de utentes
-            Utente utente = utentes.Find(u => u.Idsns == id);//não encontra lista de utentes
+            Utente utente = utente.Find(u => u.Idsns == id);//não encontra lista de utentes
 
             if (utente != null)
             {

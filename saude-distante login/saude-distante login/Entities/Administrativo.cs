@@ -60,8 +60,7 @@ namespace saude_distante_login.Entities
                     RelatorioColaboradores();
                     break;
                 case "5":
-                    Utente utente = new Utente();
-                    utente.RelEstatistico();
+                    Utente.RelEstatistico();
                     break;
 
                 case "6":

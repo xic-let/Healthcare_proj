@@ -49,7 +49,8 @@ namespace saude_distante_login.Entities
                     RegistarConsultaMed();
                     break;
                 case "2":
-                    RelEstatistico();
+                    Utente utente = new Utente();
+                    utente.RelEstatistico();
                     break;
                 case "3":
                     RelConsultas();

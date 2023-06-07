@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities
 {
-    internal class Pessoa
+    public class Pessoa
     {
         public string Nome { get; set; }
         public Genero Genero { get; set; }

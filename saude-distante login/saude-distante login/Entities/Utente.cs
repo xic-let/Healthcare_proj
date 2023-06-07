@@ -26,22 +26,6 @@ namespace saude_distante_login.Entities
 			Yes_Rgpd = yes_rgpd;
 
 
-			Consultas = new List<Consulta>();
-			
-            Consultas.Add(new Consulta(new DateTime(20 - 05 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 1,));
-			Consultas.Add(new Consulta(new DateTime(20 - 05 - 2023), 2, 65, 1.62, true, "N/A", 85, 122, 90, "N/A", "N/A", 2));
-			Consultas.Add(new Consulta(new DateTime(27 - 05 - 2023), 3, 95, 1.85, false, "N/A", 81, 119, 82, "N/A", "Artovastatina", 3));
-			Consultas.Add(new Consulta(new DateTime(27 - 05 - 2023), 2, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 4));
-			Consultas.Add(new Consulta(new DateTime(01 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina",5));
-			Consultas.Add(new Consulta(new DateTime(02 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 6));
-			Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 7));
-			Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 2, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Artovastatina", 8));
-			Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 9));
-			Consultas.Add(new Consulta(new DateTime(06 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 10));
-			Consultas.Add(new Consulta(new DateTime(07 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 11));
-			Consultas.Add(new Consulta(new DateTime(08 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 12));
-			Consultas.Add(new Consulta(new DateTime(08 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 13));
-
 			// Inicializar a lista de utentes
             utentes = new List<Utente>();
             
@@ -128,7 +112,7 @@ namespace saude_distante_login.Entities
 		}
 
 /// ////////////////////////////////////////////////////////////
-        public void RelEstatistico()
+        public string RelEstatistico()
         {
             Console.WriteLine("-------------------------------------------------");
             Console.WriteLine("DGS - Direção Regional de Saude de Rastreios");

@@ -35,6 +35,7 @@ namespace saude_distante_login
             // Verificar autenticação
             Colaborador colaboradorAutenticado = null;
 
+            
             foreach (Colaborador colaborador in colaboradores)
             {
                 if (colaborador is IAutenticacao autenticacao && autenticacao.Autenticar(funcao, email, password))

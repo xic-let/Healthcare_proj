@@ -12,7 +12,7 @@ namespace saude_distante_login.Entities
     {
         //Construtores da classe Motorista
 
-        //public Motorista() {}
+        public Motorista() {}
           
 
 

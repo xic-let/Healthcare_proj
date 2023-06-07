@@ -36,7 +36,7 @@ namespace saude_distante_login.Entities
         }
 
 
-        public void AddEquipa()
+        /*public void AddEquipa()
 			{
 				Console.WriteLine("Insira o ID da equipa: ");
 				int idEquipa = int.Parse(Console.ReadLine());
@@ -57,7 +57,7 @@ namespace saude_distante_login.Entities
 				Equipa equipa = new Equipa(idEquipa, concelho, nomeAdministrativo, nomeMotorista, nomeMedico, nomeEnfermeiro);
 
 			
-			}
+			}*/
 	}
 }
 
