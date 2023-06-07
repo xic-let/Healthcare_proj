@@ -11,14 +11,12 @@ namespace saude_distante_login.Entities
     internal class Motorista : Colaborador, IAutenticacao
     {
         //Construtores da classe Motorista
-<<<<<<< Updated upstream
-        //public Motorista() {}
-        
-=======
-   
->>>>>>> Stashed changes
 
-        public Motorista(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, Equipa equipa, string password) 
+        //public Motorista() {}
+          
+
+
+        public Motorista(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password) 
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)
         {
 

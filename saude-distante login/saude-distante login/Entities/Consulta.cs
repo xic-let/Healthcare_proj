@@ -63,16 +63,19 @@ namespace saude_distante_login.Entities
             public void GraudeDiabetes()
             {
                 if (NivelGlicose < 100)
-                {
+                {   
+                    Console.WriteLine($"Nível de Glicose: {NivelGlicose}");
                     Console.WriteLine("O utente não tem diabetes.");
 
                 }
                 else if (NivelGlicose >= 100 && NivelGlicose <= 125)
                 {
+                    Console.WriteLine($"Nível de Glicose: {NivelGlicose}");
                     Console.WriteLine("O utente tem diabetes tipo 1.");
                 }
                 else if (NivelGlicose > 125)
                 {
+                    Console.WriteLine($"Nível de Glicose: {NivelGlicose}");
                     Console.WriteLine("O utente tem diabetes tipo 2.");
                 }
              
@@ -116,27 +119,33 @@ namespace saude_distante_login.Entities
                 double imc = Peso / (Altura * Altura);
                 Console.WriteLine("O IMC do utente é: " + imc);
                 if (imc < 18.5)
-                {
+                {   
+                    Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está abaixo do peso.");
                 }
                 else if (imc >= 18.5 && imc <= 24.9)
                 {
+                    Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está com o peso normal.");
                 }
                 else if (imc >= 25 && imc <= 29.9)
                 {
+                    Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está com excesso de peso.");
                 }
                 else if (imc >= 30 && imc <= 34.9)
                 {
+                    Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está com obesidade grau 1.");
                 }
                 else if (imc >= 35 && imc <= 39.9)
                 {
+                    Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está com obesidade grau 2.");
                 }
                 else if (imc >= 40)
                 {
+                    Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está com obesidade grau 3.");
                 }
             }

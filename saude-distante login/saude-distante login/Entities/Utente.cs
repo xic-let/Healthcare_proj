@@ -26,10 +26,8 @@ namespace saude_distante_login.Entities
 			Yes_Rgpd = yes_rgpd;
 
 
-
-			/*Consultas = new List<Consulta>();
-
-
+			Consultas = new List<Consulta>();
+			
             Consultas.Add(new Consulta(new DateTime(20 - 05 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 1,));
 			Consultas.Add(new Consulta(new DateTime(20 - 05 - 2023), 2, 65, 1.62, true, "N/A", 85, 122, 90, "N/A", "N/A", 2));
 			Consultas.Add(new Consulta(new DateTime(27 - 05 - 2023), 3, 95, 1.85, false, "N/A", 81, 119, 82, "N/A", "Artovastatina", 3));
@@ -43,10 +41,8 @@ namespace saude_distante_login.Entities
 			Consultas.Add(new Consulta(new DateTime(07 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 11));
 			Consultas.Add(new Consulta(new DateTime(08 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 12));
 			Consultas.Add(new Consulta(new DateTime(08 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 13));
-   */
 
-
-
+			// Inicializar a lista de utentes
             utentes = new List<Utente>();
             
 
@@ -131,8 +127,36 @@ namespace saude_distante_login.Entities
 			}
 		}
 
+/// ////////////////////////////////////////////////////////////
+        public void RelEstatistico()
+        {
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("DGS - Direção Regional de Saude de Rastreios");
+            Console.WriteLine();
+            Console.WriteLine("Relatório Estatistico de Rastreios");
+            /*Console.WriteLine("Data: " + DateTime.Now.ToString("dd/MM/yyyy"));
+			Console.WriteLine("-------------------------------------------------");
+			Console.WriteLine("Numero Total de Consultas Realizadas: " + //aplicar .Count para contar o numero de consultas realizadas);
+			Console.WriteLine("Numero de consultas realizadas por Rota: " + //sortir as consultas por equipa e contar ccada uma delas);
+			Console.WriteLine();
+			Console.WriteLine("Análise de Risco de Tensão Arterial dos Utentes");
+			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau I: " + //aplicar .Count para contar o numero de utentes com indice Diabetes grau I);
+			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau II: " + //aplicar .Count para contar o numero de utentes com indice Diabetes grau II);
+			Console.WriteLine("Percentagem de Utentes com Indice HTA grau III: " + //Imprimir os utentes com indice HTA grau III);
+			Console.WriteLine();
+			Console.WriteLine("Análise de Risco de Diabetes dos Utentes");
+			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau I: " + //Imprimir os utentes com Diabetes grau I);
+			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau II: " + //Imprimir os utentes com Diabetes grau II);
+			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau III: " + //Imprimir os utentes com Diabetes grau III);
+			Console.WriteLine();
+			Console.WriteLine("Análise de Risco de Obesidade dos Utentes");
+			Console.WriteLine("Percentagem  de Utentes com Indice Obesidade grau I " + //aplicar .Count para contar o numero de utentes com indice Obesidade grau I);
+			Console.WriteLine("Percentagem de Utentes com Indice Obesidade grau II " + //aplicar .Count para contar o numero de utentes com indice Obesidade grau II);
+			Console.WriteLine("-------------------------------------------------"
+			*/
+        }
 
-	}
+    }
 
 }
 
