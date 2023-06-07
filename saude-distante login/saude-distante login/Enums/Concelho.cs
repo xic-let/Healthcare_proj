@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities.Enums
 {
-    internal enum Genero
+    public enum Concelho
     {
-        Feminino,
-        Masculino,
-        Outro
+        Braga  = 1,
+        Guimarães  = 2,
+        Amares = 3,
     }
 }
