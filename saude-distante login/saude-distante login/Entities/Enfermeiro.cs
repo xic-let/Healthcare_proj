@@ -14,7 +14,7 @@ namespace saude_distante_login.Entities
     {
         
         //Construtores da classe Enfermeiro
-        //public Enfermeiro(){ }
+       
 
         public Enfermeiro(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
@@ -53,8 +53,7 @@ namespace saude_distante_login.Entities
                     RegPreConsulta(); 
                     break;
                 case "3":
-                    Utente utente = new Utente();
-                    utente.RelEstatistico();
+                    Utente.RelEstatistico();
                     break;
                 case "4":
                     RelConsultas();
@@ -112,10 +111,13 @@ namespace saude_distante_login.Entities
 
         public void RegPreConsulta() 
         {
-            // Procurar o utente na lista de utentes
-            Utente utente = utente.Find(u => u.Idsns == id);//não encontra lista de utentes
+            Console.WriteLine(" Insira o Nr de Utente: ");
+            int id = int.Parse(Console.ReadLine());
 
-            if (utente != null)
+            // Procurar o utente na lista de utentes
+            Utente utenteEncontrado = utentes.Find(u => u.Idsns == id);//não encontra lista de utentes
+
+            if (utenteEncontrado != null)
             {
                 Console.WriteLine("Registe os dados de pré-consulta do utente:");
 

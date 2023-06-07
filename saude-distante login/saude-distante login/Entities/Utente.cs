@@ -15,37 +15,36 @@ namespace saude_distante_login.Entities
 	   public int Idsns { get; set; }
 	   public bool Yes_Rgpd { get; set; } // true = aceita, false = não aceita
 
-	   public List<Utente> utentes { get; set; }
+	   public List<Utente> utentes { get; private set; }
 	   public List<Consulta> Consultas { get; set; }
 
-
+		
 		public Utente(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int id, bool yes_rgpd)
 		: base(nome, genero, dataNascimento, contacto, morada, concelho, email)
 		{
 			Idsns = id;
 			Yes_Rgpd = yes_rgpd;
 
-
-			// Inicializar a lista de utentes
             utentes = new List<Utente>();
-            
+
 
             utentes.Add(new Utente("João Silva", Genero.Masculino, new DateTime(06 - 06 - 1975), "123-456-7890", "Rua Sá de Noronha", Concelho.Braga, "joao.silva@example.com", 1, true));
-			utentes.Add(new Utente("Maria Santos", Genero.Feminino, new DateTime(02 - 02 - 1980), "987-654-3210", "Avenida da República", Concelho.Amares, "maria.santos@example.com", 2, true));
-			utentes.Add(new Utente("Pedro Costa", Genero.Masculino, new DateTime(05 - 05 - 1985), "098-765-4321", "Rua Augusta", Concelho.Guimarães, "pedro.costa@example.com", 3, true));
-			utentes.Add(new Utente("Ana Martins", Genero.Feminino, new DateTime(01 - 01 - 1955), "123-456-7891", "Rua Almirante Reis", Concelho.Amares, "ana.martins@example.com", 4, true));
-			utentes.Add(new Utente("Bruno Ferreira", Genero.Masculino, new DateTime(02 - 02 - 1960), "987-654-3211", "Rua de Santa Cruz", Concelho.Braga, "bruno.ferreira@example.com", 5, true));
-			utentes.Add(new Utente("Carolina Gomes", Genero.Feminino, new DateTime(03 - 03 - 1965), "098-765-4322", "Avenida Central", Concelho.Guimarães, "carolina.gomes@example.com", 6, true));
-			utentes.Add(new Utente("Daniel Pereira", Genero.Masculino, new DateTime(04 - 04 - 1969), "123-456-7892", "Rua do Carmo", Concelho.Braga, "daniel.pereira@example.com", 7, true));
-			utentes.Add(new Utente("Eva Rodrigues", Genero.Feminino, new DateTime(05 - 05 - 1970), "987-654-3212", "Rua Garrett", Concelho.Amares, "eva.rodrigues@example.com", 8, true));
-			utentes.Add(new Utente("Fábio Fernandes", Genero.Masculino, new DateTime(02 - 02 - 1950), "098-765-4323", "Rua de Santa Catarina", Concelho.Braga, "fabio.fernandes@example.com", 9, true));
-			utentes.Add(new Utente("Gabriela Lopes", Genero.Feminino, new DateTime(07 - 07 - 1951), "123-456-7893", "Rua da Sofia", Concelho.Guimarães, "gabriela.lopes@example.com", 10, true));
-			utentes.Add(new Utente("Hugo Sousa", Genero.Masculino, new DateTime(08 - 08 - 1954), "987-654-3213", "Avenida da Liberdade", Concelho.Braga, "hugo.sousa@example.com", 11, false));
-			utentes.Add(new Utente("Inês Almeida", Genero.Feminino, new DateTime(09 - 09 - 1962), "098-765-4324", "Rua das Flores", Concelho.Guimarães, "ines.almeida@example.com", 12, true));
-			utentes.Add(new Utente("Joaquim Ribeiro", Genero.Masculino, new DateTime(10 - 10 - 1964), "123-456-7894", "Rua do Rosário", Concelho.Braga, "joaquim.ribeiro@example.com", 13, true));
-		}
+            utentes.Add(new Utente("Maria Santos", Genero.Feminino, new DateTime(02 - 02 - 1980), "987-654-3210", "Avenida da República", Concelho.Amares, "maria.santos@example.com", 2, true));
+            utentes.Add(new Utente("Pedro Costa", Genero.Masculino, new DateTime(05 - 05 - 1985), "098-765-4321", "Rua Augusta", Concelho.Guimarães, "pedro.costa@example.com", 3, true));
+            utentes.Add(new Utente("Ana Martins", Genero.Feminino, new DateTime(01 - 01 - 1955), "123-456-7891", "Rua Almirante Reis", Concelho.Amares, "ana.martins@example.com", 4, true));
+            utentes.Add(new Utente("Bruno Ferreira", Genero.Masculino, new DateTime(02 - 02 - 1960), "987-654-3211", "Rua de Santa Cruz", Concelho.Braga, "bruno.ferreira@example.com", 5, true));
+            utentes.Add(new Utente("Carolina Gomes", Genero.Feminino, new DateTime(03 - 03 - 1965), "098-765-4322", "Avenida Central", Concelho.Guimarães, "carolina.gomes@example.com", 6, true));
+            utentes.Add(new Utente("Daniel Pereira", Genero.Masculino, new DateTime(04 - 04 - 1969), "123-456-7892", "Rua do Carmo", Concelho.Braga, "daniel.pereira@example.com", 7, true));
+            utentes.Add(new Utente("Eva Rodrigues", Genero.Feminino, new DateTime(05 - 05 - 1970), "987-654-3212", "Rua Garrett", Concelho.Amares, "eva.rodrigues@example.com", 8, true));
+            utentes.Add(new Utente("Fábio Fernandes", Genero.Masculino, new DateTime(02 - 02 - 1950), "098-765-4323", "Rua de Santa Catarina", Concelho.Braga, "fabio.fernandes@example.com", 9, true));
+            utentes.Add(new Utente("Gabriela Lopes", Genero.Feminino, new DateTime(07 - 07 - 1951), "123-456-7893", "Rua da Sofia", Concelho.Guimarães, "gabriela.lopes@example.com", 10, true));
+            utentes.Add(new Utente("Hugo Sousa", Genero.Masculino, new DateTime(08 - 08 - 1954), "987-654-3213", "Avenida da Liberdade", Concelho.Braga, "hugo.sousa@example.com", 11, false));
+            utentes.Add(new Utente("Inês Almeida", Genero.Feminino, new DateTime(09 - 09 - 1962), "098-765-4324", "Rua das Flores", Concelho.Guimarães, "ines.almeida@example.com", 12, true));
+            utentes.Add(new Utente("Joaquim Ribeiro", Genero.Masculino, new DateTime(10 - 10 - 1964), "123-456-7894", "Rua do Rosário", Concelho.Braga, "joaquim.ribeiro@example.com", 13, true));
 
-		public void RelConsultaInd()
+        }
+
+		public static void RelConsultaInd()
 		{
 			Console.WriteLine("--------------------------------------------------");
 			Console.WriteLine("Relatório da consulta:");
@@ -112,7 +111,7 @@ namespace saude_distante_login.Entities
 		}
 
 /// ////////////////////////////////////////////////////////////
-        public string RelEstatistico()
+		 public  static void RelEstatistico()
         {
             Console.WriteLine("-------------------------------------------------");
             Console.WriteLine("DGS - Direção Regional de Saude de Rastreios");
