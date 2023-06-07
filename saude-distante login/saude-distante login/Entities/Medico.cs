@@ -10,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace saude_distante_login.Entities
 {
-    internal class Medico : Colaborador, IAutenticacao
+    public class Medico : Colaborador, IAutenticacao
     {
         //Construtores da classe Medico
         

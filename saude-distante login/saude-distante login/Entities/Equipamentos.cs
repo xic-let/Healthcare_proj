@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace saude_distante_login.Entities
 {
-    internal class Equipamentos
+    public class Equipamentos
     {
         
         static List<Equipamentos> Material = new List<Equipamentos>();

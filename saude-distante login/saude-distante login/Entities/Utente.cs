@@ -9,14 +9,14 @@ using System.Globalization;
 
 namespace saude_distante_login.Entities
 {
-	internal class Utente : Pessoa
+	public class Utente : Pessoa
 	{
 	   
 	   public int Idsns { get; set; }
 	   public bool Yes_Rgpd { get; set; } // true = aceita, false = não aceita
 
-	   public List<Utente> utentes { get; private set; }
-	   public List<Consulta> Consultas { get; set; }
+	   public List<Utente> utentes { get; set; }
+	   public List<Consulta> consulta { get; set; }
 
 		
 		public Utente(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int id, bool yes_rgpd)
@@ -25,7 +25,7 @@ namespace saude_distante_login.Entities
 			Idsns = id;
 			Yes_Rgpd = yes_rgpd;
 
-            utentes = new List<Utente>();
+           List<Utente> utentes = new List<Utente>();
 
 
             utentes.Add(new Utente("João Silva", Genero.Masculino, new DateTime(06 - 06 - 1975), "123-456-7890", "Rua Sá de Noronha", Concelho.Braga, "joao.silva@example.com", 1, true));

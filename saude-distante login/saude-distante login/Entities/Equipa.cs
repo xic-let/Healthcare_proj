@@ -36,28 +36,7 @@ namespace saude_distante_login.Entities
         }
 
 
-        /*public void AddEquipa()
-			{
-				Console.WriteLine("Insira o ID da equipa: ");
-				int idEquipa = int.Parse(Console.ReadLine());
-				Console.WriteLine("Insira o Concelho: ");
-				string concelho = Console.ReadLine();
-				Console.WriteLine("Insira o nome do administrativo: ");
-				string nomeAdministrativo = Console.ReadLine();
-				Console.WriteLine("Insira o nome do motorista: ");
-				string nomeMotorista = Console.ReadLine();
-				Console.WriteLine("Insira o nome do médico: ");
-				string nomeMedico = Console.ReadLine();
-				Console.WriteLine("Insira o nome do enfermeiro: ");
-				string nomeEnfermeiro = Console.ReadLine();
-				Console.WriteLine("Equipa Criada Com Sucesso!");
-				Console.WriteLine("Inventario de Equipamentos Atribuido!");
-				Console.WriteLine(Equipamentos.Inventario());
-
-				Equipa equipa = new Equipa(idEquipa, concelho, nomeAdministrativo, nomeMotorista, nomeMedico, nomeEnfermeiro);
-
-			
-			}*/
+        
 	}
 }
 

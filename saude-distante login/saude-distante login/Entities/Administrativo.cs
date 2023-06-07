@@ -8,7 +8,7 @@ using saude_distante_login.Services;
 
 namespace saude_distante_login.Entities
 {
-    internal class Administrativo : Colaborador, IAutenticacao
+   public class Administrativo : Colaborador, IAutenticacao
     {
         //Construtores da classe Administrativo
         public List<Colaborador> Colaboradores = new List<Colaborador>();

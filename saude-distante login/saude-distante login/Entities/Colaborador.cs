@@ -147,12 +147,12 @@ namespace saude_distante_login.Entities
 		}
 
 		
-        private int TotConsultas(Utente utente)
+        public int TotConsultas(Utente utente)
 		{
 			return utente.Consultas.Count; // conta total das consultas na lista de consultas
 		}
 
-        private Dictionary<string, int> ConsDia(Utente utente)
+        public Dictionary<string, int> ConsDia(Utente utente)
         {
             Dictionary<string, int> contadorEquipas = new Dictionary<string, int>();
 

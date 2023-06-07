@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace saude_distante_login.Entities
 {
     
-    internal class Enfermeiro : Colaborador, IAutenticacao
+    public class Enfermeiro : Colaborador, IAutenticacao
     {
         
         //Construtores da classe Enfermeiro

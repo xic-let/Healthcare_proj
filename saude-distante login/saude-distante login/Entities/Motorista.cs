@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities
 {
-    internal class Motorista : Colaborador, IAutenticacao
+    public class Motorista : Colaborador, IAutenticacao
     {
         //Construtores da classe Motorista
 
