@@ -14,7 +14,7 @@ namespace saude_distante_login.Entities
         public List<Colaborador> Colaboradores = new List<Colaborador>();
 
         public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
-            : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa, password)
+            : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
         {
 
         }
@@ -53,16 +53,17 @@ namespace saude_distante_login.Entities
                     rotas.AgendaRotas();
                     break;
                 case "3":
-                    Rotas rotas = new Rotas();
-                    rotas.VerAgenda(); 
+                    Rotas r = new Rotas();
+                    r.VerAgenda(); 
                     break;
                 case "4":
                     RelatorioColaboradores();
                     break;
                 case "5":
-                    Colaborador colaborador = new Colaborador();
-                    .RelEstatistico();
+                    Utente utente = new Utente();
+                    utente.RelEstatistico();
                     break;
+
                 case "6":
                     //Logout
                     break;
@@ -74,6 +75,8 @@ namespace saude_distante_login.Entities
 
         public void RegistarColaboradores()
         {
+            List<Colaborador> colaboradores = new List<Colaborador>();
+            
             Console.Write("Número de colaboradores a registar: ");
             int n;
             if (!int.TryParse(Console.ReadLine(), out n))
@@ -101,7 +104,9 @@ namespace saude_distante_login.Entities
                 string funcao;
                 if (res == 1)
                 {
+                    
                     funcao = "Administrativo";
+                    
                 }
                 else if (res == 2)
                 {
@@ -184,31 +189,127 @@ namespace saude_distante_login.Entities
             continue;
         }
 
-        Colaborador colaborador = new Colaborador(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
-        Colaborador.colaboradores.Add(colaborador);
+        Colaborador novocolaborador = new Colaborador(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
+       
+        colaboradores.Add(novocolaborador);
     }
 }
-
-       public void RelatorioColaboradores()
+/// <summary>
+/// /////////////////////////////////////////////////////////////////////////
+/// </summary>
+        public void ListarColaboradores()
         {
-            Console.WriteLine("Deseja imprimir Relatório Geral ou Relatório por Equipa?");
-            Console.WriteLine("1 - Relatório Geral");
-            Console.WriteLine("2 - Relatório por Equipa");
-            int res = int.Parse(Console.ReadLine());
-
-            if (res == 1)
+      
+            int x;
+            for (x = 0; x < Colaboradores.Count; x++)
             {
-                Colaborador colaborador = new Colaborador();
-                Colaborador.colaboradores.ListarColaboradores();
-           
-            }
-            else
-            {
-                Colaborador colaborador = new Colaborador();
-                colaboradores.ListarColaboradoresPorEquipa();
-
+                Console.WriteLine("Lista de Colaboradores: ");
+                Console.WriteLine("Nome: ");
+                Console.WriteLine(Colaboradores[x].Nome);
+                Console.WriteLine("Vencimento em €:");
+                Console.WriteLine(Colaboradores[x].Vencimento);
+                Console.WriteLine("Função: ");
+                Console.WriteLine(Colaboradores[x].Funcao);
+                Console.WriteLine("Equipa: ");
+                Console.WriteLine(Colaboradores[x].Equipa);
             }
         }
+
+        public void ListarColaboradoresPorEquipa()
+        {
+            Console.WriteLine("Escolha a equipa: ");
+            Console.WriteLine("1 - Equipa 1");
+            Console.WriteLine("2 - Equipa 2");
+            Console.WriteLine("3 - Equipa 3");
+            int opcao = Convert.ToInt32(Console.ReadLine());
+
+
+
+            if (opcao == 1)
+            {
+                int x;
+                for (x = 0; x < Colaboradores.Count; x++)
+                {
+                    if (Colaboradores[x].Equipa == 1)
+                    {
+                        Console.WriteLine("Lista de Colaboradores: ");
+                        Console.WriteLine("Nome: ");
+                        Console.WriteLine(Colaboradores[x].Nome);
+                        Console.WriteLine("Vencimento em €:");
+                        Console.WriteLine(Colaboradores[x].Vencimento);
+                        Console.WriteLine("Função: ");
+                        Console.WriteLine(Colaboradores[x].Funcao);
+                        Console.WriteLine("Equipa: ");
+                        Console.WriteLine(Colaboradores[x].Equipa);
+                    }
+                }
+            }
+            else if (opcao == 2)
+            {
+                int x;
+                for (x = 0; x < Colaboradores.Count; x++)
+                {
+                    if (Colaboradores[x].Equipa == 2)
+                    {
+                        Console.WriteLine("Lista de Colaboradores: ");
+                        Console.WriteLine("Nome: ");
+                        Console.WriteLine(Colaboradores[x].Nome);
+                        Console.WriteLine("Vencimento em €:");
+                        Console.WriteLine(Colaboradores[x].Vencimento);
+                        Console.WriteLine("Função: ");
+                        Console.WriteLine(Colaboradores[x].Funcao);
+                        Console.WriteLine("Equipa: ");
+                        Console.WriteLine(Colaboradores[x].Equipa);
+                    }
+                }
+            }
+            else if (opcao == 3)
+            {
+                int x;
+                for (x = 0; x < Colaboradores.Count; x++)
+                {
+                    if (Colaboradores[x].Equipa == 3)
+                    {
+                        Console.WriteLine("Lista de Colaboradores: ");
+                        Console.WriteLine("Nome: ");
+                        Console.WriteLine(Colaboradores[x].Nome);
+                        Console.WriteLine("Vencimento em €:");
+                        Console.WriteLine(Colaboradores[x].Vencimento);
+                        Console.WriteLine("Função: ");
+                        Console.WriteLine(Colaboradores[x].Funcao);
+                        Console.WriteLine("Equipa: ");
+                        Console.WriteLine(Colaboradores[x].Equipa);
+                    }
+                }
+            }
+        }
+        
+
+
+        public void RelatorioColaboradores()
+            {
+                Console.WriteLine("Deseja imprimir Relatório Geral ou Relatório por Equipa?");
+                Console.WriteLine("1 - Relatório Geral");
+                Console.WriteLine("2 - Relatório por Equipa");
+                int res = int.Parse(Console.ReadLine());
+
+                if (res == 1)
+                {
+             
+                    ListarColaboradores();
+           
+                }
+                else if (res == 2)
+                {
+                
+                    ListarColaboradoresPorEquipa();
+
+                }
+                else
+                {
+                    Console.WriteLine("Opção inválida. Tente novamente.");
+                }
+            }
 
 
     }

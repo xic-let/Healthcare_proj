@@ -20,7 +20,7 @@ namespace saude_distante_login.Entities
         public Rotas() { }
 
 
-        public Rotas(int id, Concelho concelho, string freguesia, int equipa, DateTime data)
+        public Rotas(int id, Enums.Concelho concelho, string freguesia, int equipa, DateTime data)
         {
             IdRota = id;
             Concelho = concelho;
@@ -41,7 +41,8 @@ namespace saude_distante_login.Entities
 
         public static void AdicionarRota(List<Rotas> rotas)
         {
-            rotas.Add(); 
+            Rotas novaRota = new Rotas();
+            rotas.Add(novaRota); 
         
         }
 

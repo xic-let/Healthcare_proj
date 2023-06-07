@@ -131,8 +131,36 @@ namespace saude_distante_login.Entities
 			}
 		}
 
+/// ////////////////////////////////////////////////////////////
+        public void RelEstatistico()
+        {
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("DGS - Direção Regional de Saude de Rastreios");
+            Console.WriteLine();
+            Console.WriteLine("Relatório Estatistico de Rastreios");
+            /*Console.WriteLine("Data: " + DateTime.Now.ToString("dd/MM/yyyy"));
+			Console.WriteLine("-------------------------------------------------");
+			Console.WriteLine("Numero Total de Consultas Realizadas: " + //aplicar .Count para contar o numero de consultas realizadas);
+			Console.WriteLine("Numero de consultas realizadas por Rota: " + //sortir as consultas por equipa e contar ccada uma delas);
+			Console.WriteLine();
+			Console.WriteLine("Análise de Risco de Tensão Arterial dos Utentes");
+			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau I: " + //aplicar .Count para contar o numero de utentes com indice Diabetes grau I);
+			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau II: " + //aplicar .Count para contar o numero de utentes com indice Diabetes grau II);
+			Console.WriteLine("Percentagem de Utentes com Indice HTA grau III: " + //Imprimir os utentes com indice HTA grau III);
+			Console.WriteLine();
+			Console.WriteLine("Análise de Risco de Diabetes dos Utentes");
+			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau I: " + //Imprimir os utentes com Diabetes grau I);
+			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau II: " + //Imprimir os utentes com Diabetes grau II);
+			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau III: " + //Imprimir os utentes com Diabetes grau III);
+			Console.WriteLine();
+			Console.WriteLine("Análise de Risco de Obesidade dos Utentes");
+			Console.WriteLine("Percentagem  de Utentes com Indice Obesidade grau I " + //aplicar .Count para contar o numero de utentes com indice Obesidade grau I);
+			Console.WriteLine("Percentagem de Utentes com Indice Obesidade grau II " + //aplicar .Count para contar o numero de utentes com indice Obesidade grau II);
+			Console.WriteLine("-------------------------------------------------"
+			*/
+        }
 
-	}
+    }
 
 }
 
