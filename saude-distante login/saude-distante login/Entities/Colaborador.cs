@@ -7,8 +7,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-List<Colaborador> colaboradores = new List<Colaborador>();
-
 
 
 namespace saude_distante_login.Entities
@@ -20,8 +18,6 @@ namespace saude_distante_login.Entities
 		public double Vencimento { get; set; }
 		public string Password { get; private set; }
 		public int Equipa { get; set; }
-
-		List<Colaborador> colaboradores = new List<Colaborador>();
 
 
 		public Colaborador(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa)
