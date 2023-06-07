@@ -12,9 +12,8 @@ namespace saude_distante_login.Entities
     
     public class Enfermeiro : Colaborador, IAutenticacao
     {
-        
+
         //Construtores da classe Enfermeiro
-       
 
         public Enfermeiro(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
@@ -103,19 +102,19 @@ namespace saude_distante_login.Entities
 
             Utente utente = new Utente(nome, genero, dataNascimento, contacto, morada, concelho, email, numUtente, yes_rgpd);
 
-            utente.utentes.Add(utente);
+            Utente.Utentes.Add(utente);
 
             Console.WriteLine("Utente registado com sucesso!");
 
         }
 
-        public void RegPreConsulta() 
+        public static void RegPreConsulta() 
         {
             Console.WriteLine(" Insira o Nr de Utente: ");
             int id = int.Parse(Console.ReadLine());
 
             // Procurar o utente na lista de utentes
-            Utente utenteEncontrado = utentes.Find(u => u.Idsns == id);//não encontra lista de utentes
+            Utente utenteEncontrado = Utente.Utentes.Find(u => u.Idsns == id);//não encontra lista de utentes
 
             if (utenteEncontrado != null)
             {
@@ -125,7 +124,7 @@ namespace saude_distante_login.Entities
                 DateTime dataConsulta = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
                 Console.Write("Informe a Equipa Responsável pelo Rastreio: ");
-                string equipa = Console.ReadLine();
+                int equipa = int.Parse(Console.ReadLine());
 
                 Console.Write("Informe o peso: ");
                 double peso = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
@@ -142,11 +141,12 @@ namespace saude_distante_login.Entities
                 Console.Write("Informe o nivel de Glicose: ");
                 double glicose = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-                Consulta consulta = new Consulta();
-                utente.Consultas.Add(consulta);
+                Consulta consulta = new Consulta(dataConsulta, equipa, peso, altura, paDistolica, paSistolica, glicose, utenteEncontrado);
+                utenteEncontrado.Consulta = consulta;
+                Consulta.Consultas.Add(consulta);
 
                 //inserir dados na tabela da consulta
-                Console.WriteLine("Dados de pré-consulta registrados com sucesso!");
+                Console.WriteLine("Dados de pré-consulta registados com sucesso!");
             }
             else
             {

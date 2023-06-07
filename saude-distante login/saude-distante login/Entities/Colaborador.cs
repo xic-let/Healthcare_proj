@@ -18,7 +18,7 @@ namespace saude_distante_login.Entities
 		public double Vencimento { get; set; }
 		public string Password { get; private set; }
 		public int Equipa { get; set; }
-        public List<Colaborador> colaboradores { get; set; }
+        public static List<Colaborador> Colaboradores { get; set; }
 
 
 		
@@ -32,20 +32,20 @@ namespace saude_distante_login.Entities
 			Password = password;
 			Equipa = equipa;
 
-            colaboradores = new List<Colaborador>();
+            Colaboradores = new List<Colaborador>();
 
-            colaboradores.Add(new Colaborador("Maria José", Genero.Feminino, new DateTime(11 - 11 - 1987), "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 1));
-            colaboradores.Add(new Colaborador("Maria José", Genero.Feminino, new DateTime(11 - 11 - 1987), "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 2));
-            colaboradores.Add(new Colaborador("Maria José", Genero.Feminino, new DateTime(11 - 11 - 1987), "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 3));
-            colaboradores.Add(new Colaborador("Manuel Pires", Genero.Masculino, new DateTime(12 - 12 - 1977), "918302038", "Rua Velha", Concelho.Amares, "manuel.pires@email.com", 124, "Motorista", 1100, "123456", 2));
-            colaboradores.Add(new Colaborador("Andreia Gomes", Genero.Feminino, new DateTime(01 - 01 - 1979), "918312338", "Rua Antiga", Concelho.Amares, "andreia.gomes@email.com", 125, "Médico", 1800, "123456", 2));
-            colaboradores.Add(new Colaborador("João Silva", Genero.Masculino, new DateTime(12 - 12 - 1990), "918302658", "Rua da Alegria", Concelho.Amares, "joao.silva@email.com", 126, "Enfermeiro", 1500, "123456", 2));
-            colaboradores.Add(new Colaborador("Soraia Pereira", Genero.Feminino, new DateTime(01 - 01 - 1969), "918319827", "Rua 25 de Abril", Concelho.Braga, "soraia.pereira@email.com", 127, "Motorista", 1100, "123456", 1));
-            colaboradores.Add(new Colaborador("André Souto", Genero.Masculino, new DateTime(02 - 02 - 1979), "915555666", "Rua Milenar", Concelho.Braga, "andre.souto@email.com", 128, "Médico", 2000, "123456", 1));
-            colaboradores.Add(new Colaborador("Clara Pinto", Genero.Feminino, new DateTime(03 - 03 - 1991), "967584444", "Rua Direita", Concelho.Braga, "clara.pinto@email.com", 129, "Enfermeiro", 1000, "123456", 1));
-            colaboradores.Add(new Colaborador("Miguel Soares", Genero.Masculino, new DateTime(04 - 04 - 1974), "911233454", "Rua 5 de Outubro", Concelho.Guimarães, "miguel.soares@email.com", 130, "Motorista", 1100, "123456", 3));
-            colaboradores.Add(new Colaborador("Joana Freitas", Genero.Feminino, new DateTime(05 - 05 - 1988), "918111222", "Rua Velha", Concelho.Guimarães, "joana.freitas@email.com", 131, "Médico", 1500, "123456", 3));
-            colaboradores.Add(new Colaborador("Carlos Santos", Genero.Masculino, new DateTime(12 - 12 - 1987), "918891918", "Rua Santa", Concelho.Guimarães, "carlos.santos@email.com", 132, "Enfermeiro", 1500, "123456", 3));
+            Colaboradores.Add(new Colaborador("Maria José", Genero.Feminino, new DateTime(11 - 11 - 1987), "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 1));
+            Colaboradores.Add(new Colaborador("Maria José", Genero.Feminino, new DateTime(11 - 11 - 1987), "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 2));
+            Colaboradores.Add(new Colaborador("Maria José", Genero.Feminino, new DateTime(11 - 11 - 1987), "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 3));
+            Colaboradores.Add(new Colaborador("Manuel Pires", Genero.Masculino, new DateTime(12 - 12 - 1977), "918302038", "Rua Velha", Concelho.Amares, "manuel.pires@email.com", 124, "Motorista", 1100, "123456", 2));
+            Colaboradores.Add(new Colaborador("Andreia Gomes", Genero.Feminino, new DateTime(01 - 01 - 1979), "918312338", "Rua Antiga", Concelho.Amares, "andreia.gomes@email.com", 125, "Médico", 1800, "123456", 2));
+            Colaboradores.Add(new Colaborador("João Silva", Genero.Masculino, new DateTime(12 - 12 - 1990), "918302658", "Rua da Alegria", Concelho.Amares, "joao.silva@email.com", 126, "Enfermeiro", 1500, "123456", 2));
+            Colaboradores.Add(new Colaborador("Soraia Pereira", Genero.Feminino, new DateTime(01 - 01 - 1969), "918319827", "Rua 25 de Abril", Concelho.Braga, "soraia.pereira@email.com", 127, "Motorista", 1100, "123456", 1));
+            Colaboradores.Add(new Colaborador("André Souto", Genero.Masculino, new DateTime(02 - 02 - 1979), "915555666", "Rua Milenar", Concelho.Braga, "andre.souto@email.com", 128, "Médico", 2000, "123456", 1));
+            Colaboradores.Add(new Colaborador("Clara Pinto", Genero.Feminino, new DateTime(03 - 03 - 1991), "967584444", "Rua Direita", Concelho.Braga, "clara.pinto@email.com", 129, "Enfermeiro", 1000, "123456", 1));
+            Colaboradores.Add(new Colaborador("Miguel Soares", Genero.Masculino, new DateTime(04 - 04 - 1974), "911233454", "Rua 5 de Outubro", Concelho.Guimarães, "miguel.soares@email.com", 130, "Motorista", 1100, "123456", 3));
+            Colaboradores.Add(new Colaborador("Joana Freitas", Genero.Feminino, new DateTime(05 - 05 - 1988), "918111222", "Rua Velha", Concelho.Guimarães, "joana.freitas@email.com", 131, "Médico", 1500, "123456", 3));
+            Colaboradores.Add(new Colaborador("Carlos Santos", Genero.Masculino, new DateTime(12 - 12 - 1987), "918891918", "Rua Santa", Concelho.Guimarães, "carlos.santos@email.com", 132, "Enfermeiro", 1500, "123456", 3));
 
 
         }
@@ -53,19 +53,18 @@ namespace saude_distante_login.Entities
         //métodos
         public void ListarColaboradores()
 		{
-            List<Colaborador> colaboradores = new List<Colaborador>();
             int x;
-			for (x = 0; x < colaboradores.Count; x++)
+			for (x = 0; x < Colaboradores.Count; x++)
 			{	
 				Console.WriteLine("Lista de Colaboradores: ");
 				Console.WriteLine("Nome: ");
-				Console.WriteLine(colaboradores[x].Nome);	
+				Console.WriteLine(Colaboradores[x].Nome);	
 				Console.WriteLine("Vencimento em €:");
-				Console.WriteLine(colaboradores[x].Vencimento);
+				Console.WriteLine(Colaboradores[x].Vencimento);
 				Console.WriteLine("Função: ");
-				Console.WriteLine(colaboradores[x].Funcao);
+				Console.WriteLine(Colaboradores[x].Funcao);
 				Console.WriteLine("Equipa: ");
-				Console.WriteLine(colaboradores[x].Equipa);
+				Console.WriteLine(Colaboradores[x].Equipa);
 			}
 		}
 
@@ -78,63 +77,61 @@ namespace saude_distante_login.Entities
 			Console.WriteLine("3 - Equipa 3");
 			int opcao = Convert.ToInt32(Console.ReadLine());
 
-            List<Colaborador> colaboradores = new List<Colaborador>();
-
             if (opcao == 1)
 			{
                
                 int x;
-				for (x = 0; x < colaboradores.Count; x++)
+				for (x = 0; x < Colaboradores.Count; x++)
 				{
-					if (colaboradores[x].Equipa == 1)
+					if (Colaboradores[x].Equipa == 1)
 					{
 						Console.WriteLine("Lista de Colaboradores: ");
 						Console.WriteLine("Nome: ");
-						Console.WriteLine(colaboradores[x].Nome);
+						Console.WriteLine(Colaboradores[x].Nome);
 						Console.WriteLine("Vencimento em €:");
-						Console.WriteLine(colaboradores[x].Vencimento);
+						Console.WriteLine(Colaboradores[x].Vencimento);
 						Console.WriteLine("Função: ");
-						Console.WriteLine(colaboradores[x].Funcao);
+						Console.WriteLine(Colaboradores[x].Funcao);
 						Console.WriteLine("Equipa: ");
-						Console.WriteLine(colaboradores[x].Equipa);
+						Console.WriteLine(Colaboradores[x].Equipa);
 					}
 				}
 			}
 			else if (opcao == 2)
 			{
 				int x;
-				for (x = 0; x < colaboradores.Count; x++)
+				for (x = 0; x < Colaboradores.Count; x++)
 				{
-					if (colaboradores[x].Equipa == 2)
+					if (Colaboradores[x].Equipa == 2)
 					{
 						Console.WriteLine("Lista de Colaboradores: ");
 						Console.WriteLine("Nome: ");
-						Console.WriteLine(colaboradores[x].Nome);
+						Console.WriteLine(Colaboradores[x].Nome);
 						Console.WriteLine("Vencimento em €:");
-						Console.WriteLine(colaboradores[x].Vencimento);
+						Console.WriteLine(Colaboradores[x].Vencimento);
 						Console.WriteLine("Função: ");
-						Console.WriteLine(colaboradores[x].Funcao);
+						Console.WriteLine(Colaboradores[x].Funcao);
 						Console.WriteLine("Equipa: ");
-						Console.WriteLine(colaboradores[x].Equipa);
+						Console.WriteLine(Colaboradores[x].Equipa);
 					}
 				}
 			}
 			else if (opcao == 3)
 			{
 				int x;
-				for (x = 0; x < colaboradores.Count; x++)
+				for (x = 0; x < Colaboradores.Count; x++)
 				{
-					if (colaboradores[x].Equipa == 3)
+					if (Colaboradores[x].Equipa == 3)
 					{
 						Console.WriteLine("Lista de Colaboradores: ");
 						Console.WriteLine("Nome: ");
-						Console.WriteLine(colaboradores[x].Nome);
+						Console.WriteLine(Colaboradores[x].Nome);
 						Console.WriteLine("Vencimento em €:");
-						Console.WriteLine(colaboradores[x].Vencimento);
+						Console.WriteLine(Colaboradores[x].Vencimento);
 						Console.WriteLine("Função: ");
-						Console.WriteLine(colaboradores[x].Funcao);
+						Console.WriteLine(Colaboradores[x].Funcao);
 						Console.WriteLine("Equipa: ");
-						Console.WriteLine(colaboradores[x].Equipa);
+						Console.WriteLine(Colaboradores[x].Equipa);
 					}
 				}
 			}
@@ -147,16 +144,16 @@ namespace saude_distante_login.Entities
 		}
 
 		
-        public int TotConsultas(Utente utente)
+        public int TotConsultas()
 		{
-			return utente.Consultas.Count; // conta total das consultas na lista de consultas
+			return Consulta.Consultas.Count; // conta total das consultas na lista de consultas
 		}
 
         public Dictionary<string, int> ConsDia(Utente utente)
         {
             Dictionary<string, int> contadorEquipas = new Dictionary<string, int>();
 
-            foreach (Consulta consulta in utente.Consultas)
+            foreach (Consulta consulta in Consulta.Consultas)
             {
                 string equipa = consulta.Equipa.ToString();
 

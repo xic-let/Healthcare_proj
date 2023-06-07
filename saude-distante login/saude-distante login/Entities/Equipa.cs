@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities
 {
-	internal class Equipa
+	public class Equipa
 	{
 
 		//Propriedades da classe Equipa
@@ -20,7 +20,6 @@ namespace saude_distante_login.Entities
 		public Enfermeiro Enfermeiro { get; set; }
 		public List<Equipamentos> Material { get; }
 		public List<Colaborador> Colaboradores { get; set; }
-
 		public List<Equipa> Equipas { get; set; }
 
         //Construtores da classe Equipa

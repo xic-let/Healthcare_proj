@@ -65,23 +65,22 @@ namespace saude_distante_login.Entities
         }
         
         public void RegistarConsultaMed()
-        {
-
+        { 
+            
             Console.WriteLine(" Insira o Nr de Utente: ");
             int id = int.Parse(Console.ReadLine());
 
             // Procurar o utente na lista de utentes
-            Utente utenteEncontrado = Utente.utentes.Find(u => u.Idsns == id);
+            Utente utenteEncontrado = Utente.Utentes.Find(u => u.Idsns == id);
 
-            if (utenteEncontrado.consultas == null)
+            if (utenteEncontrado.Consulta == null)
             {
-                Console.WriteLine("É necessário registrar os dados de pré-consulta antes de prosseguir.");
-                Console.WriteLine("Deseja registrar os dados de pré-consulta? (sim/não): ");
+                Console.WriteLine("É necessário registar os dados de pré-consulta antes de prosseguir.");
+                Console.WriteLine("Deseja registar os dados de pré-consulta? (sim/não): ");
                 string input = Console.ReadLine();
                 if (input.ToLower() == "sim")
                 {
-                    Enfermeiro enfermeiro = new Enfermeiro();
-                    enfermeiro.RegPreConsulta(consulta);
+                    Enfermeiro.RegPreConsulta();   
                     Console.WriteLine("Continuar com o registo da consulta? (sim/não): ");
                     string input2 = Console.ReadLine();
                     if (input2.ToLower() == "sim")
@@ -123,7 +122,7 @@ namespace saude_distante_login.Entities
                 Console.WriteLine("Nenhuma observação registada.");
             }
 
-            Console.Write("Será prescrita Medicaççao? (sim/não): ");
+            Console.Write("Será prescrita Medicaçao? (sim/não): ");
             string res2 = Console.ReadLine();
 
             string medicacao = string.Empty;
@@ -137,10 +136,12 @@ namespace saude_distante_login.Entities
                 Console.WriteLine("Nenhuma Medicação prescrita!");
             }
 
-            Consulta consulta = new Consulta();
-            consultas.Add(consulta);
+            utenteEncontrado.Consulta.Fumador = fumador;
+            utenteEncontrado.Consulta.HistoricoDoencas = historicoDoencas;
+            utenteEncontrado.Consulta.Observacoes = observacoes;
+            utenteEncontrado.Consulta.Receitas = medicacao;
 
-            Console.WriteLine("Consulta registrada com sucesso!");
+            Console.WriteLine("Consulta registada com sucesso!");
 
             Console.WriteLine("Deseja imprimir o relatório da consulta? (sim/não): ");
             string relInput = Console.ReadLine();

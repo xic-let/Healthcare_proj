@@ -12,8 +12,8 @@ namespace saude_distante_login.Entities
                             
     {
         //Propriedades//////////////////////////////////////////
-        DateTime Data { get; set; }
-        Equipa Equipa { get; set; }
+        public DateTime Data { get; set; }
+        public int Equipa { get; set; }
         public double Peso { get; set; }
         public double Altura { get; set; }
         public bool Fumador { get; set; }
@@ -24,14 +24,14 @@ namespace saude_distante_login.Entities
         public string Observacoes { get; set; }
         public string Receitas { get; set; }
         public int numUtente { get; set; }
-        Utente Utente { get; set; }
-        Consulta consulta { get; set; }
+        public Utente Utente { get; set; }
+        public static List<Consulta> Consultas { get; set; } = new List<Consulta>();
 
         //Construtores////////////////////////////////////////////////////////////////////////////////
 
         public Consulta() { }
 
-        public Consulta (DateTime data, Equipa equipa, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialsis, double pressaoArterialdia, string observacoes, string receitas, int numutente, Utente utente, Consulta consultas)
+        public Consulta (DateTime data, int equipa, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialsis, double pressaoArterialdia, string observacoes, string receitas, int numutente, Utente utente)
 
         {
             Data = data;
@@ -48,22 +48,35 @@ namespace saude_distante_login.Entities
             numUtente = numutente;
             Utente = utente;
 
-            List <Consulta> Consulta = new List<Consulta>();
+            //  listas dão erro porque construtor de Consulta pede um argumento Utente
+            
+            /*
+            Consultas.Add(new Consulta(new DateTime(20 - 05 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 1));
+            Consultas.Add(new Consulta(new DateTime(20 - 05 - 2023), 2, 65, 1.62, true, "N/A", 85, 122, 90, "N/A", "N/A", 2));
+            Consultas.Add(new Consulta(new DateTime(27 - 05 - 2023), 3, 95, 1.85, false, "N/A", 81, 119, 82, "N/A", "Artovastatina", 3));
+            Consultas.Add(new Consulta(new DateTime(27 - 05 - 2023), 2, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 4));
+            Consultas.Add(new Consulta(new DateTime(01 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 5));
+            Consultas.Add(new Consulta(new DateTime(02 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 6));
+            Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 7));
+            Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 2, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Artovastatina", 8));
+            Consultas.Add(new Consulta(new DateTime(05 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 9));
+            Consultas.Add(new Consulta(new DateTime(06 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 10));
+            Consultas.Add(new Consulta(new DateTime(07 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 11));
+            Consultas.Add(new Consulta(new DateTime(08 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 12));
+            Consultas.Add(new Consulta(new DateTime(08 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 13));
+            */
+        }
 
-            Consulta.Add(new Consulta(new DateTime(20 - 05 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 1));
-            Consulta.Add(new Consulta(new DateTime(20 - 05 - 2023), 2, 65, 1.62, true, "N/A", 85, 122, 90, "N/A", "N/A", 2));
-            Consulta.Add(new Consulta(new DateTime(27 - 05 - 2023), 3, 95, 1.85, false, "N/A", 81, 119, 82, "N/A", "Artovastatina", 3));
-            Consulta.Add(new Consulta(new DateTime(27 - 05 - 2023), 2, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 4));
-            Consulta.Add(new Consulta(new DateTime(01 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 5));
-            Consulta.Add(new Consulta(new DateTime(02 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 6));
-            Consulta.Add(new Consulta(new DateTime(05 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 7));
-            Consulta.Add(new Consulta(new DateTime(05 - 06 - 2023), 2, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Artovastatina", 8));
-            Consulta.Add(new Consulta(new DateTime(05 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 9));
-            Consulta.Add(new Consulta(new DateTime(06 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 10));
-            Consulta.Add(new Consulta(new DateTime(07 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 11));
-            Consulta.Add(new Consulta(new DateTime(08 - 06 - 2023), 3, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "Aspirina", 12));
-            Consulta.Add(new Consulta(new DateTime(08 - 06 - 2023), 1, 80, 1.65, false, "N/A", 80, 120, 80, "N/A", "N/A", 13));
-
+        public Consulta(DateTime data, int equipa, double peso, double altura, double pressaoArterialdia, double pressaoArterialsis, double glicose, Utente utente)
+        {
+            Data = data;
+            Equipa = equipa;
+            Peso = peso;
+            Altura = altura;
+            PressaoArterialdia = pressaoArterialdia;
+            PressaoArterialsis = pressaoArterialsis;
+            NivelGlicose = glicose;
+            Utente = utente;
         }
 
         // Methods//////////////////////////////////////////////////////////////////////////////////

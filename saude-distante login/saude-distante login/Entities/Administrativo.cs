@@ -11,7 +11,6 @@ namespace saude_distante_login.Entities
    public class Administrativo : Colaborador, IAutenticacao
     {
         //Construtores da classe Administrativo
-        public List<Colaborador> Colaboradores = new List<Colaborador>();
 
         public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
             : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
@@ -72,9 +71,7 @@ namespace saude_distante_login.Entities
         }
 
         public void RegistarColaboradores()
-        {
-            List<Colaborador> colaboradores = new List<Colaborador>();
-            
+        { 
             Console.Write("Número de colaboradores a registar: ");
             int n;
             if (!int.TryParse(Console.ReadLine(), out n))
@@ -189,7 +186,7 @@ namespace saude_distante_login.Entities
 
         Colaborador novocolaborador = new Colaborador(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
        
-        colaboradores.Add(novocolaborador);
+        Colaboradores.Add(novocolaborador);
     }
 }
 /// <summary>
