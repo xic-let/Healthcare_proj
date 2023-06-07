@@ -45,7 +45,7 @@ namespace saude_distante_login.Entities
             PressaoArterialdia = pressaoArterialdia;
             Observacoes = observacoes;
             Receitas = receitas;
-            numUtente = Utente.utentes.id;
+            numUtente = numutente;
             Utente = utente;
 
             List <Consulta> Consulta = new List<Consulta>();
