@@ -10,35 +10,26 @@ using System.Threading.Tasks;
 namespace saude_distante_login.Entities
 {
     
-    public class Enfermeiro : Colaborador//, IAutenticacao
+    public class Enfermeiro : Colaborador
     {
 
         //Construtores da classe Enfermeiro
 
         public Enfermeiro()
             :base()
-        {
-
-
-        }
+        {}
 
         public Enfermeiro(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
             : base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
-        {
-        
-        }
-
-        
+        {}
 
         //Métodos da classe Enfermeiro
 
-        /*public bool Autenticar(string funcao, string email, string password)
-        {
-            return base.Email == email && base.Password == password && funcao.ToLower() == "enfermeiro";
-        }*/
 
         public void MostrarMenuEnfermeiro()
         {
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine("Bem-vindo/a " + this.Nome);
             Console.WriteLine("Selecione uma opção:");
             Console.WriteLine();
             Console.WriteLine("1. Registo de Utente");
@@ -48,6 +39,7 @@ namespace saude_distante_login.Entities
             Console.WriteLine("5. Sair");
             Console.WriteLine();
             Console.Write("Opção (1-5): ");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
             string opcao = Console.ReadLine();
 
             switch (opcao)
@@ -65,7 +57,7 @@ namespace saude_distante_login.Entities
                     RelConsultas();
                     break;
                 case "5":
-                    //Logout
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
@@ -83,9 +75,6 @@ namespace saude_distante_login.Entities
 
             Console.Write("Género (Masculino/Feminino/Outro: ");
             Genero genero = Enum.Parse<Genero>(Console.ReadLine());
-
-            Console.Write("Data de Nascimento (dd/mm/aaaa): ");
-            DateTime dataNascimento = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
             Console.Write("Contacto: ");
             string contacto = Console.ReadLine();
@@ -115,6 +104,26 @@ namespace saude_distante_login.Entities
 
         }
 
+        public void ImprimefichaUtente()
+        {
+            Console.WriteLine("Insira o Nr de Utente: ");
+            int id = int.Parse(Console.ReadLine());
+
+            // Procurar o utente na lista de utentes
+            Utente utenteEncontrado = Utente.Utentes.Find(u => u.Idsns == id);
+
+            if (utenteEncontrado != null)
+            {
+                Console.WriteLine("Ficha do Utente:");
+                Console.WriteLine(utenteEncontrado);
+            }
+            else
+            {
+                Console.WriteLine("O utente não possui consultas registadas.");
+            }
+
+        }
+
         public static void RegPreConsulta() 
         {
             Console.WriteLine(" Insira o Nr de Utente: ");
@@ -140,15 +149,15 @@ namespace saude_distante_login.Entities
                 double altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
                 Console.Write("Informe a PA Distólica: ");
-                int paDistolica = int.Parse(Console.ReadLine());
+                double pressaoArterialdia = double.Parse(Console.ReadLine());
 
                 Console.Write("Informe a PA Sistólica: ");
-                int paSistolica = int.Parse(Console.ReadLine());
+                double pressaoArterialsis = double.Parse(Console.ReadLine());
 
                 Console.Write("Informe o nivel de Glicose: ");
                 double glicose = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-                Consulta consulta = new Consulta(dataConsulta, equipa, peso, altura, paDistolica, paSistolica, glicose, utenteEncontrado);
+                Consulta consulta = new Consulta(dataConsulta, equipa, peso, altura, pressaoArterialdia, pressaoArterialsis, glicose);
                 utenteEncontrado.Consulta = consulta;
                 Consulta.Consultas.Add(consulta);
 

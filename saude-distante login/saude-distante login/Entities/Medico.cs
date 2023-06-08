@@ -10,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace saude_distante_login.Entities
 {
-    public class Medico : Colaborador, IAutenticacao
+    public class Medico : Colaborador
     {
         //Construtores da classe Medico
 
@@ -36,7 +36,7 @@ namespace saude_distante_login.Entities
 
         public void MostrarMenuMedico()
         {
-            
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("Selecione uma opção:");
             Console.WriteLine();
             Console.WriteLine("1. Realizar consulta");
@@ -44,7 +44,8 @@ namespace saude_distante_login.Entities
             Console.WriteLine("3. Aceder Relatório de Consultas");
             Console.WriteLine("4. Sair");
             Console.WriteLine();
-            Console.Write("Opção (1-4: ");
+            Console.Write("Opção (1-4): ");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
             string opcao = Console.ReadLine();
 
             switch (opcao)
@@ -71,7 +72,7 @@ namespace saude_distante_login.Entities
         
         public void RegistarConsultaMed()
         { 
-            
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine(" Insira o Nr de Utente: ");
             int id = int.Parse(Console.ReadLine());
 
@@ -93,7 +94,7 @@ namespace saude_distante_login.Entities
                 else
                 {
                     Console.WriteLine("Operação cancelada.");
-                    base.AcessoPermitido();
+                    Environment.Exit(0);
                 }
             }
             else if (utenteEncontrado.Consulta == null)
@@ -113,17 +114,17 @@ namespace saude_distante_login.Entities
                     else
                     {
                         Console.WriteLine("Operação cancelada.");
-                        base.AcessoPermitido();
+                        Environment.Exit(0);
                     }
                 }
                 else
                 {
                     Console.WriteLine("Operação cancelada.");
-                    base.AcessoPermitido();
+                    Environment.Exit(0);
                 }
             }
 
-
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("Registe os dados da consulta:");
 
             Console.Write("É fumador? (sim/não): ");
@@ -166,13 +167,20 @@ namespace saude_distante_login.Entities
             utenteEncontrado.Consulta.Receitas = medicacao;
 
             Console.WriteLine("Consulta registada com sucesso!");
-
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("Deseja imprimir o relatório da consulta? (sim/não): ");
             string relInput = Console.ReadLine();
 
-            if(relInput.ToLower() == "sim")
+            if(relInput.ToLower() == "sim" || relInput.ToLower() == "s")
             {
+                Enfermeiro enfermeiro = new Enfermeiro();
+                enfermeiro.ImprimefichaUtente();
                 Utente.RelConsultaInd();
+            }
+            else
+            {
+                Console.WriteLine("Operação cancelada.");
+                Environment.Exit(0);
             }
         }
 

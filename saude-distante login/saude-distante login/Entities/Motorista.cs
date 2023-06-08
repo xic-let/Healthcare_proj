@@ -33,29 +33,36 @@ namespace saude_distante_login.Entities
 
         public void MostrarMenuMotorista()
         {
-            base.AcessoPermitido();
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
+			Console.WriteLine("Bem-vindo/a " + this.Nome);
             Console.WriteLine("Selecione uma opção:");
             Console.WriteLine();
-            Console.WriteLine("1. Verificar plano de rota");
-            Console.WriteLine("2. Aceder relatório estatístico");
-            Console.WriteLine("3. Sair");
+            Console.WriteLine("1. Adicionar Rota");
+            Console.WriteLine("2. Verificar plano de rota");
+            Console.WriteLine("3. Aceder relatório estatístico");
+            Console.WriteLine("4. Sair");
             Console.WriteLine();
             Console.Write("Opção (1-3): ");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
             string opcao = Console.ReadLine();
 
             switch (opcao)
             {
                 case "1":
-                    Console.WriteLine("Plano de rotas: ");
-                    Rotas rotas = new Rotas();
-                    rotas.VerPlanoRota(Rotas.rotas);
-
+                    Console.WriteLine("Adicionar Rota: ");
+                    Rotas.AdicionarRota(id, concelho, freguesia, equipa, data);
                     break;
                 case "2":
-                    RelConsultas();
+                    Console.WriteLine("Plano de rotas: ");
+                    Rotas rota = new Rotas();
+                    rota.VerPlanoRota(Rotas.rotas);
                     break;
                 case "3":
-                    //Logout
+                    RelConsultas();
+                    break;
+                case "4":
+                    Console.WriteLine("Obrigado por utilizar o nosso sistema. Até breve!");
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");

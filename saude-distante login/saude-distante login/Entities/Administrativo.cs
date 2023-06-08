@@ -8,7 +8,7 @@ using saude_distante_login.Services;
 
 namespace saude_distante_login.Entities
 {
-   public class Administrativo : Colaborador, IAutenticacao
+   public class Administrativo : Colaborador
 	{
 		//Construtores da classe Administrativo
 
@@ -26,23 +26,23 @@ namespace saude_distante_login.Entities
 
 		//Métodos da classe Administrativo
 
-		public bool Autenticar(string funcao, string email, string password)
-		{
-			return base.Email == email && base.Password == password && funcao.ToLower() == "administrativo";
-		}
-
 		public void MostrarMenuAdministrativo()
 		{
+			Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
+			Console.WriteLine("Bem-vindo/a " + this.Nome);
+			Console.WriteLine(" MENU ADMINISTRATIVO");
+			Console.WriteLine();
 			Console.WriteLine("Selecione uma opção:");
 			Console.WriteLine();
 			Console.WriteLine("1. Adicionar Equipa");
 			Console.WriteLine("2. Agendar Rotas");
 			Console.WriteLine("3. Consultar Rotas Agendadas");
 			Console.WriteLine("4. Consultar Relatório de Colaboradores");
-			Console.WriteLine("5. Consultar Relatório Estatístico"); //o email é enviado automaticamente ao fazer o registo da rota
+			Console.WriteLine("5. Consultar Relatório Estatístico");
 			Console.WriteLine("6. Sair");
 			Console.WriteLine();
 			Console.Write("Opção (1-6): ");
+			Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
 			string opcao = Console.ReadLine();
 
 			switch (opcao)
@@ -121,78 +121,69 @@ namespace saude_distante_login.Entities
 				}
 
 				Console.WriteLine("Dados do colaborador:");
-		Console.Write("ID: ");
-		int idColaborador;
-		if (!int.TryParse(Console.ReadLine(), out idColaborador))
-		{
-			Console.WriteLine("ID inválido. Tente novamente.");
-			i--;
-			continue;
+				Console.Write("ID: ");
+				int idColaborador;
+				if (!int.TryParse(Console.ReadLine(), out idColaborador))
+				{
+					Console.WriteLine("ID inválido. Tente novamente.");
+					i--;
+					continue;
+				}
+
+				Console.Write("Nome: ");
+				string nome = Console.ReadLine();
+				
+				Console.WriteLine("Género: ");
+				Genero genero;
+				if (!Enum.TryParse(Console.ReadLine(), out genero))
+				{
+					Console.WriteLine("Género inválido. Tente novamente.");
+					i--;
+					continue;
+				}
+
+				Console.Write("Contacto: ");
+				string contacto = Console.ReadLine();
+				Console.Write("Morada: ");
+				string morada = Console.ReadLine();
+
+				Console.Write("Concelho: ");
+				Concelho concelho;
+				if (!Enum.TryParse(Console.ReadLine(), out concelho))
+				{
+					Console.WriteLine("Concelho inválido. Tente novamente.");
+					i--;
+					continue;
+				}
+
+				Console.Write("Email: ");
+				string email = Console.ReadLine();
+				Console.Write("Vencimento: ");
+				double vencimento;
+				if (!double.TryParse(Console.ReadLine(), out vencimento))
+				{
+					Console.WriteLine("Vencimento inválido. Tente novamente.");
+					i--;
+					continue;
+				}
+
+				Console.Write("Password: ");
+				string password = Console.ReadLine();
+
+				Console.WriteLine("Equipa: ");
+				int equipa;
+				if (!int.TryParse(Console.ReadLine(), out equipa))
+				{
+					Console.WriteLine("Equipa inválida. Tente novamente.");
+					i--;
+					continue;
+				}
+
+				Colaborador novocolaborador = new Colaborador(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
+			
+				Colaboradores.Add(novocolaborador);
+			}
 		}
-
-		Console.Write("Nome: ");
-		string nome = Console.ReadLine();
-		
-		Console.WriteLine("Género: ");
-		Genero genero;
-		if (!Enum.TryParse(Console.ReadLine(), out genero))
-		{
-			Console.WriteLine("Género inválido. Tente novamente.");
-			i--;
-			continue;
-		}
-
-		Console.Write("Data de nascimento: ");
-		DateTime dataNascimento;
-		if (!DateTime.TryParse(Console.ReadLine(), out dataNascimento))
-		{
-			Console.WriteLine("Data de nascimento inválida. Tente novamente.");
-			i--;
-			continue;
-		}
-
-		Console.Write("Contacto: ");
-		string contacto = Console.ReadLine();
-		Console.Write("Morada: ");
-		string morada = Console.ReadLine();
-
-		Console.Write("Concelho: ");
-		Concelho concelho;
-		if (!Enum.TryParse(Console.ReadLine(), out concelho))
-		{
-			Console.WriteLine("Concelho inválido. Tente novamente.");
-			i--;
-			continue;
-		}
-
-		Console.Write("Email: ");
-		string email = Console.ReadLine();
-		Console.Write("Vencimento: ");
-		double vencimento;
-		if (!double.TryParse(Console.ReadLine(), out vencimento))
-		{
-			Console.WriteLine("Vencimento inválido. Tente novamente.");
-			i--;
-			continue;
-		}
-
-		Console.Write("Password: ");
-		string password = Console.ReadLine();
-
-		Console.WriteLine("Equipa: ");
-		int equipa;
-		if (!int.TryParse(Console.ReadLine(), out equipa))
-		{
-			Console.WriteLine("Equipa inválida. Tente novamente.");
-			i--;
-			continue;
-		}
-
-		Colaborador novocolaborador = new Colaborador(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
-	   
-		Colaboradores.Add(novocolaborador);
-	}
-}
 
 /// /////////////////////////////////////////////////////////////////////////
 
@@ -216,10 +207,12 @@ namespace saude_distante_login.Entities
 
 		public void ListarColaboradoresPorEquipa()
 		{
+			Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
 			Console.WriteLine("Escolha a equipa: ");
 			Console.WriteLine("1 - Equipa 1");
 			Console.WriteLine("2 - Equipa 2");
 			Console.WriteLine("3 - Equipa 3");
+			Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
 			int opcao = Convert.ToInt32(Console.ReadLine());
 
 
@@ -287,9 +280,11 @@ namespace saude_distante_login.Entities
 
 		public void RelatorioColaboradores()
 			{
+				Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
 				Console.WriteLine("Deseja imprimir Relatório Geral ou Relatório por Equipa?");
 				Console.WriteLine("1 - Relatório Geral");
 				Console.WriteLine("2 - Relatório por Equipa");
+				Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
 				int res = int.Parse(Console.ReadLine());
 
 				if (res == 1)
@@ -307,6 +302,7 @@ namespace saude_distante_login.Entities
 				else
 				{
 					Console.WriteLine("Opção inválida. Tente novamente.");
+					RelatorioColaboradores();
 				}
 			}
 

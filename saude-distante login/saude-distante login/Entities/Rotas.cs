@@ -39,11 +39,30 @@ namespace saude_distante_login.Entities
             new Rotas(6, Concelho.Guimarães, "Creixomil", 3, new DateTime(2023, 1, 25))
         };
 
-        public static void AdicionarRota(List<Rotas> rotas)
+        public static void AdicionarRota(int id, Enums.Concelho concelho, string freguesia, int equipa, DateTime data)
         {
-            Rotas novaRota = new Rotas();
-            rotas.Add(novaRota); 
-        
+            Rotas novaRota = new Rotas(id, concelho, freguesia, equipa, data);
+            Console.WriteLine("Insira o ID da rota:");
+            novaRota.IdRota = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira o concelho da rota:");
+            novaRota.Concelho = (Concelho)Enum.Parse(typeof(Concelho), Console.ReadLine());
+            Console.WriteLine("Insira a freguesia da rota:");
+            novaRota.Freguesia = Console.ReadLine();
+            Console.WriteLine("Insira a equipa da rota:");
+            novaRota.Equipa = int.Parse(Console.ReadLine());
+            Console.WriteLine("Insira a data da rota (dd/mm/aaaa):");
+            string dataString = Console.ReadLine();
+          
+            if (DateTime.TryParseExact(dataString, "dd/MM/yyyy", null, DateTimeStyles.None, out data))
+            {
+                novaRota.Data = data;
+                Console.WriteLine("Data adicionada com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("Formato de data inválido!");
+            }
+            rotas.Add(novaRota);
         }
 
         public void VerPlanoRota(List<Rotas> rotas)
