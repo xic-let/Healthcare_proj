@@ -11,7 +11,6 @@ namespace saude_distante_login.Entities
     {
         public string Nome { get; set; }
         public Genero Genero { get; set; }
-        public DateTime DataNascimento { get; set; }
         public string Contacto { get; set; }
         public string Morada { get; set; }
         public Concelho Concelho { get; set; }
@@ -20,11 +19,13 @@ namespace saude_distante_login.Entities
 
         //Construtores
 
-        public Pessoa(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email)
+        public Pessoa()
+        { }
+
+        public Pessoa(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email)
         {
             Nome = nome;
             Genero = genero;
-            DataNascimento = dataNascimento;
             Contacto = contacto;
             Morada = morada;
             Concelho = concelho;

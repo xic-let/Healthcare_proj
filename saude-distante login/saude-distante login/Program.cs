@@ -16,7 +16,7 @@ namespace saude_distante_login
     {
         static void Main(string[] args)
         {
-
+            Listas listas = new Listas();
             
             // Login
             Console.WriteLine("Login de Colaborador:");
@@ -28,12 +28,56 @@ namespace saude_distante_login
             Console.Write("E-mail: ");
             string email = Console.ReadLine();
 
-            Console.Write("Password: ");
+            Colaborador colaboradorEncontrado = listas.EncontrarColaborador(funcao, email);
+
+            if (colaboradorEncontrado != null)
+            {
+                Console.WriteLine("Colaborador encontrado!");
+                Console.WriteLine();
+                switch (colaboradorEncontrado.Funcao)
+                {
+                    case "Médico":
+                        Medico medico = new Medico();
+                        medico.MostrarMenuMedico();
+                        break;
+
+                    case "Enferemeiro":
+                        Enfermeiro enfermeiro = new Enfermeiro();
+                        enfermeiro.MostrarMenuEnfermeiro();
+                        break;
+
+                    case "Administrativo":
+                        Administrativo administrativo = new Administrativo();
+                        administrativo.MostrarMenuAdministrativo();
+                        break;
+
+                    case "Motorista":
+                        Motorista motorista = new Motorista();
+                        motorista.MostrarMenuMotorista();
+                        break;
+
+                    default:
+                        Console.WriteLine("Função não reconhecida.");
+                        break;
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Colaborador não encontrado.");
+            }
+
+
+
+            //if( funcao == colaborado
+
+            /*Console.Write("Password: ");
             string password = Console.ReadLine();
             Console.WriteLine();
 
+
             // Verificar autenticação
-            Colaborador colaboradorAutenticado = null;
+            /*Colaborador colaboradorAutenticado = null;
 
             
 
@@ -57,7 +101,7 @@ namespace saude_distante_login
             {
                 // Falha no login
                 Console.WriteLine("Login falhou.Tente novamente.");
-            }
+            }*/
 
         }
 

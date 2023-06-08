@@ -13,9 +13,14 @@ namespace saude_distante_login.Entities
     public class Medico : Colaborador, IAutenticacao
     {
         //Construtores da classe Medico
+
+        public Medico()
+        {
+
+        }
         
-        public Medico(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa)
-            : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
+        public Medico(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa)
+            : base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
         {
 
         }
@@ -24,14 +29,14 @@ namespace saude_distante_login.Entities
         //Métodos da classe Medico
 
 
-        public bool Autenticar(string funcao, string email, string password)
+       /* public bool Autenticar(string funcao, string email, string password)
         {
             return base.Email == email && base.Password == password && funcao.ToLower() == "médico";
-        }
+        }*/
 
-        public override void AcessoPermitido()
+        public void MostrarMenuMedico()
         {
-            base.AcessoPermitido();
+            
             Console.WriteLine("Selecione uma opção:");
             Console.WriteLine();
             Console.WriteLine("1. Realizar consulta");
@@ -73,14 +78,32 @@ namespace saude_distante_login.Entities
             // Procurar o utente na lista de utentes
             Utente utenteEncontrado = Utente.Utentes.Find(u => u.Idsns == id);
 
-            if (utenteEncontrado.Consulta == null)
+
+            if (utenteEncontrado == null)
+            {
+                Console.WriteLine("Utente não encontrado. É necessário registar o utente antes de prosseguir.");
+                Console.WriteLine("Deseja registar o utente? (sim/não): ");
+                string input = Console.ReadLine();
+                if (input.ToLower() == "sim")
+                {
+                    // Chamar o método para registrar o utente
+                    Enfermeiro enfermeiro = new Enfermeiro();
+                    enfermeiro.RegistoUtente();
+                }
+                else
+                {
+                    Console.WriteLine("Operação cancelada.");
+                    base.AcessoPermitido();
+                }
+            }
+            else if (utenteEncontrado.Consulta == null)
             {
                 Console.WriteLine("É necessário registar os dados de pré-consulta antes de prosseguir.");
                 Console.WriteLine("Deseja registar os dados de pré-consulta? (sim/não): ");
                 string input = Console.ReadLine();
                 if (input.ToLower() == "sim")
                 {
-                    Enfermeiro.RegPreConsulta();   
+                    Enfermeiro.RegPreConsulta();
                     Console.WriteLine("Continuar com o registo da consulta? (sim/não): ");
                     string input2 = Console.ReadLine();
                     if (input2.ToLower() == "sim")
@@ -99,6 +122,7 @@ namespace saude_distante_login.Entities
                     base.AcessoPermitido();
                 }
             }
+
 
             Console.WriteLine("Registe os dados da consulta:");
 

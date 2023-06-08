@@ -12,8 +12,13 @@ namespace saude_distante_login.Entities
 	{
 		//Construtores da classe Administrativo
 
-		public Administrativo(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
-			: base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
+		public Administrativo(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
+			: base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
+		{
+
+		}
+		
+		public Administrativo()
 		{
 
 		}
@@ -26,9 +31,8 @@ namespace saude_distante_login.Entities
 			return base.Email == email && base.Password == password && funcao.ToLower() == "administrativo";
 		}
 
-		public override void AcessoPermitido()
+		public void MostrarMenuAdministrativo()
 		{
-			base.AcessoPermitido();
 			Console.WriteLine("Selecione uma opção:");
 			Console.WriteLine();
 			Console.WriteLine("1. Adicionar Equipa");
@@ -184,14 +188,14 @@ namespace saude_distante_login.Entities
 			continue;
 		}
 
-		Colaborador novocolaborador = new Colaborador(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
+		Colaborador novocolaborador = new Colaborador(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
 	   
 		Colaboradores.Add(novocolaborador);
 	}
 }
-/// <summary>
+
 /// /////////////////////////////////////////////////////////////////////////
-/// </summary>
+
 		public void ListarColaboradores()
 		{
 	  

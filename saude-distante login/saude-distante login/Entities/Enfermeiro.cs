@@ -10,28 +10,35 @@ using System.Threading.Tasks;
 namespace saude_distante_login.Entities
 {
     
-    public class Enfermeiro : Colaborador, IAutenticacao
+    public class Enfermeiro : Colaborador//, IAutenticacao
     {
 
         //Construtores da classe Enfermeiro
 
-        public Enfermeiro(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
-            : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
+        public Enfermeiro()
+            :base()
         {
-            
+
 
         }
+
+        public Enfermeiro(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
+            : base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
+        {
+        
+        }
+
+        
 
         //Métodos da classe Enfermeiro
 
-        public bool Autenticar(string funcao, string email, string password)
+        /*public bool Autenticar(string funcao, string email, string password)
         {
             return base.Email == email && base.Password == password && funcao.ToLower() == "enfermeiro";
-        }
+        }*/
 
-        public override void AcessoPermitido()
+        public void MostrarMenuEnfermeiro()
         {
-            base.AcessoPermitido();
             Console.WriteLine("Selecione uma opção:");
             Console.WriteLine();
             Console.WriteLine("1. Registo de Utente");
@@ -100,7 +107,7 @@ namespace saude_distante_login.Entities
 
             bool yes_rgpd = (resp == "sim" || resp == "Sim" || resp == "SIM");
 
-            Utente utente = new Utente(nome, genero, dataNascimento, contacto, morada, concelho, email, numUtente, yes_rgpd);
+            Utente utente = new Utente(nome, genero, contacto, morada, concelho, email, numUtente, yes_rgpd);
 
             Utente.Utentes.Add(utente);
 

@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities
 {
-    public class Motorista : Colaborador, IAutenticacao
+    public class Motorista : Colaborador//, IAutenticacao
     {
         //Construtores da classe Motorista
+        public Motorista()
+        {
 
+        }
 
-        public Motorista(string nome, Genero genero, DateTime dataNascimento, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa) 
-            : base(nome, genero, dataNascimento, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
+        public Motorista(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa) 
+            : base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
         {
 
         }
@@ -23,12 +26,12 @@ namespace saude_distante_login.Entities
         //Métodos da classe Motorista
 
 
-        public bool Autenticar(string funcao, string email, string password)
+        /*public bool Autenticar(string funcao, string email, string password)
         {
             return base.Email == email && base.Password == password && funcao.ToLower() == "motorista";
-        }
+        }*/
 
-        public override void AcessoPermitido()
+        public void MostrarMenuMotorista()
         {
             base.AcessoPermitido();
             Console.WriteLine("Selecione uma opção:");
