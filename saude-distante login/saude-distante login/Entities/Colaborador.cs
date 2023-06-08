@@ -137,6 +137,11 @@ namespace saude_distante_login.Entities
 			}
 		}
 
+        public bool Autenticar(string funcao, string email, string password)
+        {
+            return Funcao == funcao && Email == email && Password == password;
+        }
+
         public virtual void AcessoPermitido()
 		{
 			Console.WriteLine("Bem-vindo/a " + this.Nome);

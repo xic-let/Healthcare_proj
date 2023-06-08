@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{0C6D9D93-6F4D-47EF-A1B7-247A96AAFB02}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.saude-distante_220login PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Rotas.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/IAutenticacao.cs">
     <Files>
       <File FileName="Entities/Rotas.cs" Line="45" Column="31" />
+      <File FileName="Enums/Concelho.cs" Line="1" Column="1" />
+      <File FileName="Enums/Genero.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="39" Column="1" />
+      <File FileName="Entities/Utente.cs" Line="1" Column="1" />
+      <File FileName="Entities/Administrativo.cs" Line="201" Column="51" />
+      <File FileName="Services/IAutenticacao.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,11 +17,19 @@
             <Node name="saude-distante login" expanded="True">
               <Node name="Entities" expanded="True" />
               <Node name="Enums" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="IAutenticacao.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.saude-distante_220login PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
