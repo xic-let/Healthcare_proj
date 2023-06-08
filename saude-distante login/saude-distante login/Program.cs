@@ -19,11 +19,44 @@ namespace saude_distante_login
             Listas listas = new Listas();
             
             // Login
-            Console.WriteLine("Login de Colaborador:");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine("Bem-vindo ao Saúde Menos Distante!");
             Console.WriteLine();
-
-            Console.Write("Função: ");
+            Console.WriteLine("Introduza a sua Função: ");
+            Console.WriteLine("1 - Médico");
+            Console.WriteLine("2 - Enfermeiro");
+            Console.WriteLine("3 - Administrativo");
+            Console.WriteLine("4 - Motorista");
+            Console.WriteLine("5 - Sair");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
             string funcao = Console.ReadLine();
+
+            if (funcao == "1")
+            {
+                funcao = "Médico";
+            }
+            else if (funcao == "2")
+            {
+                funcao = "Enfermeiro";
+            }
+            else if (funcao == "3")
+            {
+                funcao = "Administrativo";
+            }
+            else if (funcao == "4")
+            {
+                funcao = "Motorista";
+            }
+            else if (funcao == "5")
+            {
+                Environment.Exit(0);
+            }
+            else if (funcao != "1" || funcao != "2" || funcao != "3" || funcao != "4" || funcao != "5")
+            {
+                Console.WriteLine("Função não reconhecida.");
+                Environment.Exit(0);
+            }
+
 
             Console.Write("E-mail: ");
             string email = Console.ReadLine();
@@ -65,47 +98,10 @@ namespace saude_distante_login
             else
             {
                 Console.WriteLine("Colaborador não encontrado.");
+                Environment.Exit(0);
             }
-
-
-
-            //if( funcao == colaborado
-
-            /*Console.Write("Password: ");
-            string password = Console.ReadLine();
-            Console.WriteLine();
-
-
-            // Verificar autenticação
-            /*Colaborador colaboradorAutenticado = null;
-
-            
-
-
-            foreach (Colaborador colaborador in Colaborador.Colaboradores)
-            {
-                if (colaborador is IAutenticacao autenticacao && autenticacao.Autenticar(funcao, email, password))
-                {
-                    colaboradorAutenticado = colaborador;
-                    break;
-                }
-            }
-
-            if (colaboradorAutenticado != null)
-            {
-                // Colaborador autenticado com sucesso
-                Console.WriteLine("Login bem-sucedido!");
-                colaboradorAutenticado.AcessoPermitido();
-            }
-            else
-            {
-                // Falha no login
-                Console.WriteLine("Login falhou.Tente novamente.");
-            }*/
 
         }
-
-
 
     }
 }
