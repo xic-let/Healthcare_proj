@@ -17,6 +17,7 @@ namespace saude_distante_login.Entities
         int Equipa { get; set; }
         public DateTime Data { get; set; }  
 
+        
         public Rotas() { }
 
 
@@ -29,18 +30,11 @@ namespace saude_distante_login.Entities
             Data = data;
         }
 
-        public static List<Rotas> rotas = new List<Rotas>()
-        {
-            new Rotas(1, Concelho.Braga, "Sao Vitor", 1, new DateTime(2023, 1, 25)),
-            new Rotas(2, Concelho.Braga, "Gualtar", 1, new DateTime(2023, 1, 25)),
-            new Rotas(3, Concelho.Amares, "Amares e Figueiredo", 2, new DateTime(2023, 1, 25)),
-            new Rotas(4, Concelho.Amares, "Dornelas", 2, new DateTime(2023, 1, 25)),
-            new Rotas(5, Concelho.Guimarães, "Azurém", 3, new DateTime(2023, 1, 25)),
-            new Rotas(6, Concelho.Guimarães, "Creixomil", 3, new DateTime(2023, 1, 25))
-        };
+    
 
-        public static void AdicionarRota(int id, Enums.Concelho concelho, string freguesia, int equipa, DateTime data)
+        public void AdicionarRota(int id, Enums.Concelho concelho, string freguesia, int equipa, DateTime data)
         {
+            List<Rotas> rotas = new List<Rotas>();
             Rotas novaRota = new Rotas(id, concelho, freguesia, equipa, data);
             Console.WriteLine("Insira o ID da rota:");
             novaRota.IdRota = int.Parse(Console.ReadLine());
@@ -65,7 +59,7 @@ namespace saude_distante_login.Entities
             rotas.Add(novaRota);
         }
 
-        public void VerPlanoRota(List<Rotas> rotas)
+        public static void VerPlanoRota(List<Rotas> rotas)
         {
             foreach( Rotas r in rotas)
             {
@@ -79,20 +73,23 @@ namespace saude_distante_login.Entities
 
         public void AgendaRotas()
         { 
+            Listas lista = new Listas(); // Create an instance of the Listas class
+           
             Console.WriteLine("Insira o ID da rota para adicionar a data:");
             int IdRota = int.Parse(Console.ReadLine());
 
             // Procurar a rota com o ID fornecido
-            Rotas rota = rotas.Find(r => r.IdRota == IdRota);
+            Rotas rotaEncontrada = Listas.EncontrarRota(IdRota); // Call the EncontrarRota method on the instance
 
-            if (rotas != null)
+
+            if (rotaEncontrada != null)
             {
                 Console.WriteLine("Insira a data da rota (dd/mm/aaaa):");
                 string dataString = Console.ReadLine();
                 DateTime data;
                 if (DateTime.TryParseExact(dataString, "dd/MM/yyyy", null, DateTimeStyles.None, out data))
                 {
-                    rota.Data = data;
+                    rotaEncontrada.Data = data;
                     Console.WriteLine("Data adicionada com sucesso!");
                 }
                 else
@@ -108,15 +105,16 @@ namespace saude_distante_login.Entities
         }
             public void VerAgenda()
             {
+                Listas lista = new Listas(); // Create an instance of the Listas class
                 Console.WriteLine("Insira o ID da rota para ver a data:");
                 int idRota = int.Parse(Console.ReadLine());
 
                 // Procurar a rota com o ID fornecido
-                Rotas rota = rotas.Find(r => r.IdRota == idRota);
+                Rotas rotaencontrada = Listas.EncontrarRota(idRota);
 
-                if (rota != null)
+                if (rotaencontrada != null)
                 {
-                    Console.WriteLine("Data da rota: " + rota.Data.ToString("dd/MM/yyyy"));
+                    Console.WriteLine("Data da rota: " + rotaencontrada.Data.ToString("dd/MM/yyyy"));
                 }
                 else
                 {

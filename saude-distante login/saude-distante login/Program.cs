@@ -1,6 +1,5 @@
 ﻿using saude_distante_login.Entities;
 using saude_distante_login.Entities.Enums;
-using saude_distante_login.Services;
 using System.Diagnostics.Contracts;
 using System;
 using System.Collections.Generic;
@@ -49,6 +48,7 @@ namespace saude_distante_login
             }
             else if (funcao == "5")
             {
+                Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
                 Environment.Exit(0);
             }
             else if (funcao != "1" || funcao != "2" || funcao != "3" || funcao != "4" || funcao != "5")
@@ -61,7 +61,7 @@ namespace saude_distante_login
             Console.Write("E-mail: ");
             string email = Console.ReadLine();
 
-            Colaborador colaboradorEncontrado = listas.EncontrarColaborador(funcao, email);
+            Colaborador colaboradorEncontrado = Listas.EncontrarColaborador(funcao, email);
 
             if (colaboradorEncontrado != null)
             {

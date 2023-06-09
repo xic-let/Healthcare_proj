@@ -1,5 +1,4 @@
 ﻿using saude_distante_login.Entities.Enums;
-using saude_distante_login.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,46 +21,36 @@ namespace saude_distante_login.Entities
 
         }
 
-
         //Métodos da classe Motorista
-
-
-        /*public bool Autenticar(string funcao, string email, string password)
-        {
-            return base.Email == email && base.Password == password && funcao.ToLower() == "motorista";
-        }*/
-
+        List<Rotas> rotas = new List<Rotas>();
         public void MostrarMenuMotorista()
         {
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
 			Console.WriteLine("Bem-vindo/a " + this.Nome);
             Console.WriteLine("Selecione uma opção:");
             Console.WriteLine();
-            Console.WriteLine("1. Adicionar Rota");
-            Console.WriteLine("2. Verificar plano de rota");
-            Console.WriteLine("3. Aceder relatório estatístico");
-            Console.WriteLine("4. Sair");
+            Console.WriteLine("1. Verificar plano de rota");
+            Console.WriteLine("2. Aceder relatório estatístico");
+            Console.WriteLine("3. Sair");
             Console.WriteLine();
             Console.Write("Opção (1-3): ");
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
             string opcao = Console.ReadLine();
 
+            
+
             switch (opcao)
             {
                 case "1":
-                    Console.WriteLine("Adicionar Rota: ");
-                    Rotas.AdicionarRota(id, concelho, freguesia, equipa, data);
+                    Console.WriteLine("Plano de rotas: ");
+                    List<Rotas> rotasList = new List<Rotas>();
+                    Rotas.VerPlanoRota(rotasList);
                     break;
                 case "2":
-                    Console.WriteLine("Plano de rotas: ");
-                    Rotas rota = new Rotas();
-                    rota.VerPlanoRota(Rotas.rotas);
-                    break;
-                case "3":
                     RelConsultas();
                     break;
-                case "4":
-                    Console.WriteLine("Obrigado por utilizar o nosso sistema. Até breve!");
+                case "3":
+                    Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
                     Environment.Exit(0);
                     break;
                 default:

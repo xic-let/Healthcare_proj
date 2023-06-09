@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualBasic;
 using saude_distante_login.Entities.Enums;
-using saude_distante_login.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,11 +28,6 @@ namespace saude_distante_login.Entities
         //Métodos da classe Medico
 
 
-       /* public bool Autenticar(string funcao, string email, string password)
-        {
-            return base.Email == email && base.Password == password && funcao.ToLower() == "médico";
-        }*/
-
         public void MostrarMenuMedico()
         {
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
@@ -55,14 +49,14 @@ namespace saude_distante_login.Entities
                     RegistarConsultaMed();
                     break;
                 case "2":
-                    
                     Utente.RelEstatistico();
                     break;
                 case "3":
                     RelConsultas();
                     break;
-                case "5":
-                    //Logout
+                case "4":
+                    Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
@@ -175,7 +169,11 @@ namespace saude_distante_login.Entities
             {
                 Enfermeiro enfermeiro = new Enfermeiro();
                 enfermeiro.ImprimefichaUtente();
-                Utente.RelConsultaInd();
+
+
+                List<Utente> listaUtentes = new List<Utente>();
+                List<Consulta> listaConsultas = new List<Consulta>();
+                Utente.RelConsultaInd(listaUtentes, listaConsultas);
             }
             else
             {

@@ -23,15 +23,15 @@ namespace saude_distante_login.Entities
         public double PressaoArterialdia { get; set; }
         public string Observacoes { get; set; }
         public string Receitas { get; set; }
-        public int numUtente { get; set; }
-        public static List<Consulta> Consultas { get; set; } = new List<Consulta>();
+        public int Idsns { get; set; }
+        public static List<Consulta> Consultas { get;} = new List<Consulta>();
     
 
         //Construtores////////////////////////////////////////////////////////////////////////////////
 
         public Consulta() { }
 
-        public Consulta (DateTime data, int equipa, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialsis, double pressaoArterialdia, string observacoes, string receitas, int numutente)
+        public Consulta (DateTime data, int equipa, double peso, double altura, bool fumador, string historicoDoencas, double nivelGlicose, double pressaoArterialsis, double pressaoArterialdia, string observacoes, string receitas, int id)
 
         {
             Data = data;
@@ -45,7 +45,7 @@ namespace saude_distante_login.Entities
             PressaoArterialdia = pressaoArterialdia;
             Observacoes = observacoes;
             Receitas = receitas;
-            numUtente = numutente;
+            Idsns = id;
                       
             
         }
@@ -62,14 +62,14 @@ namespace saude_distante_login.Entities
            
         }
 
-        public Consulta(bool fumador, string historicoDoencas, string observacoes, string receitas, int numutente, Utente utente)
+        public Consulta(bool fumador, string historicoDoencas, string observacoes, string receitas, int id, Utente utente)
         {
            
             Fumador = fumador;
             HistoricoDoencas = historicoDoencas;
             Observacoes = observacoes;
             Receitas = receitas;
-            numUtente = numutente;
+            Idsns = id;
         }
 
 

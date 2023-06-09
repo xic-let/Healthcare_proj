@@ -16,7 +16,7 @@ namespace saude_distante_login.Entities
 		public bool Yes_Rgpd { get; set; } // true = aceita, false = não aceita
 		public static List<Utente> Utentes { get; set; } = new List<Utente>();
 		public Consulta Consulta { get; set; }
-        public static List<Consulta> Consultas { get; set; } = new List<Consulta>();
+        public static List<Consulta> Consultas { get;} = new List<Consulta>();
 
 		public Utente ()
 		{ }
@@ -30,7 +30,7 @@ namespace saude_distante_login.Entities
 
         }
 
-		public static void RelConsultaInd()
+		public static void RelConsultaInd(List<Utente> utentes, List<Consulta> consultas)
 		{
 			Console.WriteLine("--------------------------------------------------");
 			Console.WriteLine("Relatório da consulta:");
@@ -39,7 +39,7 @@ namespace saude_distante_login.Entities
 			int id = int.Parse(Console.ReadLine());
 
 			// Procurar o utente na lista de utentes
-			Utente utente = Utentes.Find(u => u.Idsns == id);
+			Utente utente = utentes.Find(u => u.Idsns == id);
 
 			if (utente != null)
 			{
@@ -54,7 +54,7 @@ namespace saude_distante_login.Entities
 				Console.WriteLine($"RGPD: {utente.Yes_Rgpd}");
 
                 // Verificar se o utente possui consultas
-                Consulta consulta = Consulta.Consultas.Find(u => u.Utente == utente);
+                Consulta consulta = consultas.Find(u => u.Idsns == id);
                 if (consulta != null)
 				{
 					Console.WriteLine("Dados da Consulta:");
@@ -62,27 +62,27 @@ namespace saude_distante_login.Entities
 					// Iterar sobre as consultas do utente
 					foreach (Consulta cons in Consulta.Consultas) 
 					{
-						if (cons.Utente == utente)
+						if (cons.Idsns == id)
 						{
-							Console.WriteLine($"Data da Consulta: {consulta.Data.ToShortDateString()}");
-							Console.WriteLine($"Equipa: {consulta.Equipa}");
-							Console.WriteLine($"Peso: {consulta.Peso}");
-							Console.WriteLine($"Altura: {consulta.Altura}");
-							Console.WriteLine($"Fumador: {consulta.Fumador}");
-							Console.WriteLine($"Histórico de Doenças: {consulta.HistoricoDoencas}");
-							Console.WriteLine($"Nível de Glicose: {consulta.NivelGlicose}");
-							Console.WriteLine($"Pressão Arterial (Sistólica): {consulta.PressaoArterialsis}");
-							Console.WriteLine($"Pressão Arterial (Diastólica): {consulta.PressaoArterialdia}");
-							Console.WriteLine($"Observações: {consulta.Observacoes}");
-							Console.WriteLine($"Receitas: {consulta.Receitas}");
+							Console.WriteLine($"Data da Consulta: {cons.Data.ToShortDateString()}");
+							Console.WriteLine($"Equipa: {cons.Equipa}");
+							Console.WriteLine($"Peso: {cons.Peso}");
+							Console.WriteLine($"Altura: {cons.Altura}");
+							Console.WriteLine($"Fumador: {cons.Fumador}");
+							Console.WriteLine($"Histórico de Doenças: {cons.HistoricoDoencas}");
+							Console.WriteLine($"Nível de Glicose: {cons.NivelGlicose}");
+							Console.WriteLine($"Pressão Arterial (Sistólica): {cons.PressaoArterialsis}");
+							Console.WriteLine($"Pressão Arterial (Diastólica): {cons.PressaoArterialdia}");
+							Console.WriteLine($"Observações: {cons.Observacoes}");
+							Console.WriteLine($"Receitas: {cons.Receitas}");
 							Console.WriteLine("--------------------------------------------------");
 							Console.WriteLine("Análise de Risco do Utente:");
 							// Calcular e exibir o IMC do utente
-							consulta.CalcImc();
+							cons.CalcImc();
 							// Verificar se o utente tem diabetes
-							consulta.GraudeDiabetes();
+							cons.GraudeDiabetes();
 							// Verificar a classificação da pressão arterial do utente
-							consulta.MedidasPA();
+							cons.MedidasPA();
 							Console.WriteLine("--------------------------------------------------");
 						}
 					}
@@ -99,33 +99,46 @@ namespace saude_distante_login.Entities
 		}
 
 /// ////////////////////////////////////////////////////////////
-		 public  static void RelEstatistico()
-        {
-            Console.WriteLine("-------------------------------------------------");
-            Console.WriteLine("DGS - Direção Regional de Saude de Rastreios");
-            Console.WriteLine();
-            Console.WriteLine("Relatório Estatistico de Rastreios");
-            /*Console.WriteLine("Data: " + DateTime.Now.ToString("dd/MM/yyyy"));
-			Console.WriteLine("-------------------------------------------------");
-			Console.WriteLine("Numero Total de Consultas Realizadas: " + //aplicar .Count para contar o numero de consultas realizadas);
-			Console.WriteLine("Numero de consultas realizadas por Rota: " + //sortir as consultas por equipa e contar ccada uma delas);
-			Console.WriteLine();
-			Console.WriteLine("Análise de Risco de Tensão Arterial dos Utentes");
-			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau I: " + //aplicar .Count para contar o numero de utentes com indice Diabetes grau I);
-			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau II: " + //aplicar .Count para contar o numero de utentes com indice Diabetes grau II);
-			Console.WriteLine("Percentagem de Utentes com Indice HTA grau III: " + //Imprimir os utentes com indice HTA grau III);
-			Console.WriteLine();
-			Console.WriteLine("Análise de Risco de Diabetes dos Utentes");
-			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau I: " + //Imprimir os utentes com Diabetes grau I);
-			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau II: " + //Imprimir os utentes com Diabetes grau II);
-			Console.WriteLine("Percentagem de Utentes com Indice Diabetes grau III: " + //Imprimir os utentes com Diabetes grau III);
-			Console.WriteLine();
-			Console.WriteLine("Análise de Risco de Obesidade dos Utentes");
-			Console.WriteLine("Percentagem  de Utentes com Indice Obesidade grau I " + //aplicar .Count para contar o numero de utentes com indice Obesidade grau I);
-			Console.WriteLine("Percentagem de Utentes com Indice Obesidade grau II " + //aplicar .Count para contar o numero de utentes com indice Obesidade grau II);
-			Console.WriteLine("-------------------------------------------------"
-			*/
-        }
+		 public static void RelEstatistico()
+			{
+				Console.WriteLine("-------------------------------------------------");
+				Console.WriteLine("DGS - Direção Regional de Saúde de Rastreios");
+				Console.WriteLine();
+				Console.WriteLine("Relatório Estatístico de Rastreios");
+				Console.WriteLine("Data: " + DateTime.Now.ToString("dd/MM/yyyy"));
+				Console.WriteLine("-------------------------------------------------");
+				Console.WriteLine("Número Total de Consultas Realizadas: " + Listas.Consultas.Count);
+				Console.WriteLine("Número de Consultas da Ultima semana: " + ConsultasSemana());
+				Console.WriteLine("Número de Consultas do Último Dia: " + Consultasdia());
+				Console.WriteLine();
+				Console.WriteLine("-------------------------------------------------");
+			}
+
+				public static int ConsultasSemana()
+				{
+					int cont = 0;
+					foreach (Consulta cons in Listas.Consultas)
+					{
+						if (cons.Data >= DateTime.Now.AddDays(-7))
+						{
+							cont++;
+						}
+					}
+					return cont;
+				}
+
+				public static int Consultasdia()
+				{
+					int cont = 0;
+					foreach (Consulta cons in Listas.Consultas)
+					{
+						if (cons.Data == DateTime.Now.AddDays(-1))
+						{
+							cont++;
+						}
+					}
+					return cont;
+				}
 
     }
 

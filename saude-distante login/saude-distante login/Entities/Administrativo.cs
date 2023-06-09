@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using saude_distante_login.Services;
+
 
 namespace saude_distante_login.Entities
 {
@@ -66,7 +66,8 @@ namespace saude_distante_login.Entities
 					Utente.RelEstatistico();
 					break;
 				case "6":
-					//Logout
+					Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+					Environment.Exit(0);
 					break;
 				default:
 					Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
@@ -181,7 +182,7 @@ namespace saude_distante_login.Entities
 
 				Colaborador novocolaborador = new Colaborador(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
 			
-				Colaboradores.Add(novocolaborador);
+				Listas.Colaboradores.Add(novocolaborador);
 			}
 		}
 
@@ -195,13 +196,13 @@ namespace saude_distante_login.Entities
 			{
 				Console.WriteLine("Lista de Colaboradores: ");
 				Console.WriteLine("Nome: ");
-				Console.WriteLine(Colaboradores[x].Nome);
+				Console.WriteLine(Listas.Colaboradores[x].Nome);
 				Console.WriteLine("Vencimento em €:");
-				Console.WriteLine(Colaboradores[x].Vencimento);
+				Console.WriteLine(Listas.Colaboradores[x].Vencimento);
 				Console.WriteLine("Função: ");
-				Console.WriteLine(Colaboradores[x].Funcao);
+				Console.WriteLine(Listas.Colaboradores[x].Funcao);
 				Console.WriteLine("Equipa: ");
-				Console.WriteLine(Colaboradores[x].Equipa);
+				Console.WriteLine(Listas.Colaboradores[x].Equipa);
 			}
 		}
 
@@ -220,19 +221,19 @@ namespace saude_distante_login.Entities
 			if (opcao == 1)
 			{
 				int x;
-				for (x = 0; x < Colaboradores.Count; x++)
+				for (x = 0; x < Listas.Colaboradores.Count; x++)
 				{
-					if (Colaboradores[x].Equipa == 1)
+					if (Listas.Colaboradores[x].Equipa == 1)
 					{
 						Console.WriteLine("Lista de Colaboradores: ");
 						Console.WriteLine("Nome: ");
-						Console.WriteLine(Colaboradores[x].Nome);
+						Console.WriteLine(Listas.Colaboradores[x].Nome);
 						Console.WriteLine("Vencimento em €:");
-						Console.WriteLine(Colaboradores[x].Vencimento);
+						Console.WriteLine(Listas.Colaboradores[x].Vencimento);
 						Console.WriteLine("Função: ");
-						Console.WriteLine(Colaboradores[x].Funcao);
+						Console.WriteLine(Listas.Colaboradores[x].Funcao);
 						Console.WriteLine("Equipa: ");
-						Console.WriteLine(Colaboradores[x].Equipa);
+						Console.WriteLine(Listas.Colaboradores[x].Equipa);
 					}
 				}
 			}
@@ -245,32 +246,32 @@ namespace saude_distante_login.Entities
 					{
 						Console.WriteLine("Lista de Colaboradores: ");
 						Console.WriteLine("Nome: ");
-						Console.WriteLine(Colaboradores[x].Nome);
+						Console.WriteLine(Listas.Colaboradores[x].Nome);
 						Console.WriteLine("Vencimento em €:");
-						Console.WriteLine(Colaboradores[x].Vencimento);
+						Console.WriteLine(Listas.Colaboradores[x].Vencimento);
 						Console.WriteLine("Função: ");
-						Console.WriteLine(Colaboradores[x].Funcao);
+						Console.WriteLine(Listas.Colaboradores[x].Funcao);
 						Console.WriteLine("Equipa: ");
-						Console.WriteLine(Colaboradores[x].Equipa);
+						Console.WriteLine(Listas.Colaboradores[x].Equipa);
 					}
 				}
 			}
 			else if (opcao == 3)
 			{
 				int x;
-				for (x = 0; x < Colaboradores.Count; x++)
+				for (x = 0; x < Listas.Colaboradores.Count; x++)
 				{
-					if (Colaboradores[x].Equipa == 3)
+					if (Listas.Colaboradores[x].Equipa == 3)
 					{
 						Console.WriteLine("Lista de Colaboradores: ");
 						Console.WriteLine("Nome: ");
-						Console.WriteLine(Colaboradores[x].Nome);
+						Console.WriteLine(Listas.Colaboradores[x].Nome);
 						Console.WriteLine("Vencimento em €:");
-						Console.WriteLine(Colaboradores[x].Vencimento);
+						Console.WriteLine(Listas.Colaboradores[x].Vencimento);
 						Console.WriteLine("Função: ");
-						Console.WriteLine(Colaboradores[x].Funcao);
+						Console.WriteLine(Listas.Colaboradores[x].Funcao);
 						Console.WriteLine("Equipa: ");
-						Console.WriteLine(Colaboradores[x].Equipa);
+						Console.WriteLine(Listas.Colaboradores[x].Equipa);
 					}
 				}
 			}

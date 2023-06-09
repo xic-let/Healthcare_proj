@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Enums\" />
+    <None Remove="Entities\Enums\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Enums\" />
+    <Folder Include="Entities\Enums\" />
   </ItemGroup>
 </Project>

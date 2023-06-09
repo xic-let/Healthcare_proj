@@ -1,5 +1,4 @@
 ﻿using saude_distante_login.Entities.Enums;
-using saude_distante_login.Services;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -57,6 +56,7 @@ namespace saude_distante_login.Entities
                     RelConsultas();
                     break;
                 case "5":
+                    Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
                     Environment.Exit(0);
                     break;
                 default:
@@ -98,7 +98,7 @@ namespace saude_distante_login.Entities
 
             Utente utente = new Utente(nome, genero, contacto, morada, concelho, email, numUtente, yes_rgpd);
 
-            Utente.Utentes.Add(utente);
+            Listas.Utentes.Add(utente);
 
             Console.WriteLine("Utente registado com sucesso!");
 
@@ -159,7 +159,7 @@ namespace saude_distante_login.Entities
 
                 Consulta consulta = new Consulta(dataConsulta, equipa, peso, altura, pressaoArterialdia, pressaoArterialsis, glicose);
                 utenteEncontrado.Consulta = consulta;
-                Consulta.Consultas.Add(consulta);
+                Listas.Consultas.Add(consulta);
 
                 //inserir dados na tabela da consulta
                 Console.WriteLine("Dados de pré-consulta registados com sucesso!");
