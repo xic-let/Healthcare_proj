@@ -184,6 +184,19 @@ namespace saude_distante_login.Entities
                 List<Utente> listaUtentes = new List<Utente>();
                 List<Consulta> listaConsultas = new List<Consulta>();
                 Utente.RelConsultaInd(listaUtentes, listaConsultas);
+
+                Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("Deseja voltar ao menu principal? (sim/não): ");
+                string input = Console.ReadLine();
+                if (input.ToLower() == "sim" || input.ToLower() == "s")
+                {
+                    MostrarMenuMedico();
+                }
+                else
+                {
+                    Console.WriteLine("Operação cancelada.");
+                    Environment.Exit(0);
+                }
             }
             else
             {

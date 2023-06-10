@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{0C6D9D93-6F4D-47EF-A1B7-247A96AAFB02}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Administrativo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Medico.cs">
     <Files>
       <File FileName="Entities/Colaborador.cs" />
       <File FileName="Entities/Consulta.cs" />
@@ -7,12 +7,13 @@
       <File FileName="Entities/Rotas.cs" />
       <File FileName="Entities/Pessoa.cs" />
       <File FileName="Entities/Motorista.cs" />
-      <File FileName="Entities/Medico.cs" />
+      <File FileName="Entities/Medico.cs" Line="87" Column="18" />
       <File FileName="Entities/Listas.cs" />
       <File FileName="Entities/Equipamentos.cs" />
       <File FileName="Entities/Equipa.cs" />
       <File FileName="Entities/Enfermeiro.cs" />
-      <File FileName="Entities/Administrativo.cs" Line="274" Column="57" />
+      <File FileName="Entities/Administrativo.cs" />
+      <File FileName="Program.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +22,7 @@
             <Node name="saude-distante login" expanded="True">
               <Node name="Entities" expanded="True">
                 <Node name="Enums" expanded="True" />
-                <Node name="Administrativo.cs" selected="True" />
+                <Node name="Medico.cs" selected="True" />
               </Node>
             </Node>
           </Node>
