@@ -14,11 +14,11 @@ namespace saude_distante_login.Entities
 	public class Colaborador : Pessoa
 	{
 		public int IdColaborador { get; private set; }
-		public string Funcao { get; set; }
+		public string? Funcao { get; set; }
 		public double Vencimento { get; set; }
-		public string Password { get; private set; }
+		public string? Password { get; private set; }
 		public int Equipa { get; set; }
-		public List<Colaborador> Colaboradores { get; set; }
+		public List<Colaborador>? Colaboradores { get; set; }
 
 		public Colaborador()
 		{ }

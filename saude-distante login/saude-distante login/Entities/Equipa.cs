@@ -18,9 +18,9 @@ namespace saude_distante_login.Entities
 		public Motorista Motorista { get; set; }
 		public Medico Medico { get; set; }
 		public Enfermeiro Enfermeiro { get; set; }
-		public List<Equipamentos> Material { get; }
+		public List<Equipamentos>? Material { get; }
 		public List<Colaborador> Colaboradores { get; set; }
-		public List<Equipa> Equipas { get; set; }
+		public List<Equipa>? Equipas { get; set; }
 
         //Construtores da classe Equipa
 

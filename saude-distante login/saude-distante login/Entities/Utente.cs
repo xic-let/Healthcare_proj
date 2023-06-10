@@ -15,7 +15,7 @@ namespace saude_distante_login.Entities
 		public int Idsns { get; set; }
 		public bool Yes_Rgpd { get; set; } // true = aceita, false = não aceita
 		public static List<Utente> Utentes { get; set; } = new List<Utente>();
-		public Consulta Consulta { get; set; }
+		public Consulta? Consulta { get; set; }
         public static List<Consulta> Consultas { get;} = new List<Consulta>();
 
 		public Utente ()

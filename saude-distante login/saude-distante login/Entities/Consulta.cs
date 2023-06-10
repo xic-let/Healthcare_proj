@@ -17,12 +17,12 @@ namespace saude_distante_login.Entities
         public double Peso { get; set; }
         public double Altura { get; set; }
         public bool Fumador { get; set; }
-        public string HistoricoDoencas { get; set; }
+        public string? HistoricoDoencas { get; set; }
         public double NivelGlicose { get; set; }
         public double PressaoArterialsis { get; set; }
         public double PressaoArterialdia { get; set; }
-        public string Observacoes { get; set; }
-        public string Receitas { get; set; }
+        public string? Observacoes { get; set; }
+        public string? Receitas { get; set; }
         public int Idsns { get; set; }
         public static List<Consulta> Consultas { get;} = new List<Consulta>();
     

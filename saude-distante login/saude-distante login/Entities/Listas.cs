@@ -76,21 +76,39 @@ namespace saude_distante_login.Entities
 
         public static Rotas EncontrarRota(int idRota)
         {
-            return Listas.rotas.FirstOrDefault(r => r.IdRota == idRota);
+            var rota = Listas.rotas.FirstOrDefault(r => r.IdRota == idRota);
+            if (rota == null)
+            {
+                throw new InvalidOperationException($"Não foi encontrada uma rota com o ID {idRota}.");
+            }
+            return rota;
         }
+
         public static Colaborador EncontrarColaborador(string funcao, string email)
         {
-            return Listas.Colaboradores.FirstOrDefault(c => c.Email == email && c.Funcao == funcao);
+            var colaborador = Listas.Colaboradores.FirstOrDefault(c => c.Email == email && c.Funcao == funcao);
+            if(colaborador == null)
+            {
+                throw new InvalidOperationException($"Não foi encontrado um colaborador com a função '{funcao}' e o e-mail '{email}'.");
+            }
+            return colaborador;
         }
+
 
         public static Utente EncontrarUtente(int Idsns)
         {
-            return Listas.Utentes.FirstOrDefault(u => u.Idsns == Idsns);
+            var utente = Listas.Utentes.FirstOrDefault(u => u.Idsns == Idsns);
+            if (utente == null)
+            {
+                throw new InvalidOperationException($"Não foi encontrado um utente com o ID SNS '{Idsns}'.");
+            }
+            return utente;
         }
 
+
     }
-       
-   }
+
+}
 
 
 

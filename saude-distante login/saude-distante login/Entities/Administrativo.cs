@@ -43,7 +43,7 @@ namespace saude_distante_login.Entities
 			Console.WriteLine();
 			Console.Write("Opção (1-6): ");
 			Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
-			string opcao = Console.ReadLine();
+			string? opcao = Console.ReadLine();
 
 			switch (opcao)
 			{
