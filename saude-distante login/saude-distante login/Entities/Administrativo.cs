@@ -104,9 +104,7 @@ namespace saude_distante_login.Entities
 				string funcao;
 				if (res == 1)
 				{
-					
 					funcao = "Administrativo";
-					
 				}
 				else if (res == 2)
 				{
@@ -134,7 +132,7 @@ namespace saude_distante_login.Entities
 				Console.Write("Nome: ");
 				string nome = Console.ReadLine();
 				
-				Console.WriteLine("Género: ");
+				Console.Write("Género: ");
 				Genero genero;
 				if (!Enum.TryParse(Console.ReadLine(), out genero))
 				{
@@ -171,7 +169,7 @@ namespace saude_distante_login.Entities
 				Console.Write("Password: ");
 				string password = Console.ReadLine();
 
-				Console.WriteLine("Equipa: ");
+				Console.Write("Equipa: ");
 				int equipa;
 				if (!int.TryParse(Console.ReadLine(), out equipa))
 				{
@@ -183,8 +181,20 @@ namespace saude_distante_login.Entities
 				Colaborador novocolaborador = new Colaborador(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
 			
 				Listas.Colaboradores.Add(novocolaborador);
-			}
-		}
+                Console.WriteLine();
+            }
+
+            if (n == 1)
+            {
+                Console.WriteLine("Colaborador registado com sucesso.");
+            }
+            else
+            {
+                Console.WriteLine("Colaboradores registados com sucesso.");
+            }
+
+            MostrarMenuAdministrativo();
+        }
 
 /// /////////////////////////////////////////////////////////////////////////
 
