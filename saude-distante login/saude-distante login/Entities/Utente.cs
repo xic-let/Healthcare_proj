@@ -60,7 +60,7 @@ namespace saude_distante_login.Entities
 					Console.WriteLine("Dados da Consulta:");
 
 					// Iterar sobre as consultas do utente
-					foreach (Consulta cons in Consulta.Consultas) 
+					foreach (Consulta cons in Listas.Consultas) 
 					{
 						if (cons.Idsns == id)
 						{
