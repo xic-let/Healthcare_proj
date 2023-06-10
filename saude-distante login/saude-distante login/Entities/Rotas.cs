@@ -103,24 +103,24 @@ namespace saude_distante_login.Entities
             }
         
         }
-            public void VerAgenda()
+        public void VerAgenda()
+        {
+            Listas lista = new Listas(); // Create an instance of the Listas class
+            Console.WriteLine("Insira o ID da rota para ver a data:");
+            int idRota = int.Parse(Console.ReadLine());
+
+            // Procurar a rota com o ID fornecido
+            Rotas rotaencontrada = Listas.EncontrarRota(idRota);
+
+            if (rotaencontrada != null)
             {
-                Listas lista = new Listas(); // Create an instance of the Listas class
-                Console.WriteLine("Insira o ID da rota para ver a data:");
-                int idRota = int.Parse(Console.ReadLine());
-
-                // Procurar a rota com o ID fornecido
-                Rotas rotaencontrada = Listas.EncontrarRota(idRota);
-
-                if (rotaencontrada != null)
-                {
-                    Console.WriteLine("Data da rota: " + rotaencontrada.Data.ToString("dd/MM/yyyy"));
-                }
-                else
-                {
-                    Console.WriteLine("ID da rota não encontrado!");
-                }
+                Console.WriteLine("Data da rota: " + rotaencontrada.Data.ToString("dd/MM/yyyy"));
             }
+            else
+            {
+                Console.WriteLine("ID da rota não encontrado!");
+            }
+        }
     }
 }
 

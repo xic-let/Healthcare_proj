@@ -30,7 +30,7 @@ namespace saude_distante_login.Entities
 		{
 			Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
 			Console.WriteLine("Bem-vindo/a " + this.Nome);
-			Console.WriteLine(" MENU ADMINISTRATIVO");
+			Console.WriteLine("MENU ADMINISTRATIVO");
 			Console.WriteLine();
 			Console.WriteLine("Selecione uma opção:");
 			Console.WriteLine();
@@ -48,7 +48,6 @@ namespace saude_distante_login.Entities
 			switch (opcao)
 			{
 				case "1":
-				
 					RegistarColaboradores(); 
 					break;
 				case "2":
