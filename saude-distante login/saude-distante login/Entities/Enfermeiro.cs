@@ -110,7 +110,7 @@ namespace saude_distante_login.Entities
             int id = int.Parse(Console.ReadLine());
 
             // Procurar o utente na lista de utentes
-            Utente utenteEncontrado = Utente.Utentes.Find(u => u.Idsns == id);
+            Utente utenteEncontrado = Listas.Utentes.Find(u => u.Idsns == id);
 
             if (utenteEncontrado != null)
             {
@@ -159,7 +159,7 @@ namespace saude_distante_login.Entities
 
                 Consulta consulta = new Consulta(dataConsulta, equipa, peso, altura, pressaoArterialdia, pressaoArterialsis, glicose);
                 utenteEncontrado.Consulta = consulta;
-                Listas.Consultas.Add(consulta);
+                //Listas.Consultas.Add(consulta);
 
                 //inserir dados na tabela da consulta
                 Console.WriteLine("Dados de pré-consulta registados com sucesso!");

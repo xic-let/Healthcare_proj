@@ -39,7 +39,7 @@ namespace saude_distante_login.Entities
 			int id = int.Parse(Console.ReadLine());
 
 			// Procurar o utente na lista de utentes
-			Utente utente = utentes.Find(u => u.Idsns == id);
+			Utente utente = Listas.Utentes.Find(u => u.Idsns == id);
 
 			if (utente != null)
 			{
@@ -54,7 +54,7 @@ namespace saude_distante_login.Entities
 				Console.WriteLine($"RGPD: {utente.Yes_Rgpd}");
 
                 // Verificar se o utente possui consultas
-                Consulta consulta = consultas.Find(u => u.Idsns == id);
+                Consulta consulta = Listas.Consultas.Find(u => u.Idsns == id);
                 if (consulta != null)
 				{
 					Console.WriteLine("Dados da Consulta:");

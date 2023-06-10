@@ -121,15 +121,23 @@ namespace saude_distante_login.Entities
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("Registe os dados da consulta:");
 
-            Console.Write("É fumador? (sim/não): ");
-            bool fumador = bool.Parse(Console.ReadLine());
+            Console.Write("É fumador? (sim/nao): ");
+            bool fumador;
+            string resp = Console.ReadLine().ToLower();
+            if (resp == "sim")
+            {
+                fumador = true;
+            }
+            else
+            {
+                fumador = false;
+            }
 
             Console.Write("Informe o histórico de doenças: ");
             string historicoDoencas = Console.ReadLine();
 
             Console.Write("Existem Observações a Registar? (sim/não): ");
             string res = Console.ReadLine();
-
             string observacoes = string.Empty;
             if (res.ToLower() == "sim")
             {
@@ -159,6 +167,8 @@ namespace saude_distante_login.Entities
             utenteEncontrado.Consulta.HistoricoDoencas = historicoDoencas;
             utenteEncontrado.Consulta.Observacoes = observacoes;
             utenteEncontrado.Consulta.Receitas = medicacao;
+
+            Listas.Consultas.Add(utenteEncontrado.Consulta);
 
             Console.WriteLine("Consulta registada com sucesso!");
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
