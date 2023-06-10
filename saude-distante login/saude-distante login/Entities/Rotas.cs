@@ -57,6 +57,21 @@ namespace saude_distante_login.Entities
                 Console.WriteLine("Formato de data inválido!");
             }
             rotas.Add(novaRota);
+
+            Console.WriteLine();
+
+            Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+            string resposta = Console.ReadLine();
+            if (resposta == "nao")
+            {
+                Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                Motorista motorista = new Motorista();
+                motorista.MostrarMenuMotorista();
+            }
         }
 
         public static void VerPlanoRota(List<Rotas> rotas)
@@ -101,7 +116,20 @@ namespace saude_distante_login.Entities
             {
                 Console.WriteLine("ID da rota não encontrado!");
             }
-        
+
+            Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+            string resposta = Console.ReadLine();
+            if (resposta == "nao")
+            {
+                Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                Motorista motorista = new Motorista();
+                motorista.MostrarMenuMotorista();
+            }
+
         }
         public void VerAgenda()
         {
@@ -119,6 +147,19 @@ namespace saude_distante_login.Entities
             else
             {
                 Console.WriteLine("ID da rota não encontrado!");
+            }
+
+            Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+            string resposta = Console.ReadLine();
+            if (resposta == "nao")
+            {
+                Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                Motorista motorista = new Motorista();
+                motorista.MostrarMenuMotorista();
             }
         }
     }

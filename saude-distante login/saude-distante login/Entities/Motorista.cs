@@ -56,6 +56,7 @@ namespace saude_distante_login.Entities
                 default:
                     Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
                     break;
+
             }
         }
     }

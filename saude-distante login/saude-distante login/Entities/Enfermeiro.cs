@@ -189,7 +189,8 @@ namespace saude_distante_login.Entities
                 }
                 else
                 {
-                    MostrarMenuEnfermeiro();
+                    Enfermeiro enfermeiro = new Enfermeiro();
+                    enfermeiro.MostrarMenuEnfermeiro();
                 }
             }
             else
@@ -215,7 +216,8 @@ namespace saude_distante_login.Entities
                     }
                     else
                     {
-                        MostrarMenuEnfermeiro();
+                        Enfermeiro enfermeiro = new Enfermeiro();
+                        enfermeiro.MostrarMenuEnfermeiro();
                     }
                 }
             }

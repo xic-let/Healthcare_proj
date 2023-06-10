@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities
 {
-   public class Administrativo : Colaborador
+	public class Administrativo : Colaborador
 	{
 		//Construtores da classe Administrativo
 
@@ -192,7 +192,19 @@ namespace saude_distante_login.Entities
                 Console.WriteLine("Colaboradores registados com sucesso.");
             }
 
-            MostrarMenuAdministrativo();
+            Console.WriteLine();
+
+            Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+            string resposta = Console.ReadLine();
+            if (resposta == "nao")
+            {
+                Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                MostrarMenuAdministrativo();
+            }
         }
 
 /// /////////////////////////////////////////////////////////////////////////
@@ -215,7 +227,19 @@ namespace saude_distante_login.Entities
 				Console.WriteLine(Listas.Colaboradores[x].Equipa);
                 Console.WriteLine();
             }
-		}
+
+            Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+            string resposta = Console.ReadLine();
+            if (resposta == "nao")
+            {
+                Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                MostrarMenuAdministrativo();
+            }
+        }
 
 		public void ListarColaboradoresPorEquipa()
 		{
@@ -296,37 +320,59 @@ namespace saude_distante_login.Entities
                 Console.WriteLine("Não existe Equipa " + opcao + ". Tente novamente.");
 				ListarColaboradoresPorEquipa();
             }
+
+            Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+            string resposta = Console.ReadLine();
+            if (resposta == "nao")
+            {
+                Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                MostrarMenuAdministrativo();
+            }
         }
 		
-
-
 		public void RelatorioColaboradores()
+		{
+			Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
+			Console.WriteLine("Deseja imprimir Relatório Geral ou Relatório por Equipa?");
+			Console.WriteLine("1 - Relatório Geral");
+			Console.WriteLine("2 - Relatório por Equipa");
+			Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
+			int res = int.Parse(Console.ReadLine());
+
+			if (res == 1)
 			{
-				Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
-				Console.WriteLine("Deseja imprimir Relatório Geral ou Relatório por Equipa?");
-				Console.WriteLine("1 - Relatório Geral");
-				Console.WriteLine("2 - Relatório por Equipa");
-				Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
-				int res = int.Parse(Console.ReadLine());
-
-				if (res == 1)
-				{
 			 
-					ListarColaboradores();
+				ListarColaboradores();
 		   
-				}
-				else if (res == 2)
-				{
-				
-					ListarColaboradoresPorEquipa();
-
-				}
-				else
-				{
-					Console.WriteLine("Opção inválida. Tente novamente.");
-					RelatorioColaboradores();
-				}
 			}
+			else if (res == 2)
+			{
+				
+				ListarColaboradoresPorEquipa();
+
+			}
+			else
+			{
+				Console.WriteLine("Opção inválida. Tente novamente.");
+				RelatorioColaboradores();
+			}
+
+            Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+            string resposta = Console.ReadLine();
+            if (resposta == "nao")
+            {
+                Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                MostrarMenuAdministrativo();
+            }
+        }
 
 
 	}
