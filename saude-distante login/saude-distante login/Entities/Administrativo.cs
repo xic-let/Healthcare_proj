@@ -190,20 +190,22 @@ namespace saude_distante_login.Entities
 
 		public void ListarColaboradores()
 		{
-	  
-			int x;
-			for (x = 0; x < Colaboradores.Count; x++)
+            Console.OutputEncoding = Encoding.UTF8;     //	permite imprimir o símbolo € na consola
+
+            Console.WriteLine("Lista de Colaboradores: ");
+            int x;
+			for (x = 0; x < Listas.Colaboradores.Count; x++)
 			{
-				Console.WriteLine("Lista de Colaboradores: ");
-				Console.WriteLine("Nome: ");
+				Console.Write("Nome: ");
 				Console.WriteLine(Listas.Colaboradores[x].Nome);
-				Console.WriteLine("Vencimento em €:");
+				Console.Write("Vencimento em €: ");
 				Console.WriteLine(Listas.Colaboradores[x].Vencimento);
-				Console.WriteLine("Função: ");
+				Console.Write("Função: ");
 				Console.WriteLine(Listas.Colaboradores[x].Funcao);
-				Console.WriteLine("Equipa: ");
+				Console.Write("Equipa: ");
 				Console.WriteLine(Listas.Colaboradores[x].Equipa);
-			}
+                Console.WriteLine();
+            }
 		}
 
 		public void ListarColaboradoresPorEquipa()
@@ -230,7 +232,7 @@ namespace saude_distante_login.Entities
 					{
 						Console.Write("Nome: ");
 						Console.WriteLine(Listas.Colaboradores[x].Nome);
-						Console.WriteLine("Vencimento em €:");
+						Console.Write("Vencimento em €: ");
 						Console.WriteLine(Listas.Colaboradores[x].Vencimento);
 						Console.Write("Função: ");
 						Console.WriteLine(Listas.Colaboradores[x].Funcao);
@@ -250,7 +252,7 @@ namespace saude_distante_login.Entities
 					{
                         Console.Write("Nome: ");
                         Console.WriteLine(Listas.Colaboradores[x].Nome);
-                        Console.WriteLine("Vencimento em €:");
+                        Console.Write("Vencimento em €: ");
                         Console.WriteLine(Listas.Colaboradores[x].Vencimento);
                         Console.Write("Função: ");
                         Console.WriteLine(Listas.Colaboradores[x].Funcao);
@@ -270,7 +272,7 @@ namespace saude_distante_login.Entities
 					{
                         Console.Write("Nome: ");
                         Console.WriteLine(Listas.Colaboradores[x].Nome);
-                        Console.WriteLine("Vencimento em €:");
+                        Console.Write("Vencimento em €: ");
                         Console.WriteLine(Listas.Colaboradores[x].Vencimento);
                         Console.Write("Função: ");
                         Console.WriteLine(Listas.Colaboradores[x].Funcao);
@@ -280,7 +282,12 @@ namespace saude_distante_login.Entities
                     }
 				}
 			}
-		}
+            else
+            {
+                Console.WriteLine("Não existe Equipa " + opcao + ". Tente novamente.");
+				ListarColaboradoresPorEquipa();
+            }
+        }
 		
 
 
