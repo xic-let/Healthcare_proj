@@ -1,10 +1,18 @@
 ﻿<Properties StartupConfiguration="{0C6D9D93-6F4D-47EF-A1B7-247A96AAFB02}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Consulta.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Administrativo.cs">
     <Files>
-      <File FileName="Entities/Colaborador.cs" Line="121" Column="9" />
-      <File FileName="Services/EmptyInterface.cs" Line="9" Column="1" />
-      <File FileName="Entities/Consulta.cs" Line="150" Column="50" />
+      <File FileName="Entities/Colaborador.cs" />
+      <File FileName="Entities/Consulta.cs" />
+      <File FileName="Entities/Utente.cs" />
+      <File FileName="Entities/Rotas.cs" />
+      <File FileName="Entities/Pessoa.cs" />
+      <File FileName="Entities/Motorista.cs" />
+      <File FileName="Entities/Medico.cs" />
+      <File FileName="Entities/Listas.cs" />
+      <File FileName="Entities/Equipamentos.cs" />
+      <File FileName="Entities/Equipa.cs" />
+      <File FileName="Entities/Enfermeiro.cs" />
+      <File FileName="Entities/Administrativo.cs" Line="274" Column="57" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +20,8 @@
           <Node name="saude-distante login" expanded="True">
             <Node name="saude-distante login" expanded="True">
               <Node name="Entities" expanded="True">
-                <Node name="Services" expanded="True" />
+                <Node name="Enums" expanded="True" />
+                <Node name="Administrativo.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -20,10 +29,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.saude-distante_220login PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.saude-distante_220login PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

@@ -79,7 +79,7 @@ namespace saude_distante_login.Entities
                 Console.WriteLine("Utente não encontrado. É necessário registar o utente antes de prosseguir.");
                 Console.WriteLine("Deseja registar o utente? (sim/não): ");
                 string input = Console.ReadLine();
-                if (input.ToLower() == "sim")
+                if (input.ToLower() == "sim" || input.ToLower() == "s" || input.ToLower() == "SIM" || input.ToLower() == "S")
                 {
                     // Chamar o método para registar o utente
                     Enfermeiro enfermeiro = new Enfermeiro();

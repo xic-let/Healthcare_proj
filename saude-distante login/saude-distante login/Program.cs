@@ -34,15 +34,15 @@ namespace saude_distante_login
             {
                 funcao = "Médico";
             }
-            else if (funcao == "2")
+            if (funcao == "2")
             {
                 funcao = "Enfermeiro";
             }
-            else if (funcao == "3")
+            if (funcao == "3")
             {
                 funcao = "Administrativo";
             }
-            else if (funcao == "4")
+            if (funcao == "4")
             {
                 funcao = "Motorista";
             }
@@ -51,11 +51,11 @@ namespace saude_distante_login
                 Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
                 Environment.Exit(0);
             }
-            else if (funcao != "1" || funcao != "2" || funcao != "3" || funcao != "4" || funcao != "5")
+            /*else if (funcao != "1" || funcao != "2" || funcao != "3" || funcao != "4" || funcao != "5")
             {
                 Console.WriteLine("Função não reconhecida.");
                 Environment.Exit(0);
-            }
+            }*/
 
 
             Console.Write("E-mail: ");
@@ -74,7 +74,7 @@ namespace saude_distante_login
                         medico.MostrarMenuMedico();
                         break;
 
-                    case "Enferemeiro":
+                    case "Enfermeiro":
                         Enfermeiro enfermeiro = new Enfermeiro();
                         enfermeiro.MostrarMenuEnfermeiro();
                         break;
