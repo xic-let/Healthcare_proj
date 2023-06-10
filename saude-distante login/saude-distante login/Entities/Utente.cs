@@ -108,8 +108,8 @@ namespace saude_distante_login.Entities
 				Console.WriteLine("Data: " + DateTime.Now.ToString("dd/MM/yyyy"));
 				Console.WriteLine("-------------------------------------------------");
 				Console.WriteLine("Número Total de Consultas Realizadas: " + Listas.Consultas.Count);
-				Console.WriteLine("Número de Consultas da Ultima semana: " + ConsultasSemana());
-				Console.WriteLine("Número de Consultas do Último Dia: " + Consultasdia());
+				Console.WriteLine("Número de Consultas da Última Semana: " + ConsultasSemana());
+				Console.WriteLine("Número de Consultas do Último Dia: " + ConsultasDia());
 				Console.WriteLine();
 				Console.WriteLine("-------------------------------------------------");
 			}
@@ -127,7 +127,7 @@ namespace saude_distante_login.Entities
 					return cont;
 				}
 
-				public static int Consultasdia()
+				public static int ConsultasDia()
 				{
 					int cont = 0;
 					foreach (Consulta cons in Listas.Consultas)

@@ -67,11 +67,11 @@ namespace saude_distante_login.Entities
         public void RegistarConsultaMed()
         { 
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
-            Console.WriteLine(" Insira o Nr de Utente: ");
+            Console.WriteLine("Insira o Nr de Utente: ");
             int id = int.Parse(Console.ReadLine());
 
             // Procurar o utente na lista de utentes
-            Utente utenteEncontrado = Utente.Utentes.Find(u => u.Idsns == id);
+            Utente utenteEncontrado = Listas.Utentes.Find(u => u.Idsns == id);
 
 
             if (utenteEncontrado == null)
@@ -81,7 +81,7 @@ namespace saude_distante_login.Entities
                 string input = Console.ReadLine();
                 if (input.ToLower() == "sim")
                 {
-                    // Chamar o método para registrar o utente
+                    // Chamar o método para registar o utente
                     Enfermeiro enfermeiro = new Enfermeiro();
                     enfermeiro.RegistoUtente();
                 }
@@ -152,7 +152,7 @@ namespace saude_distante_login.Entities
             }
             else
             {
-                Console.WriteLine("Nenhuma Medicação prescrita!");
+                Console.WriteLine("Nenhuma medicação prescrita!");
             }
 
             utenteEncontrado.Consulta.Fumador = fumador;

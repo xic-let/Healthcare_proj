@@ -73,7 +73,7 @@ namespace saude_distante_login.Entities
             Console.Write("Nome: ");
             string nome = Console.ReadLine();
 
-            Console.Write("Género (Masculino/Feminino/Outro: ");
+            Console.Write("Género (Masculino/Feminino/Outro): ");
             Genero genero = Enum.Parse<Genero>(Console.ReadLine());
 
             Console.Write("Contacto: ");
@@ -126,11 +126,11 @@ namespace saude_distante_login.Entities
 
         public static void RegPreConsulta() 
         {
-            Console.WriteLine(" Insira o Nr de Utente: ");
+            Console.WriteLine("Insira o Nr de Utente: ");
             int id = int.Parse(Console.ReadLine());
 
             // Procurar o utente na lista de utentes
-            Utente utenteEncontrado = Utente.Utentes.Find(u => u.Idsns == id);//não encontra lista de utentes
+            Utente utenteEncontrado = Listas.Utentes.Find(u => u.Idsns == id);//não encontra lista de utentes
 
             if (utenteEncontrado != null)
             {
@@ -166,7 +166,20 @@ namespace saude_distante_login.Entities
             }
             else
             {
-                Console.WriteLine("O utente não possui consultas registadas.");
+                Console.WriteLine("Utente não encontrado. É necessário registar o utente antes de prosseguir.");
+                Console.WriteLine("Deseja registar o utente? (sim/não): ");
+                string input = Console.ReadLine();
+                if (input.ToLower() == "sim")
+                {
+                    // Chamar o método para registar o utente
+                    Enfermeiro enfermeiro = new Enfermeiro();
+                    enfermeiro.RegistoUtente();
+                }
+                else
+                {
+                    Console.WriteLine("Operação cancelada.");
+                    Environment.Exit(0);
+                }
             }
         }
     }
