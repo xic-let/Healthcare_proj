@@ -208,6 +208,8 @@ namespace saude_distante_login.Entities
 
 		public void ListarColaboradoresPorEquipa()
 		{
+            Console.OutputEncoding = Encoding.UTF8;		//	permite imprimir o símbolo € na consola
+            
 			Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
 			Console.WriteLine("Escolha a equipa: ");
 			Console.WriteLine("1 - Equipa 1");
@@ -220,59 +222,62 @@ namespace saude_distante_login.Entities
 
 			if (opcao == 1)
 			{
-				int x;
+                Console.WriteLine("Colaboradores da Equipa 1");
+                int x;
 				for (x = 0; x < Listas.Colaboradores.Count; x++)
 				{
 					if (Listas.Colaboradores[x].Equipa == 1)
 					{
-						Console.WriteLine("Lista de Colaboradores: ");
-						Console.WriteLine("Nome: ");
+						Console.Write("Nome: ");
 						Console.WriteLine(Listas.Colaboradores[x].Nome);
 						Console.WriteLine("Vencimento em €:");
 						Console.WriteLine(Listas.Colaboradores[x].Vencimento);
-						Console.WriteLine("Função: ");
+						Console.Write("Função: ");
 						Console.WriteLine(Listas.Colaboradores[x].Funcao);
-						Console.WriteLine("Equipa: ");
+						Console.Write("Equipa: ");
 						Console.WriteLine(Listas.Colaboradores[x].Equipa);
+						Console.WriteLine();
 					}
 				}
 			}
 			else if (opcao == 2)
 			{
-				int x;
-				for (x = 0; x < Colaboradores.Count; x++)
+                Console.WriteLine("Colaboradores da Equipa 2");
+                int x;
+				for (x = 0; x < Listas.Colaboradores.Count; x++)
 				{
-					if (Colaboradores[x].Equipa == 2)
+					if (Listas.Colaboradores[x].Equipa == 2)
 					{
-						Console.WriteLine("Lista de Colaboradores: ");
-						Console.WriteLine("Nome: ");
-						Console.WriteLine(Listas.Colaboradores[x].Nome);
-						Console.WriteLine("Vencimento em €:");
-						Console.WriteLine(Listas.Colaboradores[x].Vencimento);
-						Console.WriteLine("Função: ");
-						Console.WriteLine(Listas.Colaboradores[x].Funcao);
-						Console.WriteLine("Equipa: ");
-						Console.WriteLine(Listas.Colaboradores[x].Equipa);
-					}
+                        Console.Write("Nome: ");
+                        Console.WriteLine(Listas.Colaboradores[x].Nome);
+                        Console.WriteLine("Vencimento em €:");
+                        Console.WriteLine(Listas.Colaboradores[x].Vencimento);
+                        Console.Write("Função: ");
+                        Console.WriteLine(Listas.Colaboradores[x].Funcao);
+                        Console.Write("Equipa: ");
+                        Console.WriteLine(Listas.Colaboradores[x].Equipa);
+                        Console.WriteLine();
+                    }
 				}
 			}
 			else if (opcao == 3)
 			{
-				int x;
+                Console.WriteLine("Colaboradores da Equipa 3");
+                int x;
 				for (x = 0; x < Listas.Colaboradores.Count; x++)
 				{
 					if (Listas.Colaboradores[x].Equipa == 3)
 					{
-						Console.WriteLine("Lista de Colaboradores: ");
-						Console.WriteLine("Nome: ");
-						Console.WriteLine(Listas.Colaboradores[x].Nome);
-						Console.WriteLine("Vencimento em €:");
-						Console.WriteLine(Listas.Colaboradores[x].Vencimento);
-						Console.WriteLine("Função: ");
-						Console.WriteLine(Listas.Colaboradores[x].Funcao);
-						Console.WriteLine("Equipa: ");
-						Console.WriteLine(Listas.Colaboradores[x].Equipa);
-					}
+                        Console.Write("Nome: ");
+                        Console.WriteLine(Listas.Colaboradores[x].Nome);
+                        Console.WriteLine("Vencimento em €:");
+                        Console.WriteLine(Listas.Colaboradores[x].Vencimento);
+                        Console.Write("Função: ");
+                        Console.WriteLine(Listas.Colaboradores[x].Funcao);
+                        Console.Write("Equipa: ");
+                        Console.WriteLine(Listas.Colaboradores[x].Equipa);
+                        Console.WriteLine();
+                    }
 				}
 			}
 		}
