@@ -102,6 +102,20 @@ namespace saude_distante_login.Entities
 
             Console.WriteLine("Utente registado com sucesso!");
 
+            Console.WriteLine();
+
+            Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+            string resposta = Console.ReadLine();
+            if (resposta == "nao")
+            {
+                Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                MostrarMenuEnfermeiro();
+            }
+
         }
 
         public void ImprimefichaUtente()
@@ -163,6 +177,20 @@ namespace saude_distante_login.Entities
 
                 //inserir dados na tabela da consulta
                 Console.WriteLine("Dados de pré-consulta registados com sucesso!");
+
+                Console.WriteLine();
+
+                Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+                string resposta = Console.ReadLine();
+                if (resposta == "nao")
+                {
+                    Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    MostrarMenuEnfermeiro();
+                }
             }
             else
             {
@@ -178,7 +206,17 @@ namespace saude_distante_login.Entities
                 else
                 {
                     Console.WriteLine("Operação cancelada.");
-                    Environment.Exit(0);
+                    Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+                    string resposta = Console.ReadLine();
+                    if (resposta == "nao")
+                    {
+                        Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        MostrarMenuEnfermeiro();
+                    }
                 }
             }
         }

@@ -88,9 +88,21 @@ namespace saude_distante_login.Entities
                 else
                 {
                     Console.WriteLine("Operação cancelada.");
-                    Environment.Exit(0);
+                    Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+                    string resposta = Console.ReadLine();
+                    if (resposta == "nao")
+                    {
+                        Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        MostrarMenuMedico();
+                    }
+                    
                 }
             }
+            //else if(consultaEncontrada == null) 
             else if (utenteEncontrado.Consulta == null)
             {
                 Console.WriteLine("É necessário registar os dados de pré-consulta antes de prosseguir.");
@@ -108,13 +120,33 @@ namespace saude_distante_login.Entities
                     else
                     {
                         Console.WriteLine("Operação cancelada.");
-                        Environment.Exit(0);
+                        Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+                        string resposta = Console.ReadLine();
+                        if (resposta == "nao")
+                        {
+                            Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            MostrarMenuMedico();
+                        }
                     }
                 }
                 else
                 {
                     Console.WriteLine("Operação cancelada.");
-                    Environment.Exit(0);
+                    Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+                    string resposta = Console.ReadLine();
+                    if (resposta == "nao")
+                    {
+                        Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        MostrarMenuMedico();
+                    }
                 }
             }
 
@@ -195,13 +227,24 @@ namespace saude_distante_login.Entities
                 else
                 {
                     Console.WriteLine("Operação cancelada.");
+                    Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
                     Environment.Exit(0);
                 }
             }
             else
             {
                 Console.WriteLine("Operação cancelada.");
-                Environment.Exit(0);
+                Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+                string resposta = Console.ReadLine();
+                if (resposta == "nao")
+                {
+                    Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    MostrarMenuMedico();
+                }
             }
         }
 
