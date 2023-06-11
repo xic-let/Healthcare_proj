@@ -173,25 +173,12 @@ namespace saude_distante_login.Entities
 
                 Consulta consulta = new Consulta(dataConsulta, equipa, peso, altura, pressaoArterialdia, pressaoArterialsis, glicose);
                 utenteEncontrado.Consulta = consulta;
-                //Listas.Consultas.Add(consulta);
+                Listas.Consultas.Add(consulta);
 
                 //inserir dados na tabela da consulta
                 Console.WriteLine("Dados de pré-consulta registados com sucesso!");
 
                 Console.WriteLine();
-
-                Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
-                string resposta = Console.ReadLine();
-                if (resposta == "nao")
-                {
-                    Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
-                    Environment.Exit(0);
-                }
-                else
-                {
-                    Enfermeiro enfermeiro = new Enfermeiro();
-                    enfermeiro.MostrarMenuEnfermeiro();
-                }
             }
             else
             {
