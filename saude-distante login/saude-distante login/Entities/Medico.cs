@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
+using OfficeOpenXml;
+using System.IO;
+
 
 namespace saude_distante_login.Entities
 {
@@ -45,7 +48,6 @@ namespace saude_distante_login.Entities
             switch (opcao)
             {
                 case "1":
-                   
                     RegistarConsultaMed();
                     break;
                 case "2":
@@ -102,7 +104,7 @@ namespace saude_distante_login.Entities
                     
                 }
             }
-            //else if(consultaEncontrada == null) 
+            
             else if (utenteEncontrado.Consulta == null)
             {
                 Console.WriteLine("É necessário registar os dados de pré-consulta antes de prosseguir.");

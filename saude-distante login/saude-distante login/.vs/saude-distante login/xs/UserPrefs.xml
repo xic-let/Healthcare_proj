@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{0C6D9D93-6F4D-47EF-A1B7-247A96AAFB02}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Medico.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Utente.cs">
     <Files>
       <File FileName="Entities/Enfermeiro.cs" />
-      <File FileName="Entities/Medico.cs" Line="223" Column="52" />
-      <File FileName="Entities/Consulta.cs" Line="75" Column="1" />
+      <File FileName="Entities/Medico.cs" Line="54" Column="45" />
+      <File FileName="Entities/Consulta.cs" />
       <File FileName="Entities/Listas.cs" Line="109" Column="1" />
-      <File FileName="Entities/Utente.cs" />
+      <File FileName="Entities/Utente.cs" Line="125" Column="4" />
+      <File FileName="Program.cs" Line="19" Column="46" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +16,7 @@
               <Node name="Diagramaserequisitos" expanded="True" />
               <Node name="Entities" expanded="True">
                 <Node name="Enums" expanded="True" />
-                <Node name="Medico.cs" selected="True" />
+                <Node name="Utente.cs" selected="True" />
               </Node>
             </Node>
           </Node>

@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using OfficeOpenXml;
+using System.IO;
+
 
 
 namespace saude_distante_login
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Listas listas = new Listas();
             
@@ -51,11 +54,7 @@ namespace saude_distante_login
                 Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
                 Environment.Exit(0);
             }
-            /*else if (funcao != "1" || funcao != "2" || funcao != "3" || funcao != "4" || funcao != "5")
-            {
-                Console.WriteLine("Função não reconhecida.");
-                Environment.Exit(0);
-            }*/
+            
 
 
             Console.Write("E-mail: ");
