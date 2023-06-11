@@ -54,9 +54,9 @@ namespace saude_distante_login.Entities
 
 			Console.WriteLine("Análise de Risco dos Utentes");
 
-			Console.WriteLine($"Número Total de Consultas Realizadas: " + TotConsultas());
-			Console.WriteLine($"Número de Consultas Realizadas por Equipa: " + NrConsultasPorEquipa());
-			Console.WriteLine();
+            Console.WriteLine("Consultas Realizadas por Equipa: ");
+            Console.WriteLine("Número Total de Consultas: " + NrConsultasPorEquipa());
+            Console.WriteLine();
 
 			Console.WriteLine("Análise de Risco de Tensão Arterial dos Utentes");
 

@@ -32,30 +32,32 @@ namespace saude_distante_login.Entities
 
     
 
-        public void AdicionarRota(int id, Enums.Concelho concelho, string freguesia, int equipa, DateTime data)
+        public void AdicionarRota()
         {
             List<Rotas> rotas = new List<Rotas>();
-            Rotas novaRota = new Rotas(id, concelho, freguesia, equipa, data);
+
             Console.WriteLine("Insira o ID da rota:");
-            novaRota.IdRota = int.Parse(Console.ReadLine());
+            int IdRota = int.Parse(Console.ReadLine());
             Console.WriteLine("Insira o concelho da rota:");
-            novaRota.Concelho = (Concelho)Enum.Parse(typeof(Concelho), Console.ReadLine());
+            Concelho Concelho = (Concelho)Enum.Parse(typeof(Concelho), Console.ReadLine());
             Console.WriteLine("Insira a freguesia da rota:");
-            novaRota.Freguesia = Console.ReadLine();
+            string Freguesia = Console.ReadLine();
             Console.WriteLine("Insira a equipa da rota:");
-            novaRota.Equipa = int.Parse(Console.ReadLine());
+            int Equipa = int.Parse(Console.ReadLine());
             Console.WriteLine("Insira a data da rota (dd/mm/aaaa):");
             string dataString = Console.ReadLine();
-          
-            if (DateTime.TryParseExact(dataString, "dd/MM/yyyy", null, DateTimeStyles.None, out data))
+
+            if (DateTime.TryParseExact(dataString, "dd/MM/yyyy", null, DateTimeStyles.None, out DateTime data))
             {
-                novaRota.Data = data;
+                Data = data;
                 Console.WriteLine("Data adicionada com sucesso!");
             }
             else
             {
                 Console.WriteLine("Formato de data inválido!");
             }
+
+            Rotas novaRota = new Rotas(IdRota, Concelho, Freguesia, Equipa, data);
             rotas.Add(novaRota);
 
             Console.WriteLine();

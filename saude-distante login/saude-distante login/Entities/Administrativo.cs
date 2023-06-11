@@ -52,8 +52,8 @@ namespace saude_distante_login.Entities
 					break;
 				case "2":
 					Rotas rotas = new Rotas();
-					rotas.AgendaRotas();
-					break;
+                    rotas.AdicionarRota();
+                    break;
 				case "3":
 					Rotas r = new Rotas();
 					r.VerAgenda(); 
