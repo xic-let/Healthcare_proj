@@ -180,17 +180,17 @@ namespace saude_distante_login.Entities
 
                 Console.WriteLine();
 
-                Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+                Console.WriteLine("Deseja passar Utente para Consulta Médica? (sim/nao)");
                 string resposta = Console.ReadLine();
                 if (resposta == "nao")
                 {
-                    Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
-                    Environment.Exit(0);
+                    Enfermeiro enfermeiro = new Enfermeiro();
+                    enfermeiro.MostrarMenuEnfermeiro();
                 }
                 else
                 {
-                    Enfermeiro enfermeiro = new Enfermeiro();
-                    enfermeiro.MostrarMenuEnfermeiro();
+                    Medico medico = new Medico();
+                    medico.MostrarMenuMedico();
                 }
             }
             else

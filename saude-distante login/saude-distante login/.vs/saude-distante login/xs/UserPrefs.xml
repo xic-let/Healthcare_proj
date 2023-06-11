@@ -1,18 +1,18 @@
 ﻿<Properties StartupConfiguration="{0C6D9D93-6F4D-47EF-A1B7-247A96AAFB02}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Medico.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Rotas.cs">
     <Files>
-      <File FileName="Entities/Colaborador.cs" />
-      <File FileName="Entities/Consulta.cs" />
-      <File FileName="Entities/Utente.cs" />
-      <File FileName="Entities/Rotas.cs" />
+      <File FileName="Entities/Colaborador.cs" Line="18" Column="16" />
+      <File FileName="Entities/Consulta.cs" Line="25" Column="23" />
+      <File FileName="Entities/Utente.cs" Line="18" Column="19" />
+      <File FileName="Entities/Rotas.cs" Line="40" Column="61" />
       <File FileName="Entities/Pessoa.cs" />
       <File FileName="Entities/Motorista.cs" />
       <File FileName="Entities/Medico.cs" Line="87" Column="18" />
-      <File FileName="Entities/Listas.cs" />
+      <File FileName="Entities/Listas.cs" Line="96" Column="1" />
       <File FileName="Entities/Equipamentos.cs" />
-      <File FileName="Entities/Equipa.cs" />
-      <File FileName="Entities/Enfermeiro.cs" />
-      <File FileName="Entities/Administrativo.cs" />
+      <File FileName="Entities/Equipa.cs" Line="21" Column="29" />
+      <File FileName="Entities/Enfermeiro.cs" Line="1" Column="1" />
+      <File FileName="Entities/Administrativo.cs" Line="46" Column="11" />
       <File FileName="Program.cs" />
     </Files>
     <Pads>
@@ -22,7 +22,6 @@
             <Node name="saude-distante login" expanded="True">
               <Node name="Entities" expanded="True">
                 <Node name="Enums" expanded="True" />
-                <Node name="Medico.cs" selected="True" />
               </Node>
             </Node>
           </Node>

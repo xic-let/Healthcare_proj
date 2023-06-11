@@ -20,3 +20,5 @@ saude-distante login/saude-distante login/obj/Release/net6.0/saude-distante logi
 .vs/Healthcare_proj/FileContentIndex/f56830d6-3bfc-4d44-8f0f-dc3b14c911f4.vsidx
 .vs/Healthcare_proj/FileContentIndex/5b0cd273-1381-4756-a4d1-36cf1a652e66.vsidx
 .vs/VSWorkspaceState.json
+saude-distante login/saude-distante login/obj/Debug/net6.0/saude-distante login.assets.cache
+.gitignore
