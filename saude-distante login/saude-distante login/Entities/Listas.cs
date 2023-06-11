@@ -76,7 +76,7 @@ namespace saude_distante_login.Entities
             };
 
 
-        public static Rotas EncontrarRota(int idRota)
+        /*public static Rotas EncontrarRota(int idRota)
         {
             var rota = Listas.rotas.FirstOrDefault(r => r.IdRota == idRota);
             if (rota == null)
@@ -84,7 +84,7 @@ namespace saude_distante_login.Entities
                 throw new InvalidOperationException($"Não foi encontrada uma rota com o ID {idRota}.");
             }
             return rota;
-        }
+        }*/
 
         public static Colaborador EncontrarColaborador(string funcao, string email)
         {

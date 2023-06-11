@@ -134,32 +134,32 @@ namespace saude_distante_login.Entities
                 Console.WriteLine("O IMC do utente é: " + imc);
                 if (imc < 18.5)
                 {   
-                    Console.WriteLine($"IMC: {imc}");
+                    //Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está abaixo do peso.");
                 }
                 else if (imc >= 18.5 && imc <= 24.9)
                 {
-                    Console.WriteLine($"IMC: {imc}");
+                    //Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está com o peso normal.");
                 }
                 else if (imc >= 25 && imc <= 29.9)
                 {
-                    Console.WriteLine($"IMC: {imc}");
+                    //Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está com excesso de peso.");
                 }
                 else if (imc >= 30 && imc <= 34.9)
                 {
-                    Console.WriteLine($"IMC: {imc}");
+                    //Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está com obesidade grau 1.");
                 }
                 else if (imc >= 35 && imc <= 39.9)
                 {
-                    Console.WriteLine($"IMC: {imc}");
+                    //Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está com obesidade grau 2.");
                 }
                 else if (imc >= 40)
                 {
-                    Console.WriteLine($"IMC: {imc}");
+                    //Console.WriteLine($"IMC: {imc}");
                     Console.WriteLine("O utente está com obesidade grau 3.");
                 }
             }
