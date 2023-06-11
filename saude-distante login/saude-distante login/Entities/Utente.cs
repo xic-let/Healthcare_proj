@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using OfficeOpenXml;
+using System.IO;
 
 
 namespace saude_distante_login.Entities
@@ -101,6 +103,12 @@ namespace saude_distante_login.Entities
 /// ////////////////////////////////////////////////////////////
 		 public static void RelEstatistico()
 			{
+				int totalConsultas = Listas.Consultas.Count;
+				int consultasSemana = ConsultasSemana();
+				int consultasDia = ConsultasDia();
+				string Rel_Estatistico = "relatorio_estatistico.xlsx"; // Nome do arquivo Excel
+
+
 				Console.WriteLine("-------------------------------------------------");
 				Console.WriteLine("DGS - Direção Regional de Saúde de Rastreios");
 				Console.WriteLine();
@@ -112,6 +120,8 @@ namespace saude_distante_login.Entities
 				Console.WriteLine("Número de Consultas do Último Dia: " + ConsultasDia());
 				Console.WriteLine();
 				Console.WriteLine("-------------------------------------------------");
+
+				ExportarExcel(totalConsultas, consultasSemana, consultasDia, Rel_Estatistico); // Chama o método para exportar o relatório estatístico para Excel
 			}
 
 				public static int ConsultasSemana()
@@ -139,6 +149,32 @@ namespace saude_distante_login.Entities
 					}
 					return cont;
 				}
+
+			public static void ExportarExcel(int totalConsultas, int consultasSemana, int consultasDia, string Rel_Estatistico)
+			{
+				// Cria um novo arquivo Excel
+				using (var package = new ExcelPackage())
+				{
+					// Cria uma planilha no arquivo Excel
+					var worksheet = package.Workbook.Worksheets.Add("Relatório Estatístico");
+
+					// Define os cabeçalhos das colunas
+					worksheet.Cells[1, 1].Value = "Data";
+					worksheet.Cells[1, 2].Value = "Total de Consultas";
+					worksheet.Cells[1, 3].Value = "Consultas da Última Semana";
+					worksheet.Cells[1, 4].Value = "Consultas do Último Dia";
+
+					// Preenche os dados estatísticos nas células
+					worksheet.Cells[2, 1].Value = DateTime.Now.ToString("dd/MM/yyyy");
+					worksheet.Cells[2, 2].Value = totalConsultas;
+					worksheet.Cells[2, 3].Value = consultasSemana;
+					worksheet.Cells[2, 4].Value = consultasDia;
+
+					// Salva o arquivo Excel no disco
+					var file = new FileInfo(Rel_Estatistico);
+					package.SaveAs(Rel_Estatistico);
+				}
+			}
 
     }
 

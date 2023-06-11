@@ -184,23 +184,27 @@ namespace saude_distante_login.Entities
             Console.Write("Será prescrita Medicaçao? (sim/não): ");
             string res2 = Console.ReadLine();
 
-            string medicacao = string.Empty;
+            string receitas = string.Empty;
             if (res2.ToLower() == "sim")
             {
                 Console.Write("Informe a medicação: ");
-                medicacao = Console.ReadLine();
+                receitas = Console.ReadLine();
             }
             else
             {
                 Console.WriteLine("Nenhuma medicação prescrita!");
             }
 
+            Consulta Consulta = new Consulta(fumador, historicoDoencas, observacoes, receitas, id);
+            Listas.Consultas.Add(utenteEncontrado.Consulta);
+
             utenteEncontrado.Consulta.Fumador = fumador;
             utenteEncontrado.Consulta.HistoricoDoencas = historicoDoencas;
             utenteEncontrado.Consulta.Observacoes = observacoes;
-            utenteEncontrado.Consulta.Receitas = medicacao;
+            utenteEncontrado.Consulta.Receitas = receitas;
+            utenteEncontrado.Consulta.Idsns = id;
 
-            Listas.Consultas.Add(utenteEncontrado.Consulta);
+           
 
             Console.WriteLine("Consulta registada com sucesso!");
             Console.WriteLine("++++++++++++++++++++++++++++++++++++++");

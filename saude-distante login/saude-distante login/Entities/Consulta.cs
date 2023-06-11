@@ -62,7 +62,7 @@ namespace saude_distante_login.Entities
            
         }
 
-        public Consulta(bool fumador, string historicoDoencas, string observacoes, string receitas, int id, Utente utente)
+        public Consulta(bool fumador, string historicoDoencas, string observacoes, string receitas, int id)
         {
            
             Fumador = fumador;

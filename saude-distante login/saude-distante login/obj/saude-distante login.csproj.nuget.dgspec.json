@@ -38,6 +38,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.2.4, )"
+            },
+            "EPPlus.Interfaces": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "EPPlus.System.Drawing": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

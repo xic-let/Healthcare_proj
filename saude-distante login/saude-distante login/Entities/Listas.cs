@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OfficeOpenXml;
+using System.IO;
 
 
 namespace saude_distante_login.Entities
@@ -104,7 +106,6 @@ namespace saude_distante_login.Entities
             }
             return utente;
         }
-
 
     }
 
