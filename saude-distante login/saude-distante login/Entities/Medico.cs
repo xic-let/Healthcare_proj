@@ -22,7 +22,7 @@ namespace saude_distante_login.Entities
         }
         
         public Medico(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa)
-            : base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
+            : base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa)
         {
 
         }
@@ -74,7 +74,7 @@ namespace saude_distante_login.Entities
 
             // Procurar o utente na lista de utentes
             Utente utenteEncontrado = Listas.Utentes.Find(u => u.Idsns == id);
-            //Consulta consultaEncontrada = Listas.Consultas.Find(u => u.Idsns == id);
+            
 
             if (utenteEncontrado == null)
             {
@@ -86,6 +86,7 @@ namespace saude_distante_login.Entities
                     // Chamar o método para registar o utente
                     Enfermeiro enfermeiro = new Enfermeiro();
                     enfermeiro.RegistoUtente();
+                    Enfermeiro.RegPreConsulta();
                 }
                 else
                 {

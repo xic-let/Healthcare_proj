@@ -35,18 +35,18 @@ namespace saude_distante_login.Entities
         public static List<Colaborador> Colaboradores { get; } = new List<Colaborador>
             {
 
-                new Colaborador("Maria José", Genero.Feminino, "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 1),
-                new Colaborador("Maria José", Genero.Feminino,  "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 2),
-                new Colaborador("Maria José", Genero.Feminino, "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, "123456", 3),
-                new Colaborador("Manuel Pires", Genero.Masculino, "918302038", "Rua Velha", Concelho.Amares, "manuel.pires@email.com", 124, "Motorista", 1100, "123456", 2),
-                new Colaborador("Andreia Gomes", Genero.Feminino, "918312338", "Rua Antiga", Concelho.Amares, "andreia.gomes@email.com", 125, "Médico", 1800, "123456", 2),
-                new Colaborador("João Silva", Genero.Masculino, "918302658", "Rua da Alegria", Concelho.Amares, "joao.silva@email.com", 126, "Enfermeiro", 1500, "123456", 2),
-                new Colaborador("Soraia Pereira", Genero.Feminino, "918319827", "Rua 25 de Abril", Concelho.Braga, "soraia.pereira@email.com", 127, "Motorista", 1100, "123456", 1),
-                new Colaborador("André Souto", Genero.Masculino, "915555666", "Rua Milenar", Concelho.Braga, "andre.souto@email.com", 128, "Médico", 2000, "123456", 1),
-                new Colaborador("Clara Pinto", Genero.Feminino, "967584444", "Rua Direita", Concelho.Braga, "clara.pinto@email.com", 129, "Enfermeiro", 1000, "123456", 1),
-                new Colaborador("Miguel Soares", Genero.Masculino, "911233454", "Rua 5 de Outubro", Concelho.Guimarães, "miguel.soares@email.com", 130, "Motorista", 1100, "123456", 3),
-                new Colaborador("Joana Freitas", Genero.Feminino, "918111222", "Rua Velha", Concelho.Guimarães, "joana.freitas@email.com", 131, "Médico", 1500, "123456", 3),
-                new Colaborador("Carlos Santos", Genero.Masculino,  "918891918", "Rua Santa", Concelho.Guimarães, "carlos.santos@email.com", 132, "Enfermeiro", 1500, "123456", 3),
+                new Colaborador("Maria José", Genero.Feminino, "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, 1),
+                new Colaborador("Maria José", Genero.Feminino,  "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, 2),
+                new Colaborador("Maria José", Genero.Feminino, "912345681", "Rua Nova", Concelho.Braga, "maria.jose@email.com", 123, "Administrativo", 1100, 3),
+                new Colaborador("Manuel Pires", Genero.Masculino, "918302038", "Rua Velha", Concelho.Amares, "manuel.pires@email.com", 124, "Motorista", 1100, 2),
+                new Colaborador("Andreia Gomes", Genero.Feminino, "918312338", "Rua Antiga", Concelho.Amares, "andreia.gomes@email.com", 125, "Médico", 1800, 2),
+                new Colaborador("João Silva", Genero.Masculino, "918302658", "Rua da Alegria", Concelho.Amares, "joao.silva@email.com", 126, "Enfermeiro", 1500, 2),
+                new Colaborador("Soraia Pereira", Genero.Feminino, "918319827", "Rua 25 de Abril", Concelho.Braga, "soraia.pereira@email.com", 127, "Motorista", 1100, 1),
+                new Colaborador("André Souto", Genero.Masculino, "915555666", "Rua Milenar", Concelho.Braga, "andre.souto@email.com", 128, "Médico", 2000, 1),
+                new Colaborador("Clara Pinto", Genero.Feminino, "967584444", "Rua Direita", Concelho.Braga, "clara.pinto@email.com", 129, "Enfermeiro", 1000, 1),
+                new Colaborador("Miguel Soares", Genero.Masculino, "911233454", "Rua 5 de Outubro", Concelho.Guimarães, "miguel.soares@email.com", 130, "Motorista", 1100, 3),
+                new Colaborador("Joana Freitas", Genero.Feminino, "918111222", "Rua Velha", Concelho.Guimarães, "joana.freitas@email.com", 131, "Médico", 1500, 3),
+                new Colaborador("Carlos Santos", Genero.Masculino,  "918891918", "Rua Santa", Concelho.Guimarães, "carlos.santos@email.com", 132, "Enfermeiro", 1500, 3),
             };
 
         public static List<Consulta> Consultas { get; } = new List<Consulta>
@@ -76,15 +76,15 @@ namespace saude_distante_login.Entities
             };
 
 
-        /*public static Rotas EncontrarRota(int idRota)
+        public static Rotas EncontrarRota(int idRota)
         {
             var rota = Listas.rotas.FirstOrDefault(r => r.IdRota == idRota);
-            if (rota == null)
+            /*if (rota == null)
             {
                 throw new InvalidOperationException($"Não foi encontrada uma rota com o ID {idRota}.");
-            }
+            }*/
             return rota;
-        }*/
+        }
 
         public static Colaborador EncontrarColaborador(string funcao, string email)
         {

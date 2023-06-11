@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace saude_distante_login.Entities
 {
-    public class Motorista : Colaborador//, IAutenticacao
+    public class Motorista : Colaborador
     {
         //Construtores da classe Motorista
         public Motorista()
@@ -16,7 +16,7 @@ namespace saude_distante_login.Entities
         }
 
         public Motorista(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa)
-            : base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
+            : base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa)
         {
 
         }
@@ -28,7 +28,7 @@ namespace saude_distante_login.Entities
             while (true)
             {
                 Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
-                Console.WriteLine("Bem-vindo/a " + this.Nome);
+                Console.WriteLine("Bem-vindo/a ");
                 Console.WriteLine("Selecione uma opção:");
                 Console.WriteLine();
                 Console.WriteLine("1. Verificar plano de rota");

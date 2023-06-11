@@ -76,7 +76,38 @@ namespace saude_distante_login.Entities
             }
         }
 
+        public void EnviarEmail()
+        {
+            Console.WriteLine("Insira o concelho para o qual pretende notificar os Utentes Residentes: (Braga/Amares/Guimarães)");
+            string idconcelho = Console.ReadLine();
+
+            if (Enum.TryParse<Concelho>(idconcelho, out Concelho concelho))
+            {
+                // Query the Utentes list for the matching Utente objects
+                List<Utente> matchingUtentes = Listas.Utentes.Where(u => u.Concelho == concelho).ToList();
+
+                if (matchingUtentes.Count > 0)
+                {
+                    Console.WriteLine($"Utentes Encontrados no concelho {concelho}:");
+                    foreach (Utente utente in matchingUtentes)
+                    {
+                        string email = utente.Email;
+                        Console.WriteLine($"Email enviado para: {email} ,Utente Notificado!");
+                        
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Sem Utentes resgistados em: {concelho}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Concelho inválido, por favor tente novamente!");
+                EnviarEmail();
+            }
         
+        }
 
         public void AgendaRotas()
         { 
@@ -86,7 +117,7 @@ namespace saude_distante_login.Entities
             int IdRota = int.Parse(Console.ReadLine());
 
             // Procurar a rota com o ID fornecido
-            Rotas rotaEncontrada = Listas.EncontrarRota(IdRota); // Call the EncontrarRota method on the instance
+            Rotas rotaEncontrada = Listas.EncontrarRota(IdRota); 
 
 
             if (rotaEncontrada != null)

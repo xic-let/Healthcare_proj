@@ -13,7 +13,7 @@ namespace saude_distante_login.Entities
 		//Construtores da classe Administrativo
 
 		public Administrativo(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
-			: base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
+			: base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa)
 		{
 
 		}
@@ -39,9 +39,10 @@ namespace saude_distante_login.Entities
 			Console.WriteLine("3. Consultar Rotas Agendadas");
 			Console.WriteLine("4. Consultar Relatório de Colaboradores");
 			Console.WriteLine("5. Consultar Relatório Estatístico");
-			Console.WriteLine("6. Sair");
+			Console.WriteLine("6. Notificar Utentes");
+			Console.WriteLine("7. Sair");
 			Console.WriteLine();
-			Console.Write("Opção (1-6): ");
+			Console.Write("Opção (1-7): ");
 			Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
 			string? opcao = Console.ReadLine();
 
@@ -65,6 +66,10 @@ namespace saude_distante_login.Entities
 					Utente.RelEstatistico();
 					break;
 				case "6":
+				Rotas rot = new Rotas();
+					rot.EnviarEmail();
+					break;
+				case "7":
 					Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
 					Environment.Exit(0);
 					break;
@@ -165,9 +170,6 @@ namespace saude_distante_login.Entities
 					continue;
 				}
 
-				Console.Write("Password: ");
-				string password = Console.ReadLine();
-
 				Console.Write("Equipa: ");
 				int equipa;
 				if (!int.TryParse(Console.ReadLine(), out equipa))
@@ -177,7 +179,7 @@ namespace saude_distante_login.Entities
 					continue;
 				}
 
-				Colaborador novocolaborador = new Colaborador(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa);
+				Colaborador novocolaborador = new Colaborador(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa);
 			
 				Listas.Colaboradores.Add(novocolaborador);
                 Console.WriteLine();

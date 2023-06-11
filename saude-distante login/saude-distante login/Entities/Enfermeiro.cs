@@ -19,7 +19,7 @@ namespace saude_distante_login.Entities
         {}
 
         public Enfermeiro(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa, string password)
-            : base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, password, equipa)
+            : base(nome, genero, contacto, morada, concelho, email, idColaborador, funcao, vencimento, equipa)
         {}
 
         //Métodos da classe Enfermeiro
@@ -75,6 +75,12 @@ namespace saude_distante_login.Entities
 
             Console.Write("Género (Masculino/Feminino/Outro): ");
             Genero genero = Enum.Parse<Genero>(Console.ReadLine());
+            if(genero != Genero.Masculino && genero != Genero.Feminino && genero != Genero.Outro)
+            {
+                Console.WriteLine("Género inválido. Por favor, insira um género válido.");
+                Console.Write("Género (Masculino/Feminino/Outro): ");
+                genero = Enum.Parse<Genero>(Console.ReadLine());
+            }
 
             Console.Write("Contacto: ");
             string contacto = Console.ReadLine();
@@ -82,8 +88,15 @@ namespace saude_distante_login.Entities
             Console.Write("Morada: ");
             string morada = Console.ReadLine();
 
-            Console.Write("Concelho: ");
+            Console.Write("Concelho: (Braga / Amares / Guimarães) ");
             Concelho concelho = Enum.Parse<Concelho>(Console.ReadLine());
+            if(concelho != Concelho.Amares && concelho != Concelho.Guimarães && concelho != Concelho.Braga)
+            {
+                Console.WriteLine("Concelho inválido. Por favor, insira um concelho válido.");
+                Console.Write("Concelho: (Braga / Amares / Guimarães) ");
+                concelho = Enum.Parse<Concelho>(Console.ReadLine());
+            }
+
 
             Console.Write("Email: ");
             string email = Console.ReadLine();
@@ -144,7 +157,7 @@ namespace saude_distante_login.Entities
             int id = int.Parse(Console.ReadLine());
 
             // Procurar o utente na lista de utentes
-            Utente utenteEncontrado = Listas.Utentes.Find(u => u.Idsns == id);//não encontra lista de utentes
+            Utente utenteEncontrado = Listas.Utentes.Find(u => u.Idsns == id);
 
             if (utenteEncontrado != null)
             {
@@ -173,7 +186,7 @@ namespace saude_distante_login.Entities
 
                 Consulta consulta = new Consulta(dataConsulta, equipa, peso, altura, pressaoArterialdia, pressaoArterialsis, glicose);
                 utenteEncontrado.Consulta = consulta;
-                //Listas.Consultas.Add(consulta);
+                
 
                 //inserir dados na tabela da consulta
                 Console.WriteLine("Dados de pré-consulta registados com sucesso!");

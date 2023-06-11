@@ -16,7 +16,6 @@ namespace saude_distante_login.Entities
 		public int IdColaborador { get; private set; }
 		public string? Funcao { get; set; }
 		public double Vencimento { get; set; }
-		public string? Password { get; private set; }
 		public int Equipa { get; set; }
 		public List<Colaborador>? Colaboradores { get; set; }
 
@@ -24,13 +23,12 @@ namespace saude_distante_login.Entities
 		{ }
 
 
-		public Colaborador(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, string password, int equipa)
+		public Colaborador(string nome, Genero genero, string contacto, string morada, Concelho concelho, string email, int idColaborador, string funcao, double vencimento, int equipa)
 				: base(nome, genero, contacto, morada, concelho, email)
 		{
 			IdColaborador = idColaborador;
 			Funcao = funcao;
 			Vencimento = vencimento;
-			Password = password;
 			Equipa = equipa;
 
 		}
