@@ -22,3 +22,7 @@ saude-distante login/saude-distante login/obj/Release/net6.0/saude-distante logi
 .vs/VSWorkspaceState.json
 saude-distante login/saude-distante login/obj/Debug/net6.0/saude-distante login.assets.cache
 .gitignore
+saude-distante login/saude-distante login/.vs/saude-distante login/xs/UserPrefs.xml
+.gitignore
+saude-distante login - cópia/.vs/ProjectEvaluation/saude-distante login.metadata.v7.bin
+.gitignore
