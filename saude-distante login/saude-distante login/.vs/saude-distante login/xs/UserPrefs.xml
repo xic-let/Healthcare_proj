@@ -2,11 +2,11 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Entities/Utente.cs">
     <Files>
       <File FileName="Entities/Enfermeiro.cs" />
-      <File FileName="Entities/Medico.cs" Line="54" Column="45" />
+      <File FileName="Entities/Medico.cs" />
       <File FileName="Entities/Consulta.cs" />
-      <File FileName="Entities/Listas.cs" Line="109" Column="1" />
-      <File FileName="Entities/Utente.cs" Line="125" Column="4" />
-      <File FileName="Program.cs" Line="19" Column="46" />
+      <File FileName="Entities/Listas.cs" />
+      <File FileName="Entities/Utente.cs" Line="144" Column="6" />
+      <File FileName="Program.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
