@@ -12,16 +12,16 @@ namespace saude_distante_login.Entities
     public class Rotas
     {
         public int IdRota { get; set; }
-        Concelho Concelho { get; set;}
+        public Concelho Concelho { get; set;}
         public string Freguesia { get; set; }
-        int Equipa { get; set; }
+        public int Equipa { get; set; }
         public DateTime Data { get; set; }  
 
         
         public Rotas() { }
 
 
-        public Rotas(int id, Enums.Concelho concelho, string freguesia, int equipa, DateTime data)
+        public Rotas(int id, Concelho concelho, string freguesia, int equipa, DateTime data)
         {
             IdRota = id;
             Concelho = concelho;
@@ -74,17 +74,7 @@ namespace saude_distante_login.Entities
             }
         }
 
-        public static void VerPlanoRota(List<Rotas> rotas)
-        {
-            foreach( Rotas r in rotas)
-            {
-                Console.WriteLine(r.IdRota);
-                Console.WriteLine(r.Concelho);
-                Console.WriteLine(r.Freguesia);
-                Console.WriteLine(r.Equipa);
-                Console.WriteLine(r.Data);
-            }
-        }
+        
 
         public void AgendaRotas()
         { 

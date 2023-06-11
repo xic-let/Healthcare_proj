@@ -79,3 +79,38 @@ C:/Users/Cesae/Desktop/Git/Healthcare_proj/saude-distante login/saude-distante l
 /Users/patriciacunha/Documents/GitHub/Healthcare_proj/saude-distante login/saude-distante login/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
 /Users/patriciacunha/Documents/GitHub/Healthcare_proj/saude-distante login/saude-distante login/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll
 /Users/patriciacunha/Documents/GitHub/Healthcare_proj/saude-distante login/saude-distante login/obj/Debug/net6.0/saude-distante login.csproj.CopyComplete
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\saude-distante login.exe
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\saude-distante login.deps.json
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\saude-distante login.runtimeconfig.json
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\saude-distante login.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\saude-distante login.pdb
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\EPPlus.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\EPPlus.Interfaces.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.csproj.AssemblyReference.cache
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.AssemblyInfoInputs.cache
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.AssemblyInfo.cs
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.csproj.CoreCompileInputs.cache
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.csproj.CopyComplete
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\refint\saude-distante login.dll
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.pdb
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\saude-distante login.genruntimeconfig.cache
+C:\Users\lenav\OneDrive\Área de Trabalho\Healthcare_proj\saude-distante login\saude-distante login\obj\Debug\net6.0\ref\saude-distante login.dll
