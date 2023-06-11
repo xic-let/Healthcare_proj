@@ -72,11 +72,12 @@ namespace saude_distante_login.Entities
 			
 			Console.WriteLine();
 
-			int diabetes1 = DiabetesGrauI(consultas);
+            Console.WriteLine("Análise de Risco de Diabetes dos Utentes");
+            int diabetes2 = DiabetesGrauI(consultas);
+
+            int diabetes1 = DiabetesGrauI(consultas);
 			Console.WriteLine("Número de Utentes com Índice Diabetes Grau I: " + diabetes1);
 			
-			Console.WriteLine("Análise de Risco de Diabetes dos Utentes");
-			int diabetes2 = DiabetesGrauI(consultas);
 			Console.WriteLine("Número de Utentes com Índice Diabetes Grau II: " + diabetes2);
 
 			int diabetes3 = DiabetesGrauI(consultas);
