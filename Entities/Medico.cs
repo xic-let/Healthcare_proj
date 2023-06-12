@@ -51,10 +51,10 @@ namespace saude_distante_login.Entities
                     RegistarConsultaMed();
                     break;
                 case "2":
-                    Utente.RelEstatistico();
-                    break;
-                case "3":
                     RelConsultas();
+                    break;
+                case "3":                    
+                    Utente.RelEstatistico();
                     break;
                 case "4":
                     Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
