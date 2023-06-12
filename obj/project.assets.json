@@ -935,11 +935,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cesae\\Desktop\\SaudeMenosDistante\\saude-distante login.csproj",
+      "projectUniqueName": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\SaudeMenosDistante\\saude-distante login.csproj",
       "projectName": "saude-distante login",
-      "projectPath": "C:\\Users\\cesae\\Desktop\\SaudeMenosDistante\\saude-distante login.csproj",
+      "projectPath": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\SaudeMenosDistante\\saude-distante login.csproj",
       "packagesPath": "C:\\Users\\cesae\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cesae\\Desktop\\SaudeMenosDistante\\obj\\",
+      "outputPath": "C:\\Users\\cesae\\OneDrive - CESAE\\Ambiente de Trabalho\\SaudeMenosDistante\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cesae\\AppData\\Roaming\\NuGet\\NuGet.Config",

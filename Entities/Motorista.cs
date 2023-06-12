@@ -25,44 +25,43 @@ namespace saude_distante_login.Entities
 
         public void MostrarMenuMotorista()
         {
-            while (true)
+
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine("Bem-vindo/a ");
+            Console.WriteLine("Selecione uma opção:");
+            Console.WriteLine();
+            Console.WriteLine("1. Verificar plano de rota");
+            Console.WriteLine("2. Aceder relatório estatístico");
+            Console.WriteLine("3. Sair");
+            Console.WriteLine();
+            Console.Write("Opção (1-3): ");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
+            string opcao = Console.ReadLine();
+
+
+
+            switch (opcao)
             {
-                Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
-                Console.WriteLine("Bem-vindo/a ");
-                Console.WriteLine("Selecione uma opção:");
-                Console.WriteLine();
-                Console.WriteLine("1. Verificar plano de rota");
-                Console.WriteLine("2. Aceder relatório estatístico");
-                Console.WriteLine("3. Sair");
-                Console.WriteLine();
-                Console.Write("Opção (1-3): ");
-                Console.WriteLine("++++++++++++++++++++++++++++++++++++++");
-                string opcao = Console.ReadLine();
+                case "1":
+                    Console.WriteLine("Plano de rotas: ");
+                    Console.WriteLine();
+                    VerPlanoRota();
+                    break;
+                case "2":
+                    RelConsultas();
+                    Console.WriteLine();
+                    break;
+                case "3":
+                    Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                    return;
+                default:
+                    Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
+                    break;
 
-
-
-                switch (opcao)
-                {
-                    case "1":
-                        Console.WriteLine("Plano de rotas: ");
-                        Console.WriteLine();
-                        VerPlanoRota();
-                        break;
-                    case "2":
-                        RelConsultas();
-                        Console.WriteLine();
-                        break;
-                    case "3":
-                        Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
-                        return;
-                    default:
-                        Console.WriteLine("Opção inválida. Por favor, selecione uma opção válida.");
-                        break;
-
-                }
             }
-
         }
+
+
         public void VerPlanoRota()
         {
             List<Rotas> rotas = Listas.rotas;
@@ -75,6 +74,18 @@ namespace saude_distante_login.Entities
                 Console.WriteLine($"Equipa: {rota.Equipa}");
                 Console.WriteLine($"Data e Hora: {rota.Data}");
                 Console.WriteLine();
+            }
+
+            Console.WriteLine("Deseja voltar ao menu? (sim/nao)");
+            string resposta = Console.ReadLine();
+            if (resposta == "nao")
+            {
+                Console.WriteLine("Obrigado por utilizar Saude Menos Distante. Até breve!");
+                Environment.Exit(0);
+            }
+            else
+            {
+                MostrarMenuMotorista();
             }
         }
     }
