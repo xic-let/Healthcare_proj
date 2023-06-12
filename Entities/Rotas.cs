@@ -149,8 +149,8 @@ namespace saude_distante_login.Entities
             }
             else
             {
-                Motorista motorista = new Motorista();
-                motorista.MostrarMenuMotorista();
+                Administrativo administrativo = new Administrativo();
+                administrativo.MostrarMenuAdministrativo();
             }
 
         }
@@ -181,8 +181,8 @@ namespace saude_distante_login.Entities
             }
             else
             {
-                Motorista motorista = new Motorista();
-                motorista.MostrarMenuMotorista();
+                Administrativo administrativo = new Administrativo();
+                administrativo.MostrarMenuAdministrativo();
             }
         }
     }
